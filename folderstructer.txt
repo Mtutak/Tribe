@@ -1,0 +1,22 @@
+
+//Below is some folder structure feel free to update to best fit MERN Stack
+
+app dir -> app.js (primary React File Where Components are Required & Rendered)
+			-> components dir (contains all react components)
+			-> dummydata dir (just in case we need it)
+
+config dir -> config.json (created when running sequelize cli)
+			-> connection.js (connect sequelize to mysql not sure if needed?)
+
+db dir -> schema.sql (contains the db modeling for mysql like models in mongoose)
+		-> seeds.sql (dummy data to be input into mysql tables)
+
+models dir -> was used with mongoose, though I believe sequelize cli creates one
+
+public dir -> all public front end components
+			-> index.html (React components work into file be div id)
+			-> bundle.js (File generated each time webpack is run to render React)
+
+routing dir -> all controller files could incoprate Express and React Router
+
+webpack.config.js -> file that transpiles JSX and generates JS for bundle.js

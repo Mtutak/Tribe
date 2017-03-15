@@ -1,0 +1,7 @@
+Could use express router…
+
+in var routes = require(“./controller/controllerfile”);
+
+then in server.js
+
+app.use(‘/‘, routes);
