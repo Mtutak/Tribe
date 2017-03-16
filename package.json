@@ -1,33 +1,36 @@
 {
-    "name": "Tribe-App",
-    "version": "1.0.0",
-    "description": "Get Connected",
-    "main": "public/index.html",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "dev": "webpack & node server",
-        "start": "node server",
-        "build": "webpack"
-    },
-    "author": "Tribe",
-    "license": "ISC",
-    "dependencies": {
-        "axios": "^0.12.0",
-        "body-parser": "^1.15.2",
-        "express": "^4.14.0",
-        "mongoose": "^4.5.1",
-        "morgan": "^1.7.0",
-        "react": "^0.14.3",
-        "react-dom": "^0.14.3",
-        "method-override": "^2.3.5",
-        "mysql": "^2.10.2",
-        "path": "^0.12.7"
-    },
-    "devDependencies": {
-        "babel-core": "^6.3.13",
-        "babel-loader": "^6.2.0",
-        "babel-preset-es2015": "^6.3.13",
-        "babel-preset-react": "^6.3.13",
-        "webpack": "^1.13.1"
-    }
+  "name": "Tribe-App",
+  "version": "1.0.0",
+  "description": "Get Connected",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "webpack & node server",
+    "start": "node server",
+    "build": "webpack"
+  },
+  "author": "Tribe",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.12.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "method-override": "^2.3.5",
+    "mongoose": "^4.5.1",
+    "morgan": "^1.7.0",
+    "mysql": "^2.10.2",
+    "path": "^0.12.7",
+    "react": "^0.14.3",
+    "react-dom": "^0.14.3",
+    "style-loader": "^0.14.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.3.13",
+    "babel-loader": "^6.2.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "css-loader": "^0.27.3",
+    "style-loader": "^0.14.1",
+    "webpack": "^1.13.1"
+  }
 }
