@@ -1,9 +1,21 @@
-// Include the Main React Dependencies
-var React = require("react");
-var ReactDOM = require("react-dom");
+// Including the Main React Dependencies
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Main } from './components/Main';
+import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Posts } from './components/Posts';
+import { CreatePost } from './components/CreatePost';
 
-// Include the main Main Component
-var Main = require("./components/Main");
+const where = document.getElementById('app');
 
-// This code here allows us to render our main component (in this case Main)
-ReactDOM.render(<Main />, document.getElementById("app"));
+const router = (
+    <Router history={hashHistory}>
+        <Route path='/' component={Main}>
+            <Route path='profile' component={UserProfile} />
+            {/*<Route path='posts/new' component={CreatePost} />*/}
+            <IndexRoute component={Posts} />
+        </Route>
+    </Router>
+);
+
+ReactDOM.render(<UserProfile profileData={DATA} />, document.getElementById('')
