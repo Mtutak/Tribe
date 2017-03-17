@@ -17,3 +17,5 @@ class UserProfile extends React.Component {
         );
     }
 }
+
+export { UserJob };
