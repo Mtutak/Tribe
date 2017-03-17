@@ -1,72 +1,105 @@
-// Include React
-var React = require("react");
+import * as React from 'react';
+import { Button } from 'antd';
 
-// Creating the Form component
-var Form = React.createClass({
+class PostForm extends React.Component {
 
-  // Here we set a generic state associated with the text being searched for
-  getInitialState: function() {
-    return { term: "" };
-  },
+  // Form Event Handlers
 
-  // This function will respond to the user input
-  handleChange: function(event) {
+  updateInput(event) {
+    const newState = {};
+    newState[event.target.id] = event.target.value;
+    this.setState(newState);
+  }
 
-    this.setState({ term: event.target.value });
-
-  },
-
-  // When a user submits...
-  handleSubmit: function(event) {
-    // prevent the HTML from trying to submit a form if the user hits "Enter" instead of
-    // clicking the button
+  handleSubmitForm(event) {
     event.preventDefault();
+    this.props.action(this.state);
+  }
 
-    // Set the parent to have the search term
-    this.props.setTerm(this.state.term);
-    this.setState({ term: "" });
-  },
-  // Here we describe this component's render method
-  render: function() {
+  // Initial State
+
+  initializeState() {
+    this.setState({
+      title: this.props.defaultTitle || '',
+      category: this.props.defaultCategory || ''
+    });
+  }
+
+  // Lifecycle Methods
+
+  componentWillMount() {
+    this.initializeState();
+  }
+
+  render() {
     return (
-      <div className="panel panel-default">
-        <div className="panel-heading">
-          <h3 className="panel-title text-center">Query</h3>
-        </div>
-        <div className="panel-body text-center">
-          <form onSubmit={this.handleSubmit}>
-            <div className="form-group">
-              <h4 className="">
-                <strong>Location</strong>
-              </h4>
-
-              {/*
-                Note how each of the form elements has an id that matches the state.
-                This is not necessary but it is convenient.
-                Also note how each has an onChange event associated with our handleChange event.
-              */}
-              <input
-                value={this.state.term}
-                type="text"
-                className="form-control text-center"
-                id="term"
-                onChange={this.handleChange}
-                required
-              />
-              <br />
-              <button
-                className="btn btn-primary"
-                type="submit"
-              >
-                Submit
-              </button>
+         <div className="assessment-container container">
+        <div className="row">
+            <div className="col-md-6 form-box">
+                <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
+                    <fieldset>
+                        <div className="form-top">
+                            <div className="form-top-left">
+                                <h3><span><i className="fa fa-calendar-check-o" aria-hidden="true"></i></span>Create Your Tribe</h3>
+                                <p>Enter Your Project Details Below</p>
+                            </div>
+                        </div>
+                        <div className="form-bottom">
+                            <div className="row">
+                                <div className="form-group col-md-6 col-sm-6">
+                                    <label htmlFor='title'>Title:</label><br/>
+                                    <input 
+                                    className='form-control' 
+                                    placeholder="Title"
+                                    id='title'
+                                    type='text'
+                                    onChange={(event) => this.updateInput(event)}
+                                    defaultValue={this.props.defaultTitle}
+                                    required
+                                    />
+                                </div>
+                                <div className="form-group col-md-6 col-sm-6">
+                                    <label htmlFor='category'>Category:</label><br/>
+                                    <input 
+                                    id='category'
+                                    type='text'
+                                    onChange={(event) => this.updateInput(event)}
+                                    defaultValue={this.props.defaultCategory}
+                                    required
+                                    className="form-control" 
+                                    placeholder="Details"
+                                    />
+                                </div>
+                            </div>
+                            <Button
+                            type='primary'
+                            loading={this.props.loading}
+                            htmlType='submit'
+                            className='btn btn-next'
+                            >
+                            Make Your Dream Reality
+                            </Button>
+                        </div>
+                    </fieldset>
+                </form>
             </div>
-          </form>
         </div>
-      </div>
+    </div>
     );
   }
-});
+}
 
-// Export the component back for use in other files
-module.exports = Form;
+// Props PostForm component
+// Requires an "action" function
+// Optional "loading" boolean
+// Optional "defaultTitle" string
+// Optional "defaultCategory" string
+
+PostForm.propTypes = {
+  action: React.PropTypes.func.isRequired,
+  loading: React.PropTypes.bool,
+  defaultTitle: React.PropTypes.string,
+  defaultCategory: React.PropTypes.string
+};
+
+export { PostForm };

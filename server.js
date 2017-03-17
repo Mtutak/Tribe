@@ -7,38 +7,31 @@ var bodyParser = require("body-parser");
 // Require History Schema
 // var History = require("./models/History");
 
-// Create Instance of Express
-var app = express();
+// // Create Instance of Express
+// var app = express();
 
-// Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 3000;
-// Run Morgan for Logging
-// app.use(logger("dev"));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({
-    extended: false
-}));
-app.use(bodyParser.text());
-app.use(bodyParser.json({
-    type: "application/vnd.api+json"
-}));
-app.use(express.static("public"));
+// // Sets an initial port. We'll use this later in our listener
+// var PORT = process.env.PORT || 3000;
+// // Run Morgan for Logging
+// // app.use(logger("dev"));
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({
+//     extended: false
+// }));
+// app.use(bodyParser.text());
+// app.use(bodyParser.json({
+//     type: "application/vnd.api+json"
+// }));
+// app.use(express.static("public"));
 
-app.get("/", function(req, res) {
-    res.sendFile(__dirname + '/public/index.html')
-});
+// app.get("/", function(req, res) {
+//     res.sendFile(__dirname + '/public/index.html')
+// });
 
-app.listen(3000, function() {
-    console.log("App running on Port 3000");
-});
-// Solution 2: Customer Relations
-// ===========================================
-// Step 1: Created a Customer model in ./models/customer.js
-// Step 2: Updated the Burger model to have a hasOne(models.Customer) relation
-// Step 3: Updated the handlebars to display a customers name if there's a 'Customers' property on the Burger
-// Step 4: Updated queries in burgerController for updating a burger to add the CustomerId
-// Step 5: Updated findAll query  in burger_controller for burgers to "include" the customer
-// Step 6: Updated findAll query in burger_controller to order returned burgers by burger_name.
+// app.listen(3000, function() {
+//     console.log("App running on Port 3000");
+// });
+
 
 // var methodOverride = require("method-override");
 // // bring in the models
@@ -52,11 +45,7 @@ app.listen(3000, function() {
 // }));
 // // override with POST having ?_method=DELETE
 // app.use(methodOverride("_method"));
-// var exphbs = require("express-handlebars");
-// app.engine("handlebars", exphbs({
-//     defaultLayout: "main"
-// }));
-// app.set("view engine", "handlebars");
+
 // var routes = require("./controllers/burgers_controller");
 // app.use("/", routes);
 // app.use("/update", routes);
@@ -66,3 +55,37 @@ app.listen(3000, function() {
 // db.sequelize.sync().then(function () {
 //     app.listen(port);
 // });
+
+var express = require("express");
+var bodyParser = require("body-parser");
+
+// Create Instance of Express
+var app = express();
+// Sets an initial port. We'll use this later in our listener
+var PORT = process.env.PORT || 8888;
+
+// Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.text());
+app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+app.use(express.static("./public"));
+
+app.post('/posts', function(req, res) {
+  setTimeout(function(){
+    res.json({
+      title: req.body.title,
+      category: req.body.category
+    });
+  }, 1000);
+});
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/public/app.html');
+});
+
+// Listener
+app.listen(PORT, function() {
+  console.log("App listening on PORT: " + PORT);
+});
