@@ -1,4 +1,4 @@
-// Include React
+/*// Include React
 var React = require("react");
 
 // Here we include all of the sub-components
@@ -95,7 +95,7 @@ var Main = React.createClass({
       </div>
     );
   }
-});
+});*/
 
 // Export the component back for use in other files
-module.exports = Main;
+// module.exports = Main;
