@@ -9,7 +9,7 @@ import { UserProfile } from '../app/components/parents/UserProfile';
 
 const router = (
 <Router history={hashHistory}>
-    <Route path='/' component={Main}>
+    <Route path='/' component={LandingPage}>
         <Route path='profile' component={UserProfile} />
         <Route path='projects' component={Projects} />
         <Route path='projects/new' component={CreateProject} />
