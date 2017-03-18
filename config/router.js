@@ -6,13 +6,14 @@ import { Main } from '../app/components/Main';
 import { CreateProject } from '../app/components/parents/CreateProjects';
 import { Projects } from '../app/components/parents/AllProjects';
 import { UserProfile } from '../app/components/parents/UserProfile';
+import { Form } from '../app/components/children/Form';
 
 const router = (
 <Router history={hashHistory}>
     <Route path='/' component={LandingPage}>
         <Route path='profile' component={UserProfile} />
         <Route path='projects' component={Projects} />
-        <Route path='projects/new' component={CreateProject} />
+        <Route path='projects/new' component={Form} />
         <IndexRoute component={UserProfile} />
     </Route>
 </Router>
