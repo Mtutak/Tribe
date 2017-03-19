@@ -1,4 +1,6 @@
 import * as React from 'react';
+import { Link } from 'react-router';
+// import { Header } from '../parents/Header';
 
 
 class LandingPage extends React.Component {
@@ -14,26 +16,22 @@ class LandingPage extends React.Component {
                         <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
                             <span className="fa fa-bars"></span>
                         </button>
-                            <a href="index.html" className="navbar-brand">Bethany</a>
+                            <a href="/" className="navbar-brand">TRIBE</a>
                         </div>
                         <div className="collapse navbar-collapse navbar-right" id="mynavbar">
                             <ul className="nav navbar-nav">
-                                <li className="active"><a href="#header">Home</a></li>
-                                <li><a href="#feature">Connections</a></li>
-                                <li><a href="#portfolio">Explore</a></li>
-                                <li><a href="#contact">Login/Logout</a></li>
+                                <li><Link to='#' activeClassName='active' >Sign Up</Link></li>
+                                <li className="active"><Link to='#' activeClassName='active' >Login</Link></li>
+
+                                <li><Link to='profile' activeClassName='active' >Profile(here for testing routes)</Link></li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </nav>
-            {/*<!--/ nav-->*/}
+            <br/>
             <div className="container text-center">
-                <div className="wrapper wow fadeInUp delay-05s" >
-                    <h3 className="title">Tribe</h3>
-                    <h4 className="sub-title">Face-to-Face Connections for Artists</h4>
-                    <button type="submit" className="btn btn-submit">Login/Signup</button>
-                </div>
+                    <h3 className="title">Showcase Projects Here</h3>
             </div>
         </div>
     </header> 
