@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Button } from 'antd';
+import { Geo } from './form/Geo';
 
 class PostForm extends React.Component {
 
@@ -42,6 +43,8 @@ class PostForm extends React.Component {
                             <div className="form-top-left">
                                 <h3><span><i className="fa fa-calendar-check-o" aria-hidden="true"></i></span>Create Your Tribe</h3>
                                 <p>Enter Your Project Details Below</p>
+                                {/* Included Geo Component for react-place autofill*/}
+                                <Geo />
                             </div>
                         </div>
                         <div className="form-bottom">
@@ -59,15 +62,18 @@ class PostForm extends React.Component {
                                     />
                                 </div>
                                 <div className="form-group col-md-6 col-sm-6">
-                                    <label htmlFor='category'>Category:</label><br/>
-                                    <input 
+                                    <label htmlFor='category'>Project Summary:</label><br/>
+                                    <textarea 
                                     id='category'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
                                     defaultValue={this.props.defaultCategory}
+                                    rows="4"
+                                    cols="50"
+                                    maxlength="250"
                                     required
                                     className="form-control" 
-                                    placeholder="Details"
+                                    placeholder="Enter a Brief Intro to Your Project!!!"
                                     />
                                 </div>
                             </div>
