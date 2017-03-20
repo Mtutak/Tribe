@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Button } from 'antd';
 
-class PostForm extends React.Component {
+class Form extends React.Component {
 
   // Form Event Handlers
 
@@ -95,11 +95,11 @@ class PostForm extends React.Component {
 // Optional "defaultTitle" string
 // Optional "defaultCategory" string
 
-PostForm.propTypes = {
+Form.propTypes = {
   action: React.PropTypes.func.isRequired,
   loading: React.PropTypes.bool,
   defaultTitle: React.PropTypes.string,
   defaultCategory: React.PropTypes.string
 };
 
-export { PostForm };
+export { Form };
