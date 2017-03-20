@@ -20,10 +20,11 @@ import { Link } from 'react-router';
 			</div>
 			<div className="collapse navbar-collapse" id="myNavbar">
 			  <ul className="nav navbar-nav navbar-right">
-			    <li className="active"><a href="#banner">Home</a></li>
-			    <li><a href="#service">Connections</a></li>
-			    <li><a href="#portfolio">Explore</a></li>
-			    <li><a href="#about">Logout</a></li>
+			    <li className="active"><Link to="/">Home</Link></li>
+                <li><Link to='/profile' activeClassName='active' >Profile</Link></li>
+			    <li><Link to="#">Explore</Link></li>
+                <li><Link to='#'>Sign Up</Link></li>
+			    <li><Link to="#">Logout</Link></li>
 			    {/*<li><a href="#contact">Contact Us</a></li>*/}
 			  </ul>
 			</div>
