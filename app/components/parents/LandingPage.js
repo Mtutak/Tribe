@@ -5,7 +5,7 @@ import { Link } from 'react-router';
  class LandingPage extends React.Component {
     render() {
         return(
-    <body>
+<div>
 	{/*<!--HEADER START-->*/}
 	<div className="main-navigation navbar-fixed-top">
 		<nav className="navbar navbar-default">
@@ -21,8 +21,8 @@ import { Link } from 'react-router';
 			<div className="collapse navbar-collapse" id="myNavbar">
 			  <ul className="nav navbar-nav navbar-right">
 			    <li className="active"><Link to="/">Home</Link></li>
-                <li><Link to='/profile' activeClassName='active' >Profile</Link></li>
-			    <li><Link to="/projects">Explore</Link></li>
+                <li><Link to='profile' activeClassName='active' >Profile</Link></li>
+			    <li><Link to='projects'>Explore</Link></li>
                 <li><Link to='#'>Sign Up</Link></li>
 			    <li><Link to="#">Logout</Link></li>
 			    {/*<li><a href="#contact">Contact Us</a></li>*/}
@@ -56,8 +56,8 @@ import { Link } from 'react-router';
 			</div>
 		</div>
 	</div>
-	{/*<!--CTA1 END-->*/}
-    </body>
+</div>
+	/*<!--CTA1 END-->*/
     );
   }
 }
