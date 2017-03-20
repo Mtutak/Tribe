@@ -22,7 +22,7 @@ import { Link } from 'react-router';
 			  <ul className="nav navbar-nav navbar-right">
 			    <li className="active"><Link to="/">Home</Link></li>
                 <li><Link to='/profile' activeClassName='active' >Profile</Link></li>
-			    <li><Link to="#">Explore</Link></li>
+			    <li><Link to="/projects">Explore</Link></li>
                 <li><Link to='#'>Sign Up</Link></li>
 			    <li><Link to="#">Logout</Link></li>
 			    {/*<li><a href="#contact">Contact Us</a></li>*/}
