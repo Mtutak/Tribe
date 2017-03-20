@@ -2,41 +2,62 @@ import * as React from 'react';
 import { Link } from 'react-router';
 // import { Header } from '../parents/Header';
 
-
-class LandingPage extends React.Component {
+ class LandingPage extends React.Component {
     render() {
         return(
-    <header className="main-header" id="header">
-        <div className="bg-color">
-            {/*<!--nav-->*/}
-            <nav className="nav navbar-default navbar-fixed-top">
-                <div className="container">
-                    <div className="col-md-12">
-                        <div className="navbar-header">
-                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynavbar" aria-expanded="false" aria-controls="navbar">
-                            <span className="fa fa-bars"></span>
-                        </button>
-                            <a href="/" className="navbar-brand">TRIBE</a>
-                        </div>
-                        <div className="collapse navbar-collapse navbar-right" id="mynavbar">
-                            <ul className="nav navbar-nav">
-                                <li><Link to='#' activeClassName='active' >Sign Up</Link></li>
-                                <li className="active"><Link to='#' activeClassName='active' >Login</Link></li>
+    <body>
+	{/*<!--HEADER START-->*/}
+	<div className="main-navigation navbar-fixed-top">
+		<nav className="navbar navbar-default">
+			<div className="container">
+			<div className="navbar-header">
+			  <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+			    <span className="icon-bar"></span>
+			    <span className="icon-bar"></span>
+			    <span className="icon-bar"></span>
+			  </button>
+			  <a className="navbar-brand" href="index.html">Tribe</a>
+			</div>
+			<div className="collapse navbar-collapse" id="myNavbar">
+			  <ul className="nav navbar-nav navbar-right">
+			    <li className="active"><a href="#banner">Home</a></li>
+			    <li><a href="#service">Connections</a></li>
+			    <li><a href="#portfolio">Explore</a></li>
+			    <li><a href="#about">Logout</a></li>
+			    {/*<li><a href="#contact">Contact Us</a></li>*/}
+			  </ul>
+			</div>
+		  </div>
+		</nav>
+	</div>
+	{/*<!--HEADER END-->*/}
 
-                                <li><Link to='profile' activeClassName='active' >Profile(here for testing routes)</Link></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-            <br/>
-            <div className="container text-center">
-                    <h3 className="title">Showcase Projects Here</h3>
-            </div>
-        </div>
-    </header> 
-        );
-    }
+	{/*<!--BANNER START-->*/}
+	<div id="banner" className="section-padding">
+		<div className="container">
+			<div className="row">
+				<div className="jumbotron">
+				  <h1 className="small">Welcome To <span className="bold">Tribe</span></h1>
+				  <p className="big">A community for artists to connect and work together</p>
+				  <a href="#" className="btn btn-banner">Sign Up/Login<i className="fa fa-send"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/*<!--BANNER END-->*/}
+
+	{/*<!--CTA1 START-->*/}
+	<div className="cta-1">
+		<div className="container">
+			<div className="row text-center white">
+				<h1 className="cta-title">Join TRIBE Today!</h1>
+				<p className="cta-sub-title">Find your community.</p>
+			</div>
+		</div>
+	</div>
+	{/*<!--CTA1 END-->*/}
+    </body>
+    );
+  }
 }
-
 export { LandingPage };
