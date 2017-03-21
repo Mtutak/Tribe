@@ -31,7 +31,6 @@ import Auth from '../../modules/localAuth';
                                     </ul>
                               ) : (
                                     <ul className="nav navbar-nav">
-                                        <li><Link to='/signup' activeClassName='active' >Sign Up</Link></li>
                                         <li className="active"><Link to='/login' activeClassName='active' >Login</Link></li>
                                     </ul>
                               )}
@@ -49,7 +48,7 @@ import Auth from '../../modules/localAuth';
 				<div className="jumbotron">
 				  <h1 className="small">Welcome To <span className="bold">Tribe</span></h1>
 				  <p className="big">A community for artists to connect and work together</p>
-				  <a href="#" className="btn btn-banner">Sign Up/Login<i className="fa fa-send"></i></a>
+				  <Link to="/signup" className="btn btn-banner">Sign Up<i className="fa fa-send"></i></Link>
 				</div>
 			</div>
 		</div>

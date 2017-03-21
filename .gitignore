@@ -29,6 +29,7 @@ build/Release
 # Dependency directories
 node_modules
 jspm_packages
+bundle.js
 
 # Optional npm cache directory
 .npm
@@ -38,3 +39,4 @@ jspm_packages
 
 #DS Store for mac: file that stores custom attributes of its containing folder
 .DS_Store
+
