@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router';
+import Auth from '../../modules/localAuth';
 // import { Header } from '../parents/Header';
 
 
@@ -19,12 +20,21 @@ class LandingPage extends React.Component {
                             <a href="/" className="navbar-brand">TRIBE</a>
                         </div>
                         <div className="collapse navbar-collapse navbar-right" id="mynavbar">
-                            <ul className="nav navbar-nav">
-                                <li><Link to='#' activeClassName='active' >Sign Up</Link></li>
-                                <li className="active"><Link to='#' activeClassName='active' >Login</Link></li>
 
-                                <li><Link to='profile' activeClassName='active' >Profile(here for testing routes)</Link></li>
-                            </ul>
+                              {Auth.isUserAuthenticated() ? (
+                                    <ul className="nav navbar-nav">
+                                        <li><Link to='/profile' activeClassName='active' >Profile</Link></li>
+                                        <li><Link to='/projects' activeClassName='active' >Explore</Link></li>
+                                        <li><Link to='/connections' activeClassName='active' >Connections</Link></li> 
+                                        <li><Link to='/logout' activeClassName='active' >Log out</Link></li>
+                                    </ul>
+                              ) : (
+                                    <ul className="nav navbar-nav">
+                                        <li><Link to='/signup' activeClassName='active' >Sign Up</Link></li>
+                                        <li className="active"><Link to='/login' activeClassName='active' >Login</Link></li>
+                                    </ul>
+                              )}
+
                         </div>
                     </div>
                 </div>
@@ -39,4 +49,4 @@ class LandingPage extends React.Component {
     }
 }
 
-export { LandingPage };
+export default LandingPage;

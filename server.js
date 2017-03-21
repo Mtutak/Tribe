@@ -1,6 +1,8 @@
 
 var express = require("express");
 var bodyParser = require("body-parser");
+const passport = require('passport');
+const mongoose = require('mongoose');
 
 // Create Instance of Express
 var app = express();
@@ -9,24 +11,33 @@ var PORT = process.env.PORT || 8888;
 
 // Middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.use(express.static("./public"));
 
-app.post('/posts', function(req, res) {
-  setTimeout(function(){
-    res.json({
-      title: req.body.title,
-      category: req.body.category
-    });
-  }, 1000);
-});
+const config = require('./app/config/config.json');
 
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/public/app.html');
-});
+require('./models').connect(config.dbUri);
+
+const localSignupStrategy = require('./controllers/passport/localSignup');
+const localLoginStrategy = require('./controllers/passport/localLogin');
+passport.use('local-signup', localSignupStrategy);
+passport.use('local-login', localLoginStrategy);
+
+// pass the authenticaion checker middleware
+const authCheckMiddleware = require('./controllers/middleware/authCheck');
+app.use('/api', authCheckMiddleware);
+
+
+const authRoutes = require('./controllers/auth');
+app.use('/auth', authRoutes);
+
+const apiRoutes = require('./controllers/api');
+app.use('/api', apiRoutes);
+
+
 
 // Listener
 app.listen(PORT, function() {

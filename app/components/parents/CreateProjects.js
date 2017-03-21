@@ -13,4 +13,4 @@ class CreateProject extends React.Component {
     }
 }
 
-export { CreateProject };
+export default CreateProject;
