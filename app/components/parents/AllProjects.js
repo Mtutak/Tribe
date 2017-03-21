@@ -13,4 +13,4 @@ class AllProjects extends React.Component {
     }
 }
 
-export { AllProjects };
+export default AllProjects;

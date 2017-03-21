@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { Link } from 'react-router';
+import Auth from '../../modules/localAuth';
 // import { Header } from '../parents/Header';
 
  class LandingPage extends React.Component {
     render() {
         return(
+
 <div>
 	{/*<!--HEADER START-->*/}
 	<div className="main-navigation navbar-fixed-top">
@@ -19,14 +21,20 @@ import { Link } from 'react-router';
 			  <a className="navbar-brand" href="index.html">Tribe</a>
 			</div>
 			<div className="collapse navbar-collapse" id="myNavbar">
-			  <ul className="nav navbar-nav navbar-right">
-			    <li className="active"><Link to="/">Home</Link></li>
-                <li><Link to='profile' activeClassName='active' >Profile</Link></li>
-			    <li><Link to='projects'>Explore</Link></li>
-                <li><Link to='#'>Sign Up</Link></li>
-			    <li><Link to="#">Logout</Link></li>
-			    {/*<li><a href="#contact">Contact Us</a></li>*/}
-			  </ul>
+
+                              {Auth.isUserAuthenticated() ? (
+                                    <ul className="nav navbar-nav">
+                                        <li><Link to='/profile' activeClassName='active' >Profile</Link></li>
+                                        <li><Link to='/projects' activeClassName='active' >Explore</Link></li>
+                                        <li><Link to='/connections' activeClassName='active' >Connections</Link></li> 
+                                        <li><Link to='/logout' activeClassName='active' >Log out</Link></li>
+                                    </ul>
+                              ) : (
+                                    <ul className="nav navbar-nav">
+                                        <li className="active"><Link to='/login' activeClassName='active' >Login</Link></li>
+                                    </ul>
+                              )}
+
 			</div>
 		  </div>
 		</nav>
@@ -40,7 +48,7 @@ import { Link } from 'react-router';
 				<div className="jumbotron">
 				  <h1 className="small">Welcome To <span className="bold">Tribe</span></h1>
 				  <p className="big">A community for artists to connect and work together</p>
-				  <a href="#" className="btn btn-banner">Sign Up/Login<i className="fa fa-send"></i></a>
+				  <Link to="/signup" className="btn btn-banner">Sign Up<i className="fa fa-send"></i></Link>
 				</div>
 			</div>
 		</div>
@@ -61,4 +69,6 @@ import { Link } from 'react-router';
     );
   }
 }
-export { LandingPage };
+
+export default LandingPage;
+
