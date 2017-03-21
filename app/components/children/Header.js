@@ -19,9 +19,10 @@ class Header extends React.Component {
                         </div>
                         <div className="collapse navbar-collapse navbar-right" id="mynavbar">
                             <ul className="nav navbar-nav">
-                                <li><Link to='/projects' activeClassName='active' >Explore</Link></li>
-                                <li><Link to='/connections' activeClassName='active' >People</Link></li>
                                 <li><Link to='/profile' activeClassName='active' >Profile</Link></li>
+                                <li><Link to='/projects' activeClassName='active' >Explore</Link></li>
+                                <li><Link to='/connections' activeClassName='active' >Connections</Link></li>
+                                <li><Link to='/logout' activeClassName='active' >Log out</Link></li>
                             </ul>
                         </div>
                     </div>

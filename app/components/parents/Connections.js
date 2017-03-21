@@ -13,4 +13,4 @@ class Connections extends React.Component {
     }
 }
 
-export { Connections };
+export default Connections;
