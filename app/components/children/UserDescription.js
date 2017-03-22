@@ -3,13 +3,9 @@ import * as React from 'react';
 class UserDescription extends React.Component {
     render() {
         return(
-        <div className="container">
-             <div className="icon-text">
-                <h3 className="txt-tl">I do this for a living...</h3>
-                {/*Get this info on initial login*/}
-                {/*Can omit this altogether if no time...*/}
-            </div>
-        </div>
+        <div>
+			<center><h3 className="line-adjustment">This is what I do and what kind of people I am looking to connect with.</h3></center>
+		</div>
         );
     }
 }

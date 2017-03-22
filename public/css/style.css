@@ -601,3 +601,6 @@ p.cta-sub-title {
 form element
 **************************************/
 
+.line-adjustment {
+    line-height: .1;
+}

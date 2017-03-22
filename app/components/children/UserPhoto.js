@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Header } from '../children/Header';
+// import { Header } from '../children/Header';
 
 class UserPhoto extends React.Component {
     render() {
