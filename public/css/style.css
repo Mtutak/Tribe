@@ -25,7 +25,7 @@ Header
 **************************************/
 .section-padding
 {
-	padding: 40px 0px;
+	padding: 10px;
 }
 .main-navigation
 {
@@ -601,3 +601,18 @@ p.cta-sub-title {
 form element
 **************************************/
 
+.line-adjustment {
+    line-height: .1;
+}
+
+.connectbtn-style {
+    background-color: #e43c5c;
+}
+
+.name-style {
+    font-size: 20px;
+}
+
+.description-style {
+    color: #6f6f6f;
+}
