@@ -21,6 +21,7 @@ class Header extends React.Component {
                             <ul className="nav navbar-nav">
                                 <li><Link to='/profile' activeClassName='active' >Profile</Link></li>
                                 <li><Link to='/projects' activeClassName='active' >Explore</Link></li>
+                                <li><Link to='/projects/new' activeClassName='active' >Create</Link></li>
                                 <li><Link to='/connections' activeClassName='active' >Connections</Link></li>
                                 <li><Link to='/logout' activeClassName='active' >Log out</Link></li>
                             </ul>

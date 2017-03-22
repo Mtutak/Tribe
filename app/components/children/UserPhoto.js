@@ -1,16 +1,24 @@
 import * as React from 'react';
+// import { Header } from '../children/Header';
 
 class UserPhoto extends React.Component {
     render() {
         return(
-        <div className="container">
-            <div className="col-md-4 col-sm-6 padding-right-zero">
-                <div className="portfolio-box design">
-                <img src="http://assets.change.org/photos/9/gy/hu/tgGyHUjAtPUDoIa-400x400-noPad.jpg?1459657762" alt="" className="img-responsive" />
-                {/*Need to grab this photo from the DB when the user logs in*/}
-                </div>
-            </div>
-        </div>
+<div id="about" className="section-padding">
+   <div className="container">
+      <div className="row">
+         <div className="page-title text-center">
+            <h1>My Profile</h1>
+            <hr className="pg-titl-bdr-btm">
+            </hr>
+         </div>
+         <center><img src="img/agent2.jpg" className="img-responsive" /></center>
+         <center><p className="name-style">Name Here</p></center>
+         <hr className="pg-titl-bdr-btm" />
+      </div>
+   </div>
+</div>
+          
         );
     }
 }
