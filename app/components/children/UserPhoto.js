@@ -12,7 +12,9 @@ class UserPhoto extends React.Component {
             <hr className="pg-titl-bdr-btm">
             </hr>
          </div>
-         <center><img src="img/agent2.jpg" class="img-responsive" /></center>
+         <center><img src="img/agent2.jpg" className="img-responsive" /></center>
+         <center><p className="name-style">Name Here</p></center>
+         <hr className="pg-titl-bdr-btm" />
       </div>
    </div>
 </div>
