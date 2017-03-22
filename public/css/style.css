@@ -616,3 +616,7 @@ form element
 .description-style {
     color: #6f6f6f;
 }
+
+.header-height {
+    height: 75px;
+}
