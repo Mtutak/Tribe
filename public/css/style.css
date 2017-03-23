@@ -56,16 +56,16 @@ Header
 }
 .navbar-brand {
 	height: inherit;
-	font-family: 'Josefin Slab', serif;
+	font-family: 'Rock Salt', cursive;
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 5px;
-    font-size: 42px;
+    font-size: 33px;
     margin-top: 5px;
 }
 
 .navbar-default .navbar-brand {
-    color: #e43c5c;
+    color: black;
 }
 
 .navbar-default .navbar-nav > li > a {
