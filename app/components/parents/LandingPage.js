@@ -31,7 +31,7 @@ import Auth from '../../modules/localAuth';
                                         <li><Link to='/logout' activeClassName='active' >Log out</Link></li>
                                     </ul>
                               ) : (
-                                    <ul className="nav navbar-nav">
+                                    <ul className="nav navbar-nav navbar-right">
                                         <li className="active"><Link to='/login' activeClassName='active' >Login</Link></li>
                                     </ul>
                               )}
@@ -57,16 +57,16 @@ import Auth from '../../modules/localAuth';
 	{/*<!--BANNER END-->*/}
 
 	{/*<!--CTA1 START-->*/}
-	<div className="cta-1">
+	{/*<div className="cta-1">
 		<div className="container">
 			<div className="row text-center white">
 				<h1 className="cta-title">Join TRIBE Today!</h1>
 				<p className="cta-sub-title">Find your community.</p>
 			</div>
 		</div>
-	</div>
+	</div>}*/}
 </div>
-	/*<!--CTA1 END-->*/
+	/*/*<!--CTA1 END-->*/
     );
   }
 }

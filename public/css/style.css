@@ -56,16 +56,16 @@ Header
 }
 .navbar-brand {
 	height: inherit;
-	font-family: 'Josefin Slab', serif;
+	font-family: 'Rock Salt', cursive;
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 5px;
-    font-size: 42px;
+    font-size: 33px;
     margin-top: 5px;
 }
 
 .navbar-default .navbar-brand {
-    color: #e43c5c;
+    color: black;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -458,9 +458,12 @@ margin-top: 5px;
 }
 #banner
 {
-    background: url('../img/banner-bg.jpg') no-repeat;
+    background: url('../img/tribewallpaper.jpg') no-repeat center center fixed;
     background-size: cover;
-    min-height: 500px;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
 }
 .cta2 .btn-default,.cta2 .btn-default:hover,.cta2 .btn-default:focus
 {
@@ -634,4 +637,8 @@ form element
     width: 200px;
     border-radius: 20px;
     right: 7.5%;
+}
+
+.nav-style {
+    width: 50%;
 }
