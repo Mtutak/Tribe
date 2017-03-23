@@ -41,7 +41,7 @@ class Form extends React.Component {
                     <fieldset>
                         <div class="page-title text-center">
 					<center><h1>Create your Project, Find your Tribe:</h1></center>
-					<center><p>List a current project that you are recruiting for</p></center>
+					<center><p>List a current project that you are recruiting for:</p></center>
 					<center><hr class="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
