@@ -14,7 +14,7 @@ class AutoGeo extends React.Component {
                 <h2> Auto-Geo </h2>
                 {/*nhttps://www.w3schools.com/html/html5_geolocation.asp */}
             </div>
-        )
+        );
     }
 }
  
