@@ -56,17 +56,7 @@ import Auth from '../../modules/localAuth';
 	</div>
 	{/*<!--BANNER END-->*/}
 
-	{/*<!--CTA1 START-->*/}
-	{/*<div className="cta-1">
-		<div className="container">
-			<div className="row text-center white">
-				<h1 className="cta-title">Join TRIBE Today!</h1>
-				<p className="cta-sub-title">Find your community.</p>
-			</div>
-		</div>
-	</div>}*/}
 </div>
-	/*/*<!--CTA1 END-->*/
     );
   }
 }
