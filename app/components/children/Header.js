@@ -6,7 +6,7 @@ class Header extends React.Component {
   render() {
     return (
     <header className="main-header" id="header">
-        <div className="bg-color">
+        <div className="bg-color header-height">
             {/*<!--nav-->*/}
             <nav className="nav navbar-default">
                 <div className="container">

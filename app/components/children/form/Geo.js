@@ -15,7 +15,7 @@ class Geo extends React.Component {
     render () {
         return (
             <div>
-                <h2> Geo </h2>
+                <center><h2> Location </h2></center>
                 {/*Location Component from react-place */}
                 <Location
                 country='US'
@@ -23,12 +23,12 @@ class Geo extends React.Component {
                 onLocationSet={this.props.onLocationSet}
                 inputProps={{
                 style: {color: '#0099FF'},
-                className:'location',
+                className:'location col-md-12 col-md-offset-6 form-group',
                 placeholder: 'Your Tribe Location?'
                 }}
-                />  
+                />
             </div>
-        )
+        );
     }
 }
  

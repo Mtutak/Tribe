@@ -56,16 +56,16 @@ Header
 }
 .navbar-brand {
 	height: inherit;
-	font-family: 'Josefin Slab', serif;
+	font-family: 'Rock Salt', cursive;
 	font-weight: 700;
 	text-transform: uppercase;
 	padding: 5px;
-    font-size: 42px;
+    font-size: 33px;
     margin-top: 5px;
 }
 
 .navbar-default .navbar-brand {
-    color: #e43c5c;
+    color: black;
 }
 
 .navbar-default .navbar-nav > li > a {
@@ -150,7 +150,7 @@ a.btn-banner:hover, a.btn-banner:focus
     border-width: 0px;
     margin: 0px;
     padding: 0px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 62px;
     letter-spacing: 6px;
     text-transform: uppercase;
@@ -458,9 +458,12 @@ margin-top: 5px;
 }
 #banner
 {
-    background: url('../img/banner-bg.jpg') no-repeat;
+    background: url('../img/tribewallpaper.jpg') no-repeat center center fixed;
     background-size: cover;
-    min-height: 500px;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
 }
 .cta2 .btn-default,.cta2 .btn-default:hover,.cta2 .btn-default:focus
 {
@@ -615,4 +618,27 @@ form element
 
 .description-style {
     color: #6f6f6f;
+}
+
+.header-height {
+    height: 75px;
+}
+
+.my-projects-btn {
+    width: 500px;
+}
+
+.all-projects-btn {
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.location {
+    width: 200px;
+    border-radius: 20px;
+    right: 7.5%;
+}
+
+.nav-style {
+    width: 50%;
 }

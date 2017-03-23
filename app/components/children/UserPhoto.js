@@ -11,12 +11,12 @@ class UserPhoto extends React.Component {
             <h1>My Profile</h1>
             <hr className="pg-titl-bdr-btm">
             </hr>
-         </div>
          <center><img src="img/agent2.jpg" className="img-responsive" /></center>
          <center><p className="name-style">Name Here</p></center>
          <hr className="pg-titl-bdr-btm" />
       </div>
    </div>
+</div>
 </div>
           
         );

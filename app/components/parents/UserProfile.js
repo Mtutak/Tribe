@@ -4,6 +4,7 @@ import { UserPhoto } from '../children/UserPhoto';
 import { UserJob } from '../children/UserJob';
 import { UserConnectBtn } from '../children/UserConnectBtn';
 import { UserDescription } from '../children/UserDescription';
+import { UserProjectBtns } from '../children/UserProjectBtns';
 
 class UserProfile extends React.Component {
     render() {
@@ -15,6 +16,8 @@ class UserProfile extends React.Component {
             <br />
             <UserJob />
             <UserDescription />
+            <br />
+            <UserProjectBtns />
         </div>
         );
     }
