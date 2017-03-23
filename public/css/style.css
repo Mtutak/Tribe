@@ -616,3 +616,16 @@ form element
 .description-style {
     color: #6f6f6f;
 }
+
+.header-height {
+    height: 75px;
+}
+
+.my-projects-btn {
+    width: 500px;
+}
+
+.all-projects-btn {
+    width: 500px;
+    margin-bottom: 20px;
+}
