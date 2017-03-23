@@ -25,8 +25,8 @@ var helper = {
   },
 
   // This function hits our own server to retrieve the record of query results
-  getHistory: function() {
-    return axios.get("/api");
+  getUsersConnections: function() {
+    return axios.get("/api/connections");
   },
 
   // This function posts new searches to our database.
@@ -36,4 +36,4 @@ var helper = {
 };
 
 // We export the API helper
-module.exports = helper;
+export default helper;

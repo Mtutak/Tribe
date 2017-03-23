@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-
+var Schema = mongoose.Schema;
 // define the User model schema
 const UserSchema = new mongoose.Schema({
   email: {
@@ -8,7 +8,13 @@ const UserSchema = new mongoose.Schema({
     index: { unique: true }
   },
   password: String,
-  name: String
+  name: String,
+  connections: [{
+    // Store ObjectIds in the array
+    type: Schema.Types.ObjectId,
+    // The ObjectIds will refer to the ids in the Note model
+    ref: "User"
+  }]
 });
 
 

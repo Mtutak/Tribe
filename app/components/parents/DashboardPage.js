@@ -46,7 +46,7 @@ class DashboardPage extends React.Component {
         <header className="main-header" id="header">
             <div className="bg-color">
                 {/*<!--nav-->*/}
-                <nav className="nav navbar-default navbar-fixed-top">
+                <nav className="nav navbar-default">
                     <div className="container">
                         <div className="col-md-12">
                             <div className="navbar-header">
