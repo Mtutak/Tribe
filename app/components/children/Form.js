@@ -34,57 +34,56 @@ class Form extends React.Component {
 
   render() {
     return (
-         <div className="assessment-container container">
-        <div className="row">
-            <div className="col-md-6 form-box">
+        <div id="contact" class="section-padding">
+		<div class="container">
+			<div class="row">
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
-                        <div className="form-top">
-                            <div className="form-top-left">
+                        <div class="page-title text-center">
+					<center><h1>Create your Project, Find your Tribe:</h1></center>
+					<center><p>List a current project that you are recruiting for</p></center>
+					<center><hr class="pg-titl-bdr-btm"></hr></center>
+                    <Geo />
+				        </div>
+                
+                        {/*<div className="form-top">
                                 <h3><span><i className="fa fa-calendar-check-o" aria-hidden="true"></i></span>Create Your Tribe</h3>
                                 <p>Enter Your Project Details Below</p>
                                 {/* Included Geo Component for react-place autofill */}
-                                <Geo />
-                            </div>
-                        </div>
+                        {/*</div>*/}
                         <div className="form-bottom">
                             <div className="row">
-                                <div className="form-group col-md-6 col-sm-6">
-                                    <label htmlFor='title'>Title:</label><br/>
-                                    <input 
-                                    className='form-control' 
-                                    placeholder="Title"
-                                    id='title'
+                                <center><div className="col-md-6 col-md-offset-3 form-group">
+                                    <label htmlFor='Title'>Project Title:</label><br/>
+                                    <center><input 
+                                    className='form-control text-field-box' 
+                                    placeholder="Idea Here"
+                                    id='name'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
                                     defaultValue={this.props.defaultTitle}
                                     required
-                                    />
-                                </div>
-                                <div className="form-group col-md-6 col-sm-6">
+                                    /></center>
+                                </div></center>
+                                <center><div className="col-md-6 col-md-offset-3 form-group">
                                     <label htmlFor='category'>Project Summary:</label><br/>
-                                    <textarea 
+                                   <center><textarea 
                                     id='category'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
                                     defaultValue={this.props.defaultCategory}
-                                    rows="4"
-                                    cols="50"
+                                    rows="2"
+                                    cols="2"
                                     maxlength="250"
                                     required
-                                    className="form-control" 
-                                    placeholder="Enter a Brief Intro to your Project"
-                                    />
-                                </div>
+                                    className="form-control text-field-box" 
+                                    placeholder="Brief Intro to your Project"
+                                    /></center>
+                                </div></center>
                             </div>
-                            <Button
-                            type='primary'
-                            loading={this.props.loading}
-                            htmlType='submit'
-                            className='btn btn-next'
-                            >
-                            Make Your Dream Reality
-                            </Button>
+                            
+                            <button className="button-medium" id="contact-submit" loading={this.props.loading} htmlType="submit" name="contact">Post Your Project</button>
+                           
                         </div>
                     </fieldset>
                 </form>
