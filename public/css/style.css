@@ -629,3 +629,9 @@ form element
     width: 500px;
     margin-bottom: 20px;
 }
+
+.location {
+    width: 200px;
+    border-radius: 20px;
+    right: 7.5%;
+}
