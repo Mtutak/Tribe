@@ -40,7 +40,7 @@ class Connections extends React.Component {
         this.setState({
           connections: xhr.response.connections
         });
-        console.log(this.state.connections);
+        // console.log(this.state.connections);
       }
     });
     xhr.send();
