@@ -608,29 +608,20 @@ form element
     line-height: .1;
 }
 
-.connectbtn-style {
-    background-color: #e43c5c;
-}
-
-.name-style {
-    font-size: 20px;
+.job-style {
+    font-family: 'Rock Salt', cursive;
+    color: #e43c5c;
+    font-size: 45px;
+    margin-top: 30px;
 }
 
 .description-style {
     color: #6f6f6f;
+    margin-top: 40px;
 }
 
 .header-height {
     height: 75px;
-}
-
-.my-projects-btn {
-    width: 500px;
-}
-
-.all-projects-btn {
-    width: 500px;
-    margin-bottom: 20px;
 }
 
 .location {
@@ -641,4 +632,64 @@ form element
 
 .nav-style {
     width: 50%;
+}
+
+#blackbg-banner {
+    background-color: black;
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: fixed;
+}
+
+.firstname {
+    color: white;
+    font-size: 80px;
+    margin-top: 130px;
+    font-family: 'Rock Salt', cursive;
+}
+
+.lastname {
+    color: white;
+    font-size: 80px;
+    margin-top: 130px;
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+}
+
+.img-style {
+    width: 80%;
+    height: auto;
+    margin-top: 25px;
+}
+
+.connect-me {
+    margin-top: 40px;
+    border: 1px solid #ffffff;
+    padding: 12px 22px;
+    line-height: 0px;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.projects-me {
+    margin-top: 40px;
+    border: 1px solid #ffffff;
+    padding: 12px 22px;
+    line-height: 0px;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1px;
+    display: inline-block;
 }

@@ -10,17 +10,21 @@ import { ProfileButton } from '../children/userprofbtn/ProfileButton';
 class UserProfile extends React.Component {
     render() {
         return(
-        <div>
-            <Header />
-            <UserPhoto />
-            <UserConnectBtn />
-            <ProfileButton />
-            <br />
-            <UserJob />
-            <UserDescription />
-            <br />
-            <UserProjectBtns />
-        </div>
+  <div>
+    <div id="blackbg-banner" className="section-padding">
+		<div className="container">
+			<div className="row">
+                <Header />
+                <UserPhoto />
+                <UserJob />
+                <UserDescription />
+                <hr />
+                <UserConnectBtn />
+                <UserProjectBtns />
+			</div>
+			</div>
+		</div>
+	</div>
         );
     }
 }

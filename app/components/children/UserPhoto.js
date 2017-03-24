@@ -7,16 +7,17 @@ class UserPhoto extends React.Component {
 <div id="about" className="section-padding">
    <div className="container">
       <div className="row">
-         <div className="page-title text-center">
-            <h1>My Profile</h1>
-            <hr className="pg-titl-bdr-btm">
-            </hr>
-         <center><img src="img/agent2.jpg" className="img-responsive" /></center>
-         <center><p className="name-style">Name Here</p></center>
-         <hr className="pg-titl-bdr-btm" />
-      </div>
-   </div>
-</div>
+          <div className="col-6 col-md-4">
+             <h1 className="firstname">FIRST</h1>
+          </div>
+          <div className="col-6 col-md-4">
+             <center><img src="img/profile-placeholder.png" className="img-responsive img-style" /></center>
+          </div>
+          <div className="col-6 col-md-4">
+              <h1 className="lastname">LAST</h1>
+          </div>
+        </div>
+    </div>
 </div>
           
         );
