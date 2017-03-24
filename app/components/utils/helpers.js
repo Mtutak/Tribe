@@ -7,19 +7,19 @@ var helpers = {
 
 
 
-    console.log(location);
+    // console.log(location);
 
     // Figure out the geolocation
-    var queryURL = "http://api.opencagedata.com/geocode/v1/json?query=" + location + "&pretty=1&key=" + geocodeAPI;
-    return axios.get(queryURL).then(function(response) {
-      // If get get a result, return that result's formatted address property
-      if (response.data.results[0]) {
-        return response.data.results[0].formatted;
-      }
-      // If we don't get any results, return an empty string
-      return "";
-    });
-  },
+  //   var queryURL = "http://api.opencagedata.com/geocode/v1/json?query=" + location + "&pretty=1&key=" + geocodeAPI;
+  //   return axios.get(queryURL).then(function(response) {
+  //     // If get get a result, return that result's formatted address property
+  //     if (response.data.results[0]) {
+  //       return response.data.results[0].formatted;
+  //     }
+  //     // If we don't get any results, return an empty string
+  //     return "";
+  //   });
+  // },
 
   // This function hits our own server to retrieve the record of query results
   getUsersConnections: function() {
@@ -29,7 +29,7 @@ var helpers = {
   // This function posts new searches to our database.
   postHistory: function(location) {
     return axios.post("/api", { location: location });
-
+  },
 // This function posts new searches to our database.
   postProject: function(data) {
     return axios.post("/projects/new", { data });
