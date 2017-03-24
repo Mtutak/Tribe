@@ -5,11 +5,12 @@ import { UserJob } from '../children/UserJob';
 import { UserConnectBtn } from '../children/UserConnectBtn';
 import { UserDescription } from '../children/UserDescription';
 import { UserProjectBtns } from '../children/UserProjectBtns';
+import { ProfileButton } from '../children/userprofbtn/ProfileButton';
 
 class UserProfile extends React.Component {
     render() {
         return(
-        <div>
+  <div>
     <div id="blackbg-banner" className="section-padding">
 		<div className="container">
 			<div className="row">
@@ -24,7 +25,6 @@ class UserProfile extends React.Component {
 			</div>
 		</div>
 	</div>
-	
         );
     }
 }
