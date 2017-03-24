@@ -5,6 +5,7 @@ import { UserJob } from '../children/UserJob';
 import { UserConnectBtn } from '../children/UserConnectBtn';
 import { UserDescription } from '../children/UserDescription';
 import { UserProjectBtns } from '../children/UserProjectBtns';
+import { ProfileButton } from '../children/userprofbtn/ProfileButton';
 
 class UserProfile extends React.Component {
     render() {
@@ -13,6 +14,7 @@ class UserProfile extends React.Component {
             <Header />
             <UserPhoto />
             <UserConnectBtn />
+            <ProfileButton />
             <br />
             <UserJob />
             <UserDescription />

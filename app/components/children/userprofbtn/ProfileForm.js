@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Geo } from './form/Geo';
+import { Geo } from '../form/Geo';
 
-class Form extends React.Component {
+class ProfileForm extends React.Component {
 
   // Form Event Handlers
 
@@ -26,7 +26,7 @@ class Form extends React.Component {
   initializeState() {
     this.setState({
       title: this.props.defaultTitle || '',
-      category: this.props.defaultCategory || '',
+      bio: this.props.defaultbio || '',
       detail: ''
     });
   }
@@ -45,12 +45,10 @@ class Form extends React.Component {
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
                         <div className="page-title text-center">
-					<center><h1>Create your Project, Find your Tribe:</h1></center>
-					<center><p>List a current project that you are recruiting for:</p></center>
+					<center><h1>Edit Your Profile: </h1></center>
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
-                
                         {/*<div className="form-top">
                                 <h3><span><i className="fa fa-calendar-check-o" aria-hidden="true"></i></span>Create Your Tribe</h3>
                                 <p>Enter Your Project Details Below</p>
@@ -59,10 +57,10 @@ class Form extends React.Component {
                         <div className="form-bottom">
                             <div className="row">
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='Title'>Project Title:</label><br/>
+                                    <label htmlFor='title'>One Liner:</label><br/>
                                     <center><input 
                                     className='form-control text-field-box' 
-                                    placeholder="Idea Here"
+                                    placeholder="It was all a dream..."
                                     id='title'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
@@ -71,9 +69,9 @@ class Form extends React.Component {
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='category'>Project Summary:</label><br/>
+                                    <label htmlFor='bio'>Bio:</label><br/>
                                    <center><textarea 
-                                    id='category'
+                                    id='bio'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
                                     rows="1"
@@ -81,7 +79,7 @@ class Form extends React.Component {
                                     maxLength="50"
                                     required
                                     className="form-control text-field-box" 
-                                    placeholder="Brief Intro to your Project"
+                                    placeholder="I used to read Word Up magazine. Salt'n'Pepa and Heavy D up in the limousine"
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
@@ -90,13 +88,13 @@ class Form extends React.Component {
                                     id='detail'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
-                                    defaultValue={this.props.defaultCategory}
+                                    defaultValue={this.props.defaultbio}
                                     rows="2"
                                     cols="2"
                                     maxLength="250"
                                     required
                                     className="form-control text-field-box" 
-                                    placeholder="This information will only be viewable by users you have met. Provide detail on your project and talents needed"
+                                    placeholder="Super Nintendo, Sega Genesis. When I was dead broke, man I couldn't picture this. 50 inch screen, money green leather sofa"
                                     /></center>
                                 </div></center>
                                 
@@ -109,7 +107,7 @@ class Form extends React.Component {
                                 loading={this.props.loading} 
                                 htmlType="submit" 
                                 name="contact">
-                                Post Your Project
+                                Save My Profile
                             </button>
                            
                         </div>
@@ -126,13 +124,13 @@ class Form extends React.Component {
 // Requires an "action" function
 // Optional "loading" boolean
 // Optional "defaultTitle" string
-// Optional "defaultCategory" string
+// Optional "defaultbio" string
 
-Form.propTypes = {
+ProfileForm.propTypes = {
   submitAction: React.PropTypes.func.isRequired,
   loading: React.PropTypes.bool,
   defaultTitle: React.PropTypes.string,
-  defaultCategory: React.PropTypes.string
+  defaultbio: React.PropTypes.string
 };
 
-export { Form };
+export { ProfileForm };
