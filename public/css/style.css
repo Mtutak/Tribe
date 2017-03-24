@@ -665,7 +665,7 @@ form element
 }
 
 .connect-me {
-    margin-top: 40px;
+    margin-top: 30px;
     border: 1px solid #ffffff;
     padding: 12px 22px;
     line-height: 0px;
@@ -680,7 +680,23 @@ form element
 }
 
 .projects-me {
-    margin-top: 40px;
+    margin-top: 20px;
+    border: 1px solid #ffffff;
+    padding: 12px 22px;
+    line-height: 0px;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.edit-me {
+    background-color: black;
+    margin-top: 20px;
     border: 1px solid #ffffff;
     padding: 12px 22px;
     line-height: 0px;

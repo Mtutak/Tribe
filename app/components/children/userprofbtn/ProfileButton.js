@@ -57,15 +57,15 @@ class ProfileButton extends React.Component {
     render() {
         return (
         <div>
-            <button 
+           <center><button 
                 onClick={(event) => this.handleClick(event)} 
-                className="button-medium" 
+                className="btn edit-me" 
                 id="userProfileForm" 
-                type="submit" 
+                type="submit"
                 name="contact"
             >
             Edit My Profile
-            </button>
+            </button></center>
             {
             this.state.formVisible
                 ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)}/>

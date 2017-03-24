@@ -11,15 +11,16 @@ class UserProfile extends React.Component {
     render() {
         return(
   <div>
+      <Header />
     <div id="blackbg-banner" className="section-padding">
 		<div className="container">
 			<div className="row">
-                <Header />
                 <UserPhoto />
                 <UserJob />
                 <UserDescription />
                 <hr />
                 <UserConnectBtn />
+                <ProfileButton />
                 <UserProjectBtns />
 			</div>
 			</div>
