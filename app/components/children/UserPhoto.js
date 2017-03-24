@@ -11,7 +11,7 @@ class UserPhoto extends React.Component {
              <h1 className="firstname">FIRST</h1>
           </div>
           <div className="col-6 col-md-4">
-              <img src="img/profile-placeholder.png" className="img-responsive" />
+             <center><img src="img/profile-placeholder.png" className="img-responsive img-style" /></center>
           </div>
           <div className="col-6 col-md-4">
               <h1 className="lastname">LAST</h1>

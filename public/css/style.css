@@ -666,3 +666,9 @@ form element
     font-family: 'Rock Salt', cursive;
     text-align: center;
 }
+
+.img-style {
+    width: 80%;
+    height: auto;
+    margin-top: 25px;
+}
