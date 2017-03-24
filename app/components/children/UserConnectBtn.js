@@ -5,7 +5,7 @@ class UserConnectBtn extends React.Component {
     render() {
         return(
             <div>
-                 <button className="button-medium" id="contact-submit" type="submit" name="contact">Connect</button>
+                 <h3>Hello</h3>
             </div>
           
         );
