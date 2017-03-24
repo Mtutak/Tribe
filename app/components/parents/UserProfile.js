@@ -15,11 +15,10 @@ class UserProfile extends React.Component {
 			<div className="row">
                 <Header />
                 <UserPhoto />
-                <UserConnectBtn />
-                <br />
                 <UserJob />
                 <UserDescription />
-                <br />
+                <hr />
+                <UserConnectBtn />
                 <UserProjectBtns />
 			</div>
 			</div>
