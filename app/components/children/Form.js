@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { Button } from 'antd';
 import { Geo } from './form/Geo';
 
 class Form extends React.Component {
@@ -7,14 +6,19 @@ class Form extends React.Component {
   // Form Event Handlers
 
   updateInput(event) {
+    console.log(event.target.value);
     const newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
   }
 
   handleSubmitForm(event) {
+    console.log(this.props.loading);
+    console.log('success!');
     event.preventDefault();
-    this.props.action(this.state);
+    console.log(this.state);
+    {/* this is found in CreateProject Component */}
+    this.props.submitAction(this.state);
   }
 
   // Initial State
@@ -34,15 +38,15 @@ class Form extends React.Component {
 
   render() {
     return (
-        <div id="contact" class="section-padding">
-		<div class="container">
-			<div class="row">
+        <div id="contact" className="section-padding">
+		<div className="container">
+			<div className="row">
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
-                        <div class="page-title text-center">
+                        <div className="page-title text-center">
 					<center><h1>Create your Project, Find your Tribe:</h1></center>
 					<center><p>List a current project that you are recruiting for:</p></center>
-					<center><hr class="pg-titl-bdr-btm"></hr></center>
+					<center><hr className="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
                 
@@ -58,7 +62,7 @@ class Form extends React.Component {
                                     <center><input 
                                     className='form-control text-field-box' 
                                     placeholder="Idea Here"
-                                    id='name'
+                                    id='title'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
                                     defaultValue={this.props.defaultTitle}
@@ -74,15 +78,23 @@ class Form extends React.Component {
                                     defaultValue={this.props.defaultCategory}
                                     rows="2"
                                     cols="2"
-                                    maxlength="250"
+                                    maxLength="250"
                                     required
                                     className="form-control text-field-box" 
                                     placeholder="Brief Intro to your Project"
                                     /></center>
                                 </div></center>
                             </div>
-                            
-                            <button className="button-medium" id="contact-submit" loading={this.props.loading} htmlType="submit" name="contact">Post Your Project</button>
+                            {/* Update Loading Cursor with this.props.loading bool */}
+                            <button 
+                                type="primary"
+                                className="button-medium" 
+                                id="contact-submit" 
+                                loading={this.props.loading} 
+                                htmlType="submit" 
+                                name="contact">
+                                Post Your Project
+                            </button>
                            
                         </div>
                     </fieldset>
@@ -94,14 +106,14 @@ class Form extends React.Component {
   }
 }
 
-// Props PostForm component
+// Props CreateProjects component
 // Requires an "action" function
 // Optional "loading" boolean
 // Optional "defaultTitle" string
 // Optional "defaultCategory" string
 
 Form.propTypes = {
-  action: React.PropTypes.func.isRequired,
+  submitAction: React.PropTypes.func.isRequired,
   loading: React.PropTypes.bool,
   defaultTitle: React.PropTypes.string,
   defaultCategory: React.PropTypes.string
