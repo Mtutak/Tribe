@@ -668,7 +668,7 @@ form element
 .connect-me {
     margin-top: 30px;
     border: 1px solid #ffffff;
-    padding: 12px 22px;
+    padding: 15px 27px;
     line-height: 0px;
     border-radius: 3px;
     font-family: 'Open Sans', sans-serif;
@@ -683,7 +683,8 @@ form element
 .projects-me {
     margin-top: 20px;
     border: 1px solid #ffffff;
-    padding: 12px 22px;
+    padding: 16px 15px;
+    padding-bottom: 15px;
     line-height: 0px;
     border-radius: 3px;
     font-family: 'Open Sans', sans-serif;
@@ -698,7 +699,7 @@ form element
 .edit-me {
     background-color: black;
     margin-top: 20px;
-    border: 1px solid #ffffff;
+    /*border: 1px solid #ffffff;*/
     padding: 12px 22px;
     line-height: 0px;
     border-radius: 3px;

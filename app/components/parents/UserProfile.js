@@ -20,8 +20,8 @@ class UserProfile extends React.Component {
                 <UserDescription />
                 <hr />
                 <UserConnectBtn />
-                <ProfileButton />
                 <UserProjectBtns />
+                <ProfileButton />
 			</div>
 			</div>
 		</div>
