@@ -18,7 +18,7 @@ class UserProfile extends React.Component {
                 <UserPhoto />
                 <UserJob />
                 <UserDescription />
-                <hr />
+                <hr/>
                 <UserConnectBtn />
                 <UserProjectBtns />
                 <ProfileButton />

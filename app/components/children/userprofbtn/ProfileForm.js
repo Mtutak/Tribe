@@ -103,9 +103,7 @@ class ProfileForm extends React.Component {
                             <button 
                                 type="primary"
                                 className="button-medium" 
-                                id="contact-submit" 
-                                loading={this.props.loading} 
-                                htmlType="submit" 
+                                id="contact-submit"                                 
                                 name="contact">
                                 Save My Profile
                             </button>

@@ -11,29 +11,18 @@ class ProfileButton extends React.Component {
             // this.setState({formVisible: !this.state.formVisible});
             this.setState({showModal: !this.state.showModal});
         }
-       // Initial State
-       initializeState() {
-           return { showModal: false };
-       }
-       constructor(props) {
-            super(props);
-            this.state = {
-                showModal: false
-            };
-        }
-       close() {
-           this.setState({ showModal: false });
-       }
-       open() {
-           this.setState({ showModal:true });
-       }
-        // initializeState() {
-        //     this.setState({ formVisible: false});
-        // }
-        // Lifecycle Methods
+        // Initial State       
         componentWillMount() {
-            this.initializeState();
+            this.setState({
+                showModal: false
+            });
         }
+        close() {
+            this.setState({ showModal: false });
+        }
+        open() {
+            this.setState({ showModal:true });
+        }        
         sendSuccessNotification() {
             notification['success']({
             message: 'Yayyy!!',
@@ -62,39 +51,48 @@ class ProfileButton extends React.Component {
             //     this.endLoading();
             //   }).bind(this);
         }
-    render() {
-        return (
-        <div>
-           <center><button 
-                /*onClick={(event) => this.handleClick(event)} */
-                onClick={() => this.setState({ showModal: true})}
-                className="btn edit-me" 
-                id="userProfileForm" 
-                type="submit"
-                name="contact"
-            >
-            Edit My Profile
-            </button></center>
-           {
-            <Modal show={this.state.showModal} onHide={this.close}>
-                <Modal.Header closeButton>
-                    <Modal.Title>Edit your Profile</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>
-                   ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)} />
-                   : null 
-                </Modal.Body>
-            </Modal>
-           }
-        </div>
-           /*{
-            /*this.state.formVisible*/
-            /*this.state.showModal
-                ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)}/>
-                : null
-            }
-        </div>*/
-        );
-    }
+        render() {
+            return (
+                <div>
+                <center>
+                    <button 
+                        /*onClick={(event) => this.handleClick(event)} */
+                        onClick={() => this.open()}
+                        className="btn edit-me" 
+                        id="userProfileForm" 
+                        type="submit"
+                        name="contact"
+                    >
+                    Edit My Profile
+                    </button>
+                </center>
+                
+                    <Modal show={this.state.showModal} onHide={() => this.close()}>
+                        <Modal.Header closeButton>
+                            <Modal.Title>Edit your Profile</Modal.Title>
+                        </Modal.Header>
+                        {
+                        <Modal.Body>
+                        
+                        <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)} />
+                        {/*: null */}
+                        
+                        </Modal.Body>
+                        }
+                        <Modal.Footer>
+                            <button onClick={() => this.close()}>Close</button>
+                        </Modal.Footer>
+                    </Modal>
+                
+                </div>
+                /*{
+                    /*this.state.formVisible*/
+                    /*this.state.showModal
+                        ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)}/>
+                        : null
+                    }
+                </div>*/
+            );
+        }
 }
 export  { ProfileButton };
