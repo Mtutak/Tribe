@@ -3,20 +3,11 @@ import { Card, CardText } from 'material-ui/Card';
 import { Header } from '../children/Header';
 import ApiService from '../utils/helpers';
 import Auth from '../../modules/localAuth';
+import { Link } from 'react-router';
 
 class Connections extends React.Component {
     
     initializeState() {
-      // ApiService.getUsersConnections().then(function(response) {
-      //           console.log(response);
-      //           // if(JSON.stringify(response.data) !== '[]'){
-
-      //           //   // console.log("resultsComponent was updated");
-      //           //   console.log(response.data);
-      //           //   this.props.saveThis(response.data);
-      //           // }
-      //         }.bind(this));
-
 
       this.setState({
         connections: []
@@ -40,7 +31,6 @@ class Connections extends React.Component {
         this.setState({
           connections: xhr.response.connections
         });
-        // console.log(this.state.connections);
       }
     });
     xhr.send();
@@ -61,7 +51,21 @@ class Connections extends React.Component {
 	                  <div key={search.id}>
 
 	    	              		 
-	    	              		 <h2>{search.name}</h2>
+	    	              		 <Link 
+                            to={
+                                { 
+                                  pathname: '/friendsProfile/query', 
+                                  query: { 
+                                    friend: search._id 
+                                  } 
+                                }
+                              } 
+                            activeClassName='active' >
+
+                            <h2>{search.name}</h2>
+
+                            </Link>
+
 	    	              		 <h4>{search.email}</h4>
 
 	                      <br />

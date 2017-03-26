@@ -12,6 +12,31 @@ const router = new express.Router();
 	  });
 	});
 
+	router.post('/friendsInfo', (req, res) => {
+
+		const friendsId = req.body.id 
+	
+
+	    	User.findById(friendsId)
+				.exec(function(error, doc){
+					console.log(doc);
+
+				      if (error) {
+				          res.send(error);
+				      }
+				      // Or send the doc to the browser
+				      else {
+						  res.status(200).json({
+						    name: doc.name,
+						    email:doc.email
+						  }); 
+
+				      }
+
+				});;
+
+	});
+
 	router.get('/connections', function(req, res){
 		
 		const token = req.headers.authorization.split(' ')[1];

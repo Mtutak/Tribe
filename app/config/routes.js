@@ -11,7 +11,10 @@ import Connections from '../components/parents/Connections';
 import LoginPage from '../components/parents/LoginPage';
 import SignUpPage from '../components/parents/SignUpPage';
 import DashboardPage from '../components/parents/DashboardPage';
+import FriendsPage from '../components/parents/FriendsProfile';
+import FriendsPageComponents from '../components/children/friendsProfComps';
 import Auth from '../modules/localAuth';
+import { Link } from 'react-router';
 
 // import { LoginForm } from '../components/children/LoginForm.jsx';
 
@@ -50,6 +53,17 @@ const routes = {
           callback(null, LoginPage);
         }
       }
+    },
+
+    {
+      path: '/friendsProfile',
+      component: FriendsPage,
+      childRoutes: [
+        {
+          path:'query', 
+          component: FriendsPageComponents
+        }
+      ]
     },
 
     {
