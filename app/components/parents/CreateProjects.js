@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Header } from '../children/Header';
 import { Form } from '../children/Form';
 import { notification } from 'antd';
-// import * as axios from 'axios'; not needed replaced with helpers
+import * as axios from 'axios'; // axios should be replaced with helpers
 import helpers from '../utils/helpers';
+import Auth from '../../modules/localAuth';
 
 class CreateProject extends React.Component {
 
@@ -43,25 +44,27 @@ class CreateProject extends React.Component {
 
   postform(postObj) {
     this.startLoading();
-    helpers.postProject(postObj)
-      .then(() => {
-        console.log('Post Form Success!');
-        this.sendSuccessNotification();
-        this.endLoading();
-        this.redirectToPosts();
-      })
-      .catch((error) => {
-        console.log('Error With Post Form Project')
-        this.sendErrorNotification();
-        this.endLoading();
-      });
+    axios.post("/projects/new", { postObj });
+
+    // helpers.postProject(postObj).then(() => {
+    //     console.log('Post Form Success!');
+    //     this.sendSuccessNotification();
+    //     this.endLoading();
+    //     this.redirectToPosts();
+    //   })
+    //   .catch((error) => {
+    //     console.log('Error With Post Form Project')
+    //     this.sendErrorNotification();
+    //     this.endLoading();
+    //   }).bind(this);
   }
 
   // Setting Initial State
 
   initializeState() {
     this.setState({
-      loading: false
+      loading: false,
+      currentid: ''
     });
   }
 
@@ -70,6 +73,27 @@ class CreateProject extends React.Component {
   componentWillMount() {
     this.initializeState();
   }
+  
+  componentDidMount(){
+
+   	const xhr = new XMLHttpRequest();
+    xhr.open('get', '/api/projects/user');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // set the authorization HTTP header
+    xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', () => {
+      if (xhr.status === 200) {
+        console.log(xhr.response.currentid);
+        this.setState({
+          currentid: xhr.response._id
+        });
+        console.log(this.state.currentid);
+      }
+    });
+    xhr.send();
+
+    }
 
   render() {
     return (

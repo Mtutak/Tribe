@@ -54,7 +54,7 @@ const router = new express.Router();
 	    	User.findById(userId)
 	    		.populate("connections")
 				.exec(function(error, doc){
-
+							console.log(doc);
 				      if (error) {
 				          res.send(error);
 				      }
@@ -66,9 +66,41 @@ const router = new express.Router();
 
 				      }
 
-				});;
+				});
 	  	});
 	});
 
+router.get('/projects/user', function(req, res){
+		
+		const token = req.headers.authorization.split(' ')[1];
+
+	  	jwt.verify(token, config.jwtSecret, (err, decoded) => {
+	    // the 401 code is for unauthorized status
+	    	if (err) { res.status(401).end(); }
+
+	    	const userId = decoded.sub;
+	    // 			res.status(200).json({
+					//     loggedUser: userId
+					// }); 
+
+	    	// query user
+	    	User.findById(userId)
+				.exec(function(error, doc){
+							console.log(doc._id);
+				      if (error) {
+				          res.send(error);
+				      }
+				      // Or send the doc to the browser
+				      else {
+						  res.status(200).json({
+						    currentid: doc._id
+						  }); 
+
+				      }
+
+				});
+	  	});
+	});
+	
 
 module.exports = router;

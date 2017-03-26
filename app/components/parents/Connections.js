@@ -28,6 +28,7 @@ class Connections extends React.Component {
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
+        console.log(xhr.response.connections);
         this.setState({
           connections: xhr.response.connections
         });
