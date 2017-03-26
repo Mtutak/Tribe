@@ -1,18 +1,15 @@
 import * as React from 'react';
 import { Header } from './Header';
-import { UserPhoto } from './UserPhoto';
-import { UserJob } from './UserJob';
-import { UserConnectBtn } from './UserConnectBtn';
-import { UserDescription } from './UserDescription';
-import { UserProjectBtns } from './UserProjectBtns';
 import Auth from '../../modules/localAuth';
 import { Link } from 'react-router';
+import { ProfileButton } from './userprofbtn/ProfileButton';
 
 class FriendsProfileComponents extends React.Component {
     initializeState() {
 
       this.setState({
-              friendsName: '',
+              friendsFirstName: '',
+              friendsLastName:'',
               friendsEmail: ''
       });
     }
@@ -32,11 +29,14 @@ class FriendsProfileComponents extends React.Component {
         xhr.responseType = 'json';
         xhr.addEventListener('load', () => {
           if (xhr.status === 200) {
-            console.log(xhr.response);
+            const nameArray = xhr.response.name.split(' ');
+
             this.setState({
-              friendsName: xhr.response.name,
+              friendsFirstName: nameArray[0],
+              friendsLastName: nameArray[1],
               friendsEmail: xhr.response.email
             });
+
           }
         });
         xhr.send('id='+who);  
@@ -57,44 +57,44 @@ class FriendsProfileComponents extends React.Component {
         return(
         <div>
             <Header />
+            <div id="blackbg-banner" className="section-padding">
+                <div className="container">
 
-            <div id="about" className="section-padding">
-               <div className="container">
-                  <div className="row">
-                     <div className="page-title text-center">
-                        <h1>My Profile</h1>
-                        <hr className="pg-titl-bdr-btm">
-                        </hr>
-                     <center><img src="img/agent2.jpg" className="img-responsive" /></center>
-                     <center><p className="name-style">{this.state.friendsName}</p></center>
-                     <hr className="pg-titl-bdr-btm" />
-                  </div>
-               </div>
-            </div>
-            </div>
+                    <div id="about" className="section-padding">
+                       <div className="container">
+                          <div className="row">
+                              <div className="col-6 col-md-4">
+                                 <h1 className="firstname">{this.state.friendsFirstName}</h1>
+                              </div>
+                              <div className="col-6 col-md-4">
+                                 <center><img src="/img/profile-placeholder.png" className="img-responsive img-style" /></center>
+                              </div>
+                              <div className="col-6 col-md-4">
+                                  <h1 className="lastname">{this.state.friendsLastName}</h1>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div className="page-title text-center">
+                                <h1 className="line-adjustment job-style">Job Title</h1>
+                    </div>
 
-            <div>
-                 <button className="button-medium" id="contact-submit" type="submit" name="contact">Connect</button>
-            </div>
-            <br />
+                    <div>
+                        <center><h3 className="line-adjustment description-style">This is what I do and what kind of people I am looking to connect with.</h3></center>
+                    </div>
 
+                    <hr />
 
-            <div className="page-title text-center">
-                        <h1 className="line-adjustment">Job Title</h1>
-            </div> 
-                       
+                    <div>
+                     <center><Link to="#" className="btn connect-me">Connect <i className="fa fa-handshake-o"></i></Link></center>
+                    </div>
 
-            <div>
-                <center><h3 className="line-adjustment description-style">This is what I do and what kind of people I am looking to connect with.</h3></center>
-            </div>
-            <br />
+                    <div>
+                        <center><Link to="#" className="btn projects-me">Projects <i className="fa fa-star-o"></i></Link></center>
+                    </div>
 
-            <div>
-                <br />
-                 <button className="button-medium my-projects-btn" id="contact-submit" type="submit" name="contact">My Projects</button>
-                 <br />
-                 <Link to="/projects"><button className="button-medium all-projects-btn" id="contact-submit" type="submit" name="contact">All Projects</button></Link>
+                </div>
             </div>
         </div>
         );

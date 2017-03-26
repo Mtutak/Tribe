@@ -14,12 +14,11 @@ const router = new express.Router();
 
 	router.post('/friendsInfo', (req, res) => {
 
-		const friendsId = req.body.id 
+		const friendsId = req.body.id; 
 	
 
 	    	User.findById(friendsId)
 				.exec(function(error, doc){
-					console.log(doc);
 
 				      if (error) {
 				          res.send(error);
@@ -37,7 +36,7 @@ const router = new express.Router();
 
 	});
 
-	router.get('/connections', function(req, res){
+	router.get('/myInfo', function(req, res){
 		
 		const token = req.headers.authorization.split(' ')[1];
 
@@ -46,27 +45,90 @@ const router = new express.Router();
 	    	if (err) { res.status(401).end(); }
 
 	    	const userId = decoded.sub;
-	    // 			res.status(200).json({
-					//     loggedUser: userId
-					// }); 
 
 	    	// check if a user exists
 	    	User.findById(userId)
-	    		.populate("connections")
 				.exec(function(error, doc){
-							console.log(doc);
+
 				      if (error) {
 				          res.send(error);
 				      }
 				      // Or send the doc to the browser
 				      else {
 						  res.status(200).json({
-						    connections: doc.connections
+						    name: doc.name,
+						    email:doc.email
+						  }); 
+
+				      }
+
+				});;
+	  	});
+	});
+
+	router.get('/connections/made', function(req, res){
+		
+		const token = req.headers.authorization.split(' ')[1];
+
+	  	jwt.verify(token, config.jwtSecret, (err, decoded) => {
+	    // the 401 code is for unauthorized status
+	    	if (err) { res.status(401).end(); }
+
+	    	const userId = decoded.sub;
+
+	    	// check if a user exists
+	    	User.findById(userId)
+	    		.populate("connections")
+				.exec(function(error, doc){
+
+				      if (error) {
+				          res.send(error);
+				      }
+				      // Or send the doc to the browser
+				      else {
+						  res.status(200).json({
+						    connectionsMade: doc.connections
 						  }); 
 
 				      }
 
 				});
+	  	});
+	});
+
+	router.get('/connections/available', function(req, res){
+		
+		const token = req.headers.authorization.split(' ')[1];
+		var availableConnections;
+
+	  	jwt.verify(token, config.jwtSecret, (err, decoded) => {
+	    // the 401 code is for unauthorized status
+	    	if (err) { res.status(401).end(); }
+
+	    	const userId = decoded.sub;
+
+	    	// check if a user exists
+	    	User.findById(userId)
+				.exec(function(error, doc){
+				      if (error) {
+				          res.send(error);
+				      }
+				      // Or send the doc to the browser
+				      else {
+				      		availableConnections = doc.connections;
+				      		availableConnections.push(userId);
+
+							User.find({
+							    '_id': { $nin: availableConnections}
+							}, function(err, docs){
+								  res.status(200).json({
+								    connectionsAvailable: docs
+								  }); 
+							});
+				      }
+				});
+
+
 	  	});
 	});
 
@@ -79,9 +141,6 @@ router.get('/projects/user', function(req, res){
 	    	if (err) { res.status(401).end(); }
 
 	    	const userId = decoded.sub;
-	    // 			res.status(200).json({
-					//     loggedUser: userId
-					// }); 
 
 	    	// query user
 	    	User.findById(userId)
