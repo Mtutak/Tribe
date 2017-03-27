@@ -99,7 +99,7 @@ class CreateProject extends React.Component {
     return (
       <div>
         <Header />
-        <h2>New Posts</h2>
+        <h2 className="newposts-heading">Find Your Tribe</h2>
         <Form
           loading={this.state.loading}
           submitAction={(postObj) => this.postform(postObj)}

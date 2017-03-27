@@ -766,3 +766,9 @@ form element
 .save-profile-btn {
     font-family: 'Open Sans', sans-serif;
 }
+
+.newposts-heading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 99px;
+    text-align: center;
+}
