@@ -15,7 +15,7 @@ class Geo extends React.Component {
     render () {
         return (
             <div>
-                <center><h2> Location </h2></center>
+                <center><h2 className="location-heading"> Location </h2></center>
                 {/*Location Component from react-place */}
                 <Location
                 country='US'

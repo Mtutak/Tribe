@@ -340,13 +340,13 @@ margin-top: 5px;
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 40px;
-    height: 60px;
-    line-height: 60px;
+    /*height: 60px;*/
+    line-height: 25px;
     text-align: left;
     color: #666;
     font-size: 14px;
-    padding: 0 35px;
-    margin-bottom: 30px;
+    padding: 7px 35px;
+    margin-bottom: 15px;
     width: 100%;
     outline: none;
     appearance: none;
@@ -394,15 +394,14 @@ margin-top: 5px;
     color: #ffffff;
     cursor: pointer;
     display: block;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    height: 48px;
-    line-height: 48px;
+    height: 40px;
     margin: 0 auto;
     overflow: hidden;
     text-align: center;
-    width: 200px;
+    width: 100px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -729,7 +728,7 @@ form element
 .title {
     font-family: 'Raleway', sans-serif;
     color: white;
-    font-size: 95px;
+    font-size: 92px;
 }
 
 .card-container {
@@ -743,5 +742,27 @@ form element
 
 .connections-email {
     color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.location-heading {
+    font-family: 'Raleway', sans-serif;
+}
+
+.edit-profile {
+    font-family: 'Raleway', sans-serif;
+}
+
+.form-fonts {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.showcase-projects {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    font-size: 99px;
+}
+
+.save-profile-btn {
     font-family: 'Open Sans', sans-serif;
 }

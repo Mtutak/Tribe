@@ -78,7 +78,7 @@ class DashboardPage extends React.Component {
                 </nav>
                 <br/>
                 <div className="container text-center">
-                        <h3 className="title">Showcase Projects Here</h3>
+                        <h3 className="title showcase-projects">Showcase Projects Here</h3>
                 </div>
             </div>
         </header> 
