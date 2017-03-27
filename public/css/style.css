@@ -136,6 +136,7 @@ a.btn-banner:hover, a.btn-banner:focus
 .bold
 {
     font-weight: bold;
+    font-family: 'Rock Salt', cursive;
 }
 .bor-btm
 {
@@ -771,4 +772,9 @@ form element
     font-family: 'Raleway', sans-serif;
     font-size: 99px;
     text-align: center;
+}
+
+.pink-tribe {
+    color: #e43c5c;
+    font-family: 'Rock Salt', cursive;
 }
