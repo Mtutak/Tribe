@@ -729,6 +729,7 @@ form element
 .title {
     font-family: 'Raleway', sans-serif;
     color: white;
+    font-size: 95px;
 }
 
 .card-container {

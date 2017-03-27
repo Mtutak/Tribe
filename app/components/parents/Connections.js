@@ -72,7 +72,7 @@ class Connections extends React.Component {
                 <div className="container text-center">
                         <h3 className="title">Connections You've Made</h3>
                 </div>
-	        <Card className="container card-container">
+	        <center><Card className="container card-container">
 		           
 		         {this.state.connectionsMade.map(function(search, i) {
 	                return (
@@ -102,13 +102,13 @@ class Connections extends React.Component {
 	              })}
 
 
-	        </Card>
+	        </Card></center>
 
                 <div className="container text-center">
                         <h3 className="title">Connections Around You</h3>
                 </div>
 
-          <Card className="container">
+          <center><Card className="container">
                
              {this.state.connectionsAvailable.map(function(search, i) {
                   return (
@@ -138,7 +138,7 @@ class Connections extends React.Component {
                 })}
 
 
-          </Card>
+          </Card></center>
 	        </div>
         </div>
         );
