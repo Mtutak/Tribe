@@ -40,8 +40,8 @@ class ProfileForm extends React.Component {
   render() {
     return (
         <div id="contact" className="section-padding">
-		<div className="container">
-			<div className="row">
+		{/*<div className="container">
+			<div className="row">*/}
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
                         <div className="page-title text-center">
@@ -67,7 +67,7 @@ class ProfileForm extends React.Component {
                                     defaultValue={this.props.defaultTitle}
                                     required
                                     /></center>
-                                </div></center>
+                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
                                     <label htmlFor='bio'>Bio:</label><br/>
                                    <center><textarea 
@@ -112,8 +112,8 @@ class ProfileForm extends React.Component {
                     </fieldset>
                 </form>
             </div>
-        </div>
-    </div>
+    //     </div>
+    // </div>
     );
   }
 }

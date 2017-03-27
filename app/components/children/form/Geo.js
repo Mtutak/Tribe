@@ -23,7 +23,7 @@ class Geo extends React.Component {
                 onLocationSet={this.props.onLocationSet}
                 inputProps={{
                 style: {color: '#0099FF'},
-                className:'location col-md-12 col-md-offset-6 form-group',
+                className:'location form-group',
                 placeholder: 'Your Tribe Location?'
                 }}
                 />

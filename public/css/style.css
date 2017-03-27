@@ -641,6 +641,15 @@ form element
     min-height: 100%;
     width: 100%;
     height: auto;
+    /*position: fixed;*/
+}
+
+#user-bg {
+    background-color: black;
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
     position: fixed;
 }
 
@@ -711,4 +720,27 @@ form element
     color: #ffffff;
     letter-spacing: 1px;
     display: inline-block;
+}
+
+.connections-bg {
+    background-color: black;
+}
+
+.title {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+.card-container {
+    background-color: black !important;
+}
+
+.connections-name {
+    color: #e43c5c;
+    font-family: 'Rock Salt', cursive;
+}
+
+.connections-email {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
 }
