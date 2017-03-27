@@ -13,7 +13,7 @@ exports.getProjects = function(req, res, next) {
 			res.send({ error: err});
 			return next(err);
 		}
-		console.log(projects);
+		// console.log(projects);
 		//go through each project id and populate detail
 		// projects.forEach(function(project) {
 		// 	ProjectDetail.find({'projectId': project._id})

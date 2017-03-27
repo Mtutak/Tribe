@@ -3,23 +3,15 @@ import { Card, CardText } from 'material-ui/Card';
 import { Header } from '../children/Header';
 import ApiService from '../utils/helpers';
 import Auth from '../../modules/localAuth';
+import { Link } from 'react-router';
 
 class Connections extends React.Component {
     
     initializeState() {
-      // ApiService.getUsersConnections().then(function(response) {
-      //           console.log(response);
-      //           // if(JSON.stringify(response.data) !== '[]'){
-
-      //           //   // console.log("resultsComponent was updated");
-      //           //   console.log(response.data);
-      //           //   this.props.saveThis(response.data);
-      //           // }
-      //         }.bind(this));
-
 
       this.setState({
-        connections: []
+        connectionsMade: [],
+        connectionsAvailable: []
       });
     }
 
@@ -27,24 +19,48 @@ class Connections extends React.Component {
       this.initializeState();
     }
 
-    componentDidMount(){
+    getUsersConnections(){
 
-   	const xhr = new XMLHttpRequest();
-    xhr.open('get', '/api/connections');
+    const xhr = new XMLHttpRequest();
+    xhr.open('get', '/api/connections/made');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     // set the authorization HTTP header
     xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
-        console.log(xhr.response.connections);
         this.setState({
-          connections: xhr.response.connections
+          connectionsMade: xhr.response.connectionsMade
         });
-        console.log(this.state.connections);
       }
     });
     xhr.send();
+
+    }
+
+    getAvailableConnections(){
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('get', '/api/connections/available');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // set the authorization HTTP header
+    xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', () => {
+      if (xhr.status === 200) {
+        this.setState({
+          connectionsAvailable: xhr.response.connectionsAvailable
+        });
+      }
+    });
+    xhr.send();
+
+    }
+
+    componentDidMount(){
+
+      this.getUsersConnections();
+      this.getAvailableConnections();
 
     }
 
@@ -57,12 +73,26 @@ class Connections extends React.Component {
                 </div>
 	        <Card className="container">
 		           
-		         {this.state.connections.map(function(search, i) {
+		         {this.state.connectionsMade.map(function(search, i) {
 	                return (
 	                  <div key={search.id}>
 
 	    	              		 
-	    	              		 <h2>{search.name}</h2>
+	    	              		 <Link 
+                            to={
+                                { 
+                                  pathname: '/friendsProfile/query', 
+                                  query: { 
+                                    friend: search._id 
+                                  } 
+                                }
+                              } 
+                            activeClassName='active' >
+
+                            <h2>{search.name}</h2>
+
+                            </Link>
+
 	    	              		 <h4>{search.email}</h4>
 
 	                      <br />
@@ -72,6 +102,42 @@ class Connections extends React.Component {
 
 
 	        </Card>
+
+                <div className="container text-center">
+                        <h3 className="title">Connections Around You</h3>
+                </div>
+
+          <Card className="container">
+               
+             {this.state.connectionsAvailable.map(function(search, i) {
+                  return (
+                    <div key={search.id}>
+
+                           
+                           <Link 
+                            to={
+                                { 
+                                  pathname: '/friendsProfile/query', 
+                                  query: { 
+                                    friend: search._id 
+                                  } 
+                                }
+                              } 
+                            activeClassName='active' >
+
+                            <h2>{search.name}</h2>
+
+                            </Link>
+
+                           <h4>{search.email}</h4>
+
+                        <br />
+                      </div>
+                  );
+                })}
+
+
+          </Card>
 	        </div>
         );
     }
