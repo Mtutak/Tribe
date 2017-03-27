@@ -55,6 +55,7 @@ class UserProfile extends React.Component {
 
     render() {
         return(
+
         <div>
             <Header />
             <div id="blackbg-banner" className="section-padding">
