@@ -10,6 +10,28 @@ const ProjectSchema = new Schema({
     type: Schema.Types.ObjectId, 
     ref: 'User'
   },
+  title: {
+  	type: String,
+  	required: true
+  },
+  summary: {
+  	type: String,
+  	required: true
+  },
+  detail: {
+  	type: String,
+  	required: true
+  },
+  location: {
+  	type: String,
+  	required: true
+  },
+  latitude: {
+  	type: Number
+  },
+  longitude: {
+  	type: Number
+  },
   //all those you've connected with to work on this project  
   tribe: [{ type: Schema.Types.ObjectId, ref: 'User' }]
 }, 
