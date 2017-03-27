@@ -654,7 +654,7 @@ form element
 
 .firstname {
     color: white;
-    font-size: 80px;
+    font-size: 500%;
     margin-top: 130px;
     font-family: 'Rock Salt', cursive;
     text-align: center;
@@ -662,7 +662,7 @@ form element
 
 .lastname {
     color: white;
-    font-size: 80px;
+    font-size: 500%;
     margin-top: 130px;
     font-family: 'Rock Salt', cursive;
     text-align: center;
