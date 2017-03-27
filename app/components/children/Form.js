@@ -45,8 +45,8 @@ class Form extends React.Component {
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
                         <div className="page-title text-center">
-					<center><h1>Create your Project, Find your Tribe:</h1></center>
-					<center><p>List a current project that you are recruiting for:</p></center>
+					<center><h1 className="create-project-heading">Create your Project:</h1></center>
+					<center><p className="recruiting-p">List a current project that you are recruiting for:</p></center>
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
@@ -59,7 +59,7 @@ class Form extends React.Component {
                         <div className="form-bottom">
                             <div className="row">
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='Title'>Project Title:</label><br/>
+                                    <label htmlFor='Title' className='project-form'>Project Title:</label><br/>
                                     <center><input 
                                     className='form-control text-field-box' 
                                     placeholder="Idea Here"
@@ -71,7 +71,7 @@ class Form extends React.Component {
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='category'>Project Summary:</label><br/>
+                                    <label htmlFor='category' className='project-form'>Project Summary:</label><br/>
                                    <center><textarea 
                                     id='category'
                                     type='text'
@@ -85,7 +85,7 @@ class Form extends React.Component {
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='detail'>Details:</label><br/>
+                                    <label htmlFor='detail' className='project-form'>Details:</label><br/>
                                    <center><textarea 
                                     id='detail'
                                     type='text'
@@ -104,7 +104,7 @@ class Form extends React.Component {
                             {/* Update Loading Cursor with this.props.loading bool */}
                             <button 
                                 type="primary"
-                                className="button-medium" 
+                                className="button-medium project-btn" 
                                 id="contact-submit" 
                                 loading={this.props.loading} 
                                 htmlType="submit" 
