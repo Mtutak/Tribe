@@ -650,7 +650,7 @@ form element
     min-height: 100%;
     width: 100%;
     height: auto;
-    position: fixed;
+    position: absolute;
 }
 
 .firstname {
@@ -748,6 +748,7 @@ form element
 
 .location-heading {
     font-family: 'Raleway', sans-serif;
+    color: #e43c5c;
 }
 
 .edit-profile {
@@ -772,9 +773,29 @@ form element
     font-family: 'Raleway', sans-serif;
     font-size: 99px;
     text-align: center;
+    color: white;
+}
+
+.create-project-heading {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+.recruiting-p {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
 }
 
 .pink-tribe {
     color: #e43c5c;
     font-family: 'Rock Salt', cursive;
+}
+
+.project-btn {
+    width: 200px;
+}
+
+.project-form {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
 }

@@ -97,7 +97,7 @@ class CreateProject extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="blackbg-banner">
         <Header />
         <h2 className="newposts-heading">Find Your <span className="pink-tribe">Tribe</span></h2>
         <Form
