@@ -58,7 +58,7 @@ class UserProfile extends React.Component {
 
         <div>
             <Header />
-            <div id="blackbg-banner" className="section-padding">
+            <div id="user-bg" className="section-padding">
                 <div className="container">
 
                     <div id="about" className="section-padding">

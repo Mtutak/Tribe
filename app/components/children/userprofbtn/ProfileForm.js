@@ -40,12 +40,12 @@ class ProfileForm extends React.Component {
   render() {
     return (
         <div id="contact" className="section-padding">
-		<div className="container">
-			<div className="row">
+		{/*<div className="container">
+			<div className="row">*/}
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
                         <div className="page-title text-center">
-					<center><h1>Edit Your Profile: </h1></center>
+					<center><h1 className="edit-profile">Edit Your Profile: </h1></center>
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
@@ -56,10 +56,10 @@ class ProfileForm extends React.Component {
                         {/*</div>*/}
                         <div className="form-bottom">
                             <div className="row">
-                                <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='title'>One Liner:</label><br/>
+                                <center><div className="col-lg-12 form-group">
+                                    <label htmlFor='title' className="form-fonts">One Liner:</label><br/>
                                     <center><input 
-                                    className='form-control text-field-box' 
+                                    className='form-control text-field-box form-fonts' 
                                     placeholder="It was all a dream..."
                                     id='title'
                                     type='text'
@@ -67,14 +67,14 @@ class ProfileForm extends React.Component {
                                     defaultValue={this.props.defaultTitle}
                                     required
                                     /></center>
-                                </div></center>
-                                <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='bio'>Bio:</label><br/>
+                                 </div></center>
+                                <center><div className="col-lg-12 form-group">
+                                    <label htmlFor='bio' className="form-fonts">Bio:</label><br/>
                                    <center><textarea 
                                     id='bio'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
-                                    rows="1"
+                                    rows="2"
                                     cols="2"
                                     maxLength="50"
                                     required
@@ -82,8 +82,8 @@ class ProfileForm extends React.Component {
                                     placeholder="I used to read Word Up magazine. Salt'n'Pepa and Heavy D up in the limousine"
                                     /></center>
                                 </div></center>
-                                <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='detail'>Details:</label><br/>
+                                <center><div className="col-lg-12 form-group">
+                                    <label htmlFor='detail' className="form-fonts">Details:</label><br/>
                                    <center><textarea 
                                     id='detail'
                                     type='text'
@@ -102,18 +102,18 @@ class ProfileForm extends React.Component {
                             {/* Update Loading Cursor with this.props.loading bool */}
                             <button 
                                 type="primary"
-                                className="button-medium" 
+                                className="button-medium save-profile-btn" 
                                 id="contact-submit"                                 
                                 name="contact">
-                                Save My Profile
+                                SAVE
                             </button>
                            
                         </div>
                     </fieldset>
                 </form>
             </div>
-        </div>
-    </div>
+    //     </div>
+    // </div>
     );
   }
 }

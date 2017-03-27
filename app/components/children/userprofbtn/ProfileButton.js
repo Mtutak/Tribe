@@ -5,6 +5,7 @@ import { Modal } from 'react-bootstrap';
 import * as axios from 'axios'; // axios should be replaced with helpers
 import helpers from '../../utils/helpers';
 import Auth from '../../../modules/localAuth';
+
 class ProfileButton extends React.Component {
         handleClick(event) {
             event.preventDefault();
@@ -69,7 +70,7 @@ class ProfileButton extends React.Component {
                 
                     <Modal show={this.state.showModal} onHide={() => this.close()}>
                         <Modal.Header closeButton>
-                            <Modal.Title>Edit your Profile</Modal.Title>
+                            <Modal.Title></Modal.Title>
                         </Modal.Header>
                         {
                         <Modal.Body>

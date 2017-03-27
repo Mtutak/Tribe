@@ -68,10 +68,11 @@ class Connections extends React.Component {
         return(
         	<div>
             <Header />
+            <div id="blackbg-banner" className="section-padding">
                 <div className="container text-center">
                         <h3 className="title">Connections You've Made</h3>
                 </div>
-	        <Card className="container">
+	        <center><Card className="container card-container">
 		           
 		         {this.state.connectionsMade.map(function(search, i) {
 	                return (
@@ -89,11 +90,11 @@ class Connections extends React.Component {
                               } 
                             activeClassName='active' >
 
-                            <h2>{search.name}</h2>
+                            <h2 className="connections-name">{search.name}</h2>
 
                             </Link>
 
-	    	              		 <h4>{search.email}</h4>
+	    	              		 <h4 className="connections-email">{search.email}</h4>
 
 	                      <br />
 	                    </div>
@@ -101,13 +102,13 @@ class Connections extends React.Component {
 	              })}
 
 
-	        </Card>
+	        </Card></center>
 
                 <div className="container text-center">
                         <h3 className="title">Connections Around You</h3>
                 </div>
 
-          <Card className="container">
+          <center><Card className="container">
                
              {this.state.connectionsAvailable.map(function(search, i) {
                   return (
@@ -137,8 +138,9 @@ class Connections extends React.Component {
                 })}
 
 
-          </Card>
+          </Card></center>
 	        </div>
+        </div>
         );
     }
 }
