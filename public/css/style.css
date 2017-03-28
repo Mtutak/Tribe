@@ -737,8 +737,9 @@ form element
 
 .title {
     font-family: 'Raleway', sans-serif;
-    color: white;
-    font-size: 92px;
+    color:black;
+    padding-top: 35px;
+    font-size: 99px;
 }
 
 .card-container {
