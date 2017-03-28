@@ -161,5 +161,32 @@ router.get('/projects/user', function(req, res){
 	  	});
 	});
 	
+	// This route is like /myInfo but getting entire user profile to use for ProfileButton -> Profile Form components
+	router.get('/userprofile', function(req, res){
+		
+		const token = req.headers.authorization.split(' ')[1];
+
+	  	jwt.verify(token, config.jwtSecret, (err, decoded) => {
+	    // the 401 code is for unauthorized status
+	    	if (err) { res.status(401).end(); }
+
+	    	const userId = decoded.sub;
+
+	    	// check if a user exists
+	    	User.findById(userId)
+				.exec(function(error, doc){
+
+				      if (error) {
+				          res.send(error);
+				      }
+				      // Or send the doc to the browser
+				      else {
+						  res.send(doc);
+
+				      }
+
+				});;
+	  	});
+	});
 
 module.exports = router;

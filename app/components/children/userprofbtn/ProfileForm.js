@@ -25,9 +25,11 @@ class ProfileForm extends React.Component {
 
   initializeState() {
     this.setState({
-      title: this.props.defaultTitle || '',
-      bio: this.props.defaultbio || '',
-      detail: ''
+      id: this.props.id || '',
+      title: this.props.title || '',
+      bio: this.props.bio || '',
+      detail: this.props.detail || '',
+      profileimg: this.props.profileimg || 'https://www.actualized.org/images/pages/creative_mind_01.png'
     });
   }
 
@@ -56,6 +58,17 @@ class ProfileForm extends React.Component {
                         {/*</div>*/}
                         <div className="form-bottom">
                             <div className="row">
+                                 <center><div className="col-lg-12 form-group">
+                                    <label htmlFor='profileimg' className="form-fonts">Profile Image:</label><br/>
+                                    <center><input 
+                                    className='form-control text-field-box form-fonts' 
+                                    id='profileimg'
+                                    type='text'
+                                     placeholder="Enter a link for your profile image"
+                                    onChange={(event) => this.updateInput(event)}
+                                    required
+                                    /></center>
+                                 </div></center>
                                 <center><div className="col-lg-12 form-group">
                                     <label htmlFor='title' className="form-fonts">One Liner:</label><br/>
                                     <center><input 
@@ -64,7 +77,7 @@ class ProfileForm extends React.Component {
                                     id='title'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
-                                    defaultValue={this.props.defaultTitle}
+                                    defaultValue={this.props.title}
                                     required
                                     /></center>
                                  </div></center>
@@ -80,6 +93,7 @@ class ProfileForm extends React.Component {
                                     required
                                     className="form-control text-field-box" 
                                     placeholder="I used to read Word Up magazine. Salt'n'Pepa and Heavy D up in the limousine"
+                                    defaultValue={this.props.bio}
                                     /></center>
                                 </div></center>
                                 <center><div className="col-lg-12 form-group">
@@ -88,7 +102,7 @@ class ProfileForm extends React.Component {
                                     id='detail'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
-                                    defaultValue={this.props.defaultbio}
+                                    defaultValue={this.props.detail}
                                     rows="2"
                                     cols="2"
                                     maxLength="250"
@@ -128,7 +142,12 @@ ProfileForm.propTypes = {
   submitAction: React.PropTypes.func.isRequired,
   loading: React.PropTypes.bool,
   defaultTitle: React.PropTypes.string,
-  defaultbio: React.PropTypes.string
+  defaultbio: React.PropTypes.string,
+  id: React.PropTypes.string,
+  profileimg: React.PropTypes.string,
+  bio: React.PropTypes.string,
+  detail: React.PropTypes.string,
+  title: React.PropTypes.string
 };
 
 export { ProfileForm };

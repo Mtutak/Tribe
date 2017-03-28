@@ -4,6 +4,7 @@ var bodyParser = require("body-parser");
 const passport = require('passport');
 const mongoose = require('mongoose');
 const Project = require('./models/Project');
+const user = require('./models/user');
 
 // Create Instance of Express
 var app = express();
@@ -105,6 +106,21 @@ app.get('/projects', function(req, res){
 
 				      }
         });
+	});
+
+	app.post('/user/:uid/update', function(req, res){
+			console.log('hit update route!');
+			console.log(req.body);
+			var doc = req.body.data;
+			console.log(doc);
+				user.findByIdAndUpdate(doc.id, { $set: { 
+					title: doc.title,
+					bio: doc.bio,
+					detail: doc.detail,
+					profileimg: doc.profileimg }}, { new: true }, function (err, profile) {
+  				if (err) return handleError(err);
+  				res.send(profile);
+				});
 	});
 // Listener
 app.listen(PORT, function() {
