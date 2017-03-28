@@ -50,14 +50,14 @@ class AllProjects extends React.Component {
                 <div className="container text-center">
                         <h3 className="title">All Projects</h3>
                 </div>
-            </div>
+            
 	        <center><Card className="container card-container">
 		           
 		         {this.state.allProjects.map(function(search, i) {
 	                return (
 	                  <div key={search._id}>
                             <h2 className="project-title">{search.title}</h2>
-                            <h2 className="project-location">{search.location}</h2>
+                            <i><h2 className="project-location">{search.location}</h2></i>
                             <h2 className="project-summary">{search.summary}</h2>
 	                      <br />
 	                    </div>
@@ -66,7 +66,7 @@ class AllProjects extends React.Component {
 
 
 	        </Card></center>
-
+        </div>
         </div>
         );
     }
