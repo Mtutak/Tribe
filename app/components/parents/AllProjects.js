@@ -55,10 +55,10 @@ class AllProjects extends React.Component {
 		           
 		         {this.state.allProjects.map(function(search, i) {
 	                return (
-	                  <div key={search.id}>
+	                  <div key={search._id}>
                             <h2 className="project-title">{search.title}</h2>
                             <h2 className="project-location">{search.location}</h2>
-                             <h2 className="project-summary">{search.summary}</h2>
+                            <h2 className="project-summary">{search.summary}</h2>
 	                      <br />
 	                    </div>
 	                );
