@@ -9,13 +9,28 @@ const UserSchema = new mongoose.Schema({
   },
   password: String,
   name: String,
+  title: { 
+  	type: String,
+  },
+  bio: { 
+  	type: String,
+  },
+  detail: { 
+  	type: String
+  },
+  location: { 
+  	type: String,
+  },
   connections: [{
     // Store ObjectIds in the array
     type: Schema.Types.ObjectId,
     // The ObjectIds will refer to the ids in the Note model
     ref: "User"
   }]
-});
+},
+  {
+        timestamps: true
+    });
 
 
 /**

@@ -3,7 +3,7 @@ import { ProfileForm } from './ProfileForm';
 import { notification } from 'antd';
 import { Modal } from 'react-bootstrap';
 import * as axios from 'axios'; // axios should be replaced with helpers
-import helpers from '../../utils/helpers';
+import { helpers } from '../../utils/helpers';
 import Auth from '../../../modules/localAuth';
 
 class ProfileButton extends React.Component {
@@ -37,27 +37,64 @@ class ProfileButton extends React.Component {
             });
         }
         // Data Request Methods
-        postform(postObj) {
-            this.startLoading();
-            axios.post("/projects/new", { postObj });
-            // helpers.postProject(postObj).then(() => {
-            //     console.log('Post Form Success!');
-            //     this.sendSuccessNotification();
-            //     this.endLoading();
-            //     this.redirectToPosts();
-            //   })
-            //   .catch((error) => {
-            //     console.log('Error With Post Form Project')
-            //     this.sendErrorNotification();
-            //     this.endLoading();
-            //   }).bind(this);
+        updateProfile(postObj) {
+            var id = this.state.id;
+            console.log('this is userid', id);
+            // this.startLoading();
+            helpers.updateUserProfile(id, postObj).then((profile) => {
+                console.log('Post Form Success!');
+                //profile is the response object returned after mongoose
+                console.log(profile.data);
+                // this.setState({
+                //     profileimg: profile.data.profileimg,
+                //     bio: profile.data.bio,
+                //     detail: profile.data.detail,
+                //     title: profile.data.title
+                // });
+                this.sendSuccessNotification();
+                this.endLoading();
+                this.redirectToPosts();
+              })
+              .catch((error) => {
+                console.log('Error With Post Form Project')
+                this.sendErrorNotification();
+                this.endLoading();
+              });
+        }
+        getUserId(){
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('get', '/api/userprofile');
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            // set the authorization HTTP header
+            xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+            xhr.responseType = 'json';
+            xhr.addEventListener('load', () => {
+            if (xhr.status === 200) {
+                console.log(xhr.response);
+                this.setState({
+                id: xhr.response._id,
+                profileimg: xhr.response.profileimg,
+                bio: xhr.response.bio,
+                detail: xhr.response.detail,
+                title: xhr.response.title
+            });
+            console.log(this.state);
+            }
+            });
+            xhr.send();
+
+        }
+        componentDidMount(){
+
+            this.getUserId();
+
         }
         render() {
             return (
                 <div>
                 <center>
-                    <button 
-                        /*onClick={(event) => this.handleClick(event)} */
+                    <button
                         onClick={() => this.open()}
                         className="btn edit-me" 
                         id="userProfileForm" 
@@ -74,8 +111,15 @@ class ProfileButton extends React.Component {
                         </Modal.Header>
                         {
                         <Modal.Body>
-                        
-                        <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)} />
+                        <ProfileForm 
+                        loading={this.state.loading} 
+                        submitAction={(postObj) => this.updateProfile(postObj)} 
+                        id = {this.state.id}
+                        profileimg = {this.state.profileimg}
+                        bio = {this.state.bio}
+                        detail =  {this.state.detail}
+                        title = {this.state.title}
+                        />
                         {/*: null */}
                         
                         </Modal.Body>
