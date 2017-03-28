@@ -35,6 +35,10 @@ var helpers = {
     console.log('Post Project Helper hit!');
     return axios.post("/projects/new", { data });
 
+  },
+  getAllProjects: function() {
+    console.log('Hit Get All Projects Helper');
+    return axios.get("/projects");
   }
 };
 

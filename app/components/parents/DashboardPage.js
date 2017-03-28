@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router';
 import Auth from '../../modules/localAuth';
 import Dashboard from '../children/Dashboard.js';
+import { Card, CardText } from 'material-ui/Card';
+import { helpers } from '../utils/helpers';
 
 
 class DashboardPage extends React.Component {
@@ -78,7 +80,24 @@ class DashboardPage extends React.Component {
                 </nav>
                 <br/>
                 <div className="container text-center">
-                        <h3 className="title showcase-projects">Showcase Projects Here</h3>
+                        <h3 className="title">Showcase Projects Here</h3>
+                        <Card className="container">
+		           
+		        {/*  {this.state.connections.map(function(search, i) {
+	                return (
+	                  <div key={search.id}>
+
+	    	              		 
+	    	              		 <h2>{search.name}</h2>
+	    	              		 <h4>{search.email}</h4>
+
+	                      <br />
+	                    </div>
+	                );
+	              })}
+              */}
+
+	        </Card>
                 </div>
             </div>
         </header> 

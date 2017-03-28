@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 const passport = require('passport');
 const mongoose = require('mongoose');
+const Project = require('./models/Project');
 
 // Create Instance of Express
 var app = express();
@@ -37,8 +38,74 @@ app.use('/auth', authRoutes);
 const apiRoutes = require('./controllers/api');
 app.use('/api', apiRoutes);
 
+app.post('/projects/new', function(req, res){
+      console.log('hit project new route!');
+			console.log(req.body);
+			console.log(req.body.data.title);
+		// const token = req.headers.authorization.split(' ')[1];
 
+	  // 	jwt.verify(token, config.jwtSecret, (err, decoded) => {
+	  //   // the 401 code is for unauthorized status
+	  //   	if (err) { res.status(401).end(); }
 
+	  //   	const userId = decoded.sub;
+	  //   // 			res.status(200).json({
+		// 			//     loggedUser: userId
+		// 			// }); 
+
+	    	// create new project
+	    	Project.create({
+					creator: '58d1bd0d28594f86f2c4ba92',
+					location: "Chicago, IL, United States",
+					title: req.body.data.title,
+					summary: req.body.data.category,
+					detail: req.body.data.detail
+				});
+
+        res.status(200).json({
+						    success: "successful new project"
+						  }); 
+
+	});
+
+app.get('/projects', function(req, res){
+			console.log('hit projects route!');
+
+				Project.find({})
+				.exec(function(error, doc){
+							console.log(doc);
+				      if (error) {
+				          res.send(error);
+				      }
+				      // Or send the doc to the browser
+				      else {
+						  res.send(doc); 
+
+				      };
+        });
+	});
+
+	app.get('/projects/user', function(req, res){
+			console.log('hit projects route!');
+			console.log(req.body);
+			console.log(req.body.data.title);
+			var userID = "58d1bd0d28594f86f2c4ba92";
+			
+				Project.find({userID})
+				.exec(function(error, doc){
+							console.log(doc);
+				      if (error) {
+				          res.send(error);
+				      }
+				      // Or send the doc to the browser
+				      else {
+						  res.status(200).json({
+						    connections: doc.connections
+						  }); 
+
+				      }
+        });
+	});
 // Listener
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);
