@@ -3,7 +3,7 @@ import { Header } from '../children/Header';
 import { Form } from '../children/Form';
 import { notification } from 'antd';
 import * as axios from 'axios'; // axios should be replaced with helpers
-import helpers from '../utils/helpers';
+import { helpers } from '../utils/helpers';
 import Auth from '../../modules/localAuth';
 
 class CreateProject extends React.Component {
@@ -44,19 +44,19 @@ class CreateProject extends React.Component {
 
   postform(postObj) {
     this.startLoading();
-    axios.post("/projects/new", { postObj });
+    // axios.post("/projects/new", { postObj });
 
-    // helpers.postProject(postObj).then(() => {
-    //     console.log('Post Form Success!');
-    //     this.sendSuccessNotification();
-    //     this.endLoading();
-    //     this.redirectToPosts();
-    //   })
-    //   .catch((error) => {
-    //     console.log('Error With Post Form Project')
-    //     this.sendErrorNotification();
-    //     this.endLoading();
-    //   }).bind(this);
+    helpers.postProject(postObj).then(() => {
+        console.log('Post Form Success!');
+        this.sendSuccessNotification();
+        this.endLoading();
+        this.redirectToPosts();
+      })
+      .catch((error) => {
+        console.log('Error With Post Form Project')
+        this.sendErrorNotification();
+        this.endLoading();
+      });
   }
 
   // Setting Initial State
