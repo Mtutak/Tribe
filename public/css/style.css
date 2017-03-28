@@ -832,11 +832,11 @@ form element
     font-family: 'Open Sans', sans-serif;
     line-height: 10px;
     margin-top: 0px;
-    font-size: 20px;
+    font-size: 15px;
 }
 
 .project-summary {
-    color: white;
+    color: yellow;
     font-family: 'Open Sans', sans-serif;
     line-height: 10px;
     font-size: 20px;
@@ -856,7 +856,7 @@ form element
 }
 
 #post-box {
-    height: 175px;
+    height: 275px;
 }
 
 .form-bottom {
