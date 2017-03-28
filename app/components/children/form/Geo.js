@@ -22,7 +22,7 @@ class Geo extends React.Component {
                 noMatching='Sorry, I can not find {{value}}.'
                 onLocationSet={this.props.onLocationSet}
                 inputProps={{
-                style: {color: '#0099FF'},
+                style: {color: 'black'},
                 className:'location form-group',
                 placeholder: 'Your Tribe Location?'
                 }}
