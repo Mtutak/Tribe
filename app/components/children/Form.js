@@ -80,7 +80,7 @@ class Form extends React.Component {
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='category' className='project-form'>Project Summary:</label><br/>
+                                    <label htmlFor='category' className='project-form'>Needed:</label><br/>
                                    <center><textarea 
                                     id='category'
                                     type='text'

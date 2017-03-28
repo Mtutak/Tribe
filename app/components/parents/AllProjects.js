@@ -51,21 +51,29 @@ class AllProjects extends React.Component {
                         <h3 className="title">All Projects</h3>
                 </div>
             
-	        <center><Card className="container card-container">
-		           
+	        <Card className="container card-container">
+		           <div className="row">
+                 <div className="col-lg-12">
+                   <div className="row">
 		         {this.state.allProjects.map(function(search, i) {
 	                return (
+                    <div className="col-lg-4" id="post-box">
 	                  <div key={search._id}>
                             <h2 className="project-title">{search.title}</h2>
                             <i><h2 className="project-location">{search.location}</h2></i>
                             <h2 className="project-summary">{search.summary}</h2>
+                            <h2 className="project-details">{search.detail}</h2>
 	                      <br />
 	                    </div>
+                    </div>
+                  
+                  
 	                );
 	              })}
-
-
-	        </Card></center>
+                </div>
+                </div>
+                </div>
+	        </Card>
         </div>
         </div>
         );
