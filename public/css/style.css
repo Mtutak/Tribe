@@ -350,7 +350,7 @@ margin-top: 5px;
     text-align: left;
     color: black;
     font-size: 14px;
-    padding: 7px 35px;
+    padding: 7px 15px;
     margin-bottom: 15px;
     width: 100%;
     outline: none;
@@ -827,8 +827,8 @@ body {
       padding: 1em;
     }
     .location {
-      width: 65%;
-      padding: 1em;
+      width: 25%;
+      padding: 7px 15px;
       font-size: 1em;
       outline: none;
       border-radius: .4em;
@@ -923,3 +923,8 @@ body {
           background: hsl(86, 100%, 21%);
           color: inherit;
         }
+.close-button {
+    background-color: white;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
+}

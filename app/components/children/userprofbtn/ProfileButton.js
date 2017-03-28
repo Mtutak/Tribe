@@ -81,7 +81,7 @@ class ProfileButton extends React.Component {
                         </Modal.Body>
                         }
                         <Modal.Footer>
-                            <button onClick={() => this.close()}>Close</button>
+                            <button className="close-button" onClick={() => this.close()}>Close</button>
                         </Modal.Footer>
                     </Modal>
                 
