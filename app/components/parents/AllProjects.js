@@ -48,7 +48,7 @@ class AllProjects extends React.Component {
             <Header />
             <div id="blackbg-banner" className="section-padding">
                 <div className="container text-center">
-                        <h3 className="title">All Projects</h3>
+                        <h3 className="title all-projects-heading">All Projects</h3>
                 </div>
             
 	        <Card className="container card-container">

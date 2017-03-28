@@ -849,6 +849,12 @@ form element
     font-size: 20px;
 }
 
+.all-projects-heading {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 99px;
+}
+
 #post-box {
     height: 175px;
 }
