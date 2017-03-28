@@ -35,10 +35,13 @@ Header
     background-color: #fff;
     border-color: rgba(231, 231, 231, 0.33);
     padding: 20px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    color: #354242;
+    color: #e43c5c;
     background-color: #fff;
 }
 .navbar-nav {
@@ -135,7 +138,7 @@ a.btn-banner:hover, a.btn-banner:focus
 }
 .bold
 {
-    font-weight: bold;
+    /*font-weight: bold;*/
     font-family: 'Rock Salt', cursive;
 }
 .bor-btm
@@ -151,6 +154,7 @@ a.btn-banner:hover, a.btn-banner:focus
     border-width: 0px;
     margin: 0px;
     padding: 0px;
+    padding-top: 20px;
     font-family: 'Raleway', sans-serif;
     font-size: 62px;
     letter-spacing: 6px;
@@ -414,6 +418,11 @@ margin-top: 5px;
     -ms-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
+
+button:active {
+    color: #e43c5c;
+}
+
 .footer {
     background-color: #040E18;
 }
@@ -641,7 +650,7 @@ form element
     min-height: 100%;
     width: 100%;
     height: auto;
-    /*position: fixed;*/
+    position: absolute;
 }
 
 #user-bg {
@@ -763,6 +772,7 @@ form element
     font-family: 'Raleway', sans-serif;
     color: black;
     font-size: 99px;
+    padding-top: 35px;
 }
 
 .save-profile-btn {
@@ -798,4 +808,8 @@ form element
 .project-form {
     color: white;
     font-family: 'Open Sans', sans-serif;
+}
+
+.form-bottom {
+    padding-bottom: 50px;
 }
