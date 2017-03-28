@@ -824,6 +824,7 @@ form element
 .project-title {
     color: #e43c5c;
     font-family: 'Rock Salt', cursive;
+    padding-top: 20px;
 }
 
 .project-location {
@@ -839,6 +840,23 @@ form element
     font-family: 'Open Sans', sans-serif;
     line-height: 10px;
     font-size: 20px;
+}
+
+.project-details {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.all-projects-heading {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 99px;
+}
+
+#post-box {
+    height: 175px;
 }
 
 .form-bottom {
