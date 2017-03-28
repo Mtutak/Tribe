@@ -74,6 +74,7 @@ class Form extends React.Component {
                                     placeholder="Idea Here"
                                     id='title'
                                     type='text'
+                                    maxLength="15"
                                     onChange={(event) => this.updateInput(event)}
                                     defaultValue={this.props.defaultTitle}
                                     required
@@ -87,10 +88,10 @@ class Form extends React.Component {
                                     onChange={(event) => this.updateInput(event)}
                                     rows="1"
                                     cols="2"
-                                    maxLength="50"
+                                    maxLength="20"
                                     required
                                     className="form-control text-field-box" 
-                                    placeholder="Brief Intro to your Project"
+                                    placeholder="Type of Artist Needed"
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
@@ -102,7 +103,7 @@ class Form extends React.Component {
                                     defaultValue={this.props.defaultCategory}
                                     rows="2"
                                     cols="2"
-                                    maxLength="250"
+                                    maxLength="150"
                                     required
                                     className="form-control text-field-box" 
                                     placeholder="This information will only be viewable by users you have met. Provide detail on your project and talents needed"
