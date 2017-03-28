@@ -83,7 +83,7 @@ class DashboardPage extends React.Component {
                         <h3 className="title">Showcase Projects Here</h3>
                         <Card className="container">
 		           
-		         {this.state.connections.map(function(search, i) {
+		        {/*  {this.state.connections.map(function(search, i) {
 	                return (
 	                  <div key={search.id}>
 
@@ -95,7 +95,7 @@ class DashboardPage extends React.Component {
 	                    </div>
 	                );
 	              })}
-
+              */}
 
 	        </Card>
                 </div>

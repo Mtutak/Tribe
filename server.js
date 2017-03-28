@@ -3,6 +3,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 const passport = require('passport');
 const mongoose = require('mongoose');
+const Project = require('./models/Project');
 
 // Create Instance of Express
 var app = express();
@@ -38,6 +39,7 @@ const apiRoutes = require('./controllers/api');
 app.use('/api', apiRoutes);
 
 app.post('/projects/new', function(req, res){
+      console.log('hit project new route!');
 			console.log(req.body);
 			console.log(req.body.data.title);
 		// const token = req.headers.authorization.split(' ')[1];
@@ -59,12 +61,15 @@ app.post('/projects/new', function(req, res){
 					summary: req.body.data.category,
 					detail: req.body.data.detail
 				});
+
+        res.status(200).json({
+						    success: "successful new project"
+						  }); 
+
 	});
 
 app.get('/projects', function(req, res){
 			console.log('hit projects route!');
-			console.log(req.body);
-			console.log(req.body.data.title);
 
 				Project.find({})
 				.exec(function(error, doc){
@@ -74,11 +79,10 @@ app.get('/projects', function(req, res){
 				      }
 				      // Or send the doc to the browser
 				      else {
-						  res.status(200).json({
-						    connections: doc.connections
-						  }); 
+						  res.send(doc); 
 
-				      }
+				      };
+        });
 	});
 
 	app.get('/projects/user', function(req, res){
@@ -100,8 +104,8 @@ app.get('/projects', function(req, res){
 						  }); 
 
 				      }
+        });
 	});
-
 // Listener
 app.listen(PORT, function() {
   console.log("App listening on PORT: " + PORT);

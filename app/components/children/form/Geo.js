@@ -5,12 +5,12 @@ import React from 'react';
 import Location from 'react-place';
 
 class Geo extends React.Component {
-    onLocationSet(data) {
-    console.log(data);
-    data.description
-    // data.coords.lat
-    // data.coords.lng
-    }
+    // onLocationSet(data) {
+    // console.log(data);
+    // data.description
+    // // data.coords.lat
+    // // data.coords.lng
+    // }
     //needs at least one method - render
     render () {
         return (
@@ -24,7 +24,9 @@ class Geo extends React.Component {
                 inputProps={{
                 style: {color: '#0099FF'},
                 className:'location form-group',
-                placeholder: 'Your Tribe Location?'
+                placeholder: 'Your Tribe Location?',
+                id: 'location',
+                onChange: (event) => this.props.onChange(event)
                 }}
                 />
             </div>

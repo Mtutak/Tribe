@@ -2,6 +2,14 @@ import * as React from 'react';
 import { Geo } from './form/Geo';
 
 class Form extends React.Component {
+    
+    onLocationSet(data) {
+        console.log(data);
+        // data.description
+        // data.coords.lat
+        // data.coords.lng
+
+    };
 
   // Form Event Handlers
 
@@ -25,6 +33,7 @@ class Form extends React.Component {
 
   initializeState() {
     this.setState({
+      location: '',
       title: this.props.defaultTitle || '',
       category: this.props.defaultCategory || '',
       detail: ''
@@ -48,7 +57,7 @@ class Form extends React.Component {
 					<center><h1 className="create-project-heading">Create your Project:</h1></center>
 					<center><p className="recruiting-p">List a current project that you are recruiting for:</p></center>
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
-                    <Geo />
+                    <Geo onChange={(event) => this.updateInput(event)} onLocationSet={this.onLocationSet}/>
 				        </div>
                 
                         {/*<div className="form-top">
