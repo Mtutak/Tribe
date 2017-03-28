@@ -43,6 +43,7 @@ class CreateProject extends React.Component {
   // Data Request Methods
 
   postform(postObj) {
+    console.log('Hit create Project component');
     this.startLoading();
     // axios.post("/projects/new", { postObj });
 
