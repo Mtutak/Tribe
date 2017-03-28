@@ -814,6 +814,7 @@ form element
 
 .project-btn {
     width: 200px;
+    margin-top: 20px;
 }
 
 .project-form {
@@ -855,6 +856,14 @@ form element
     font-size: 99px;
 }
 
+.title-input {
+    width: 50%;
+}
+
+.needed-input {
+    width: 50%;
+}
+
 #post-box {
     height: 275px;
 }
@@ -881,7 +890,7 @@ body {
       border: solid 1px grey;
     }
     .location:focus {
-      border: solid 2px #83CDE6;
+      border: solid 2px white;
     }
     [hidden] { display: none; }
     .visually-hidden {
@@ -893,10 +902,10 @@ body {
       position: relative;
     }
     div.awesomplete > ul {
-      position: absolute;
+      position: relative;
       left: 0;
       z-index: 1;
-      min-width: 100%;
+      min-width: 60%;
       box-sizing: border-box;
       list-style: none;
       padding: 0;
@@ -933,7 +942,7 @@ body {
         top: -.43em;
         left: 1em;
         width: 0; height: 0;
-        padding: .4em;
+        /*padding: .4em;*/
         background: white;
         border: inherit;
         border-right: 0;
@@ -943,6 +952,7 @@ body {
       }
       div.awesomplete > ul > li {
         position: relative;
+        text-align: left;
         padding: .2em .5em;
         cursor: pointer;
       }
@@ -953,7 +963,7 @@ body {
       }
       
       div.awesomplete > ul > li[aria-selected="true"] {
-        background: hsl(205, 40%, 40%);
+        background: palevioletred;
         color: white;
       }
       

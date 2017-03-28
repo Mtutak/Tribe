@@ -70,7 +70,7 @@ class Form extends React.Component {
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
                                     <label htmlFor='Title' className='project-form'>Project Title:</label><br/>
                                     <center><input 
-                                    className='form-control text-field-box' 
+                                    className='form-control title-input' 
                                     placeholder="Idea Here"
                                     id='title'
                                     type='text'
@@ -90,7 +90,7 @@ class Form extends React.Component {
                                     cols="2"
                                     maxLength="20"
                                     required
-                                    className="form-control text-field-box" 
+                                    className="form-control needed-input" 
                                     placeholder="Type of Artist Needed"
                                     /></center>
                                 </div></center>
@@ -105,8 +105,8 @@ class Form extends React.Component {
                                     cols="2"
                                     maxLength="150"
                                     required
-                                    className="form-control text-field-box" 
-                                    placeholder="This information will only be viewable by users you have met. Provide detail on your project and talents needed"
+                                    className="form-control details-input" 
+                                    placeholder="Provide brief details about your project."
                                     /></center>
                                 </div></center>
                                 
