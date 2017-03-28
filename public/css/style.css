@@ -821,6 +821,26 @@ form element
     font-family: 'Open Sans', sans-serif;
 }
 
+.project-title {
+    color: #e43c5c;
+    font-family: 'Rock Salt', cursive;
+}
+
+.project-location {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 10px;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.project-summary {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 10px;
+    font-size: 20px;
+}
+
 .form-bottom {
     padding-bottom: 50px;
 }
