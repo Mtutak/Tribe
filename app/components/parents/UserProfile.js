@@ -11,7 +11,12 @@ class UserProfile extends React.Component {
       this.setState({
               myFirstName: '',
               myLastName:'',
-              myEmail: ''
+              myEmail: '',
+              profileimg: '',
+              bio: '',
+              detail: '',
+              title: '',
+              location: ''
       });
     }
 
@@ -73,7 +78,8 @@ class UserProfile extends React.Component {
                     profileimg: profile.data.profileimg,
                     bio: profile.data.bio,
                     detail: profile.data.detail,
-                    title: profile.data.title
+                    title: profile.data.title,
+                    location: profile.data.location
                 });
                 
                 // this.sendSuccessNotification();
@@ -102,7 +108,8 @@ class UserProfile extends React.Component {
                 profileimg: xhr.response.profileimg,
                 bio: xhr.response.bio,
                 detail: xhr.response.detail,
-                title: xhr.response.title
+                title: xhr.response.title,
+                location: xhr.response.location
             });
             console.log(this.state);
             }
@@ -131,10 +138,10 @@ class UserProfile extends React.Component {
                        <div className="container">
                           <div className="row">
                               <div className="col-6 col-md-4">
-                                 <h1 className="firstname">{this.state.myFirstName}{this.state.profileimg}</h1>
+                                 <h1 className="firstname">{this.state.myFirstName}</h1>
                               </div>
                               <div className="col-6 col-md-4">
-                                 <center><img src={this.state.profileimg} className="img-responsive img-style" /><div>{this.state.profileimg}</div></center>
+                                 <center><img src={this.state.profileimg} className="img-responsive img-style" /></center>
                               </div>
                               <div className="col-6 col-md-4">
                                   <h1 className="lastname">{this.state.myLastName}</h1>
@@ -155,7 +162,7 @@ class UserProfile extends React.Component {
 
                     <div>
                         <center><Link to="#" className="btn projects-me">My Projects <i className="fa fa-star-o"></i></Link></center>
-                        <center><h3 className="line-adjustment description-style">{this.state.detail}</h3></center>
+                        <center><h3 className="line-adjustment description-style">{this.state.location}</h3></center>
                     </div>
 
                     <ProfileButton
@@ -166,6 +173,7 @@ class UserProfile extends React.Component {
                         bio = {this.state.bio}
                         detail =  {this.state.detail}
                         title = {this.state.title} 
+                        location = {this.state.location}
                         />
 
                 </div>

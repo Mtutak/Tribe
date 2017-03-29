@@ -29,7 +29,8 @@ class ProfileForm extends React.Component {
       title: this.props.title || '',
       bio: this.props.bio || '',
       detail: this.props.detail || '',
-      profileimg: this.props.profileimg || ''
+      profileimg: this.props.profileimg || '',
+      location: this.props.location || ''
     });
   }
 
@@ -60,6 +61,7 @@ class ProfileForm extends React.Component {
                                     className='form-control text-field-box form-fonts' 
                                     id='profileimg'
                                     type='text'
+                                    defaultValue={this.props.profileimg}
                                      placeholder="Enter a link for your profile image"
                                     onChange={(event) => this.updateInput(event)}
                                     required
@@ -142,7 +144,8 @@ ProfileForm.propTypes = {
   profileimg: React.PropTypes.string,
   bio: React.PropTypes.string,
   detail: React.PropTypes.string,
-  title: React.PropTypes.string
+  title: React.PropTypes.string,
+  location: React.PropTypes.string
 };
 
 export { ProfileForm };
