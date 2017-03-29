@@ -73,9 +73,13 @@ class Connections extends React.Component {
                         <h3 className="title">Connections You've Made</h3>
                 </div>
 	        <center><Card className="container card-container">
+            <div className="row">
+                 <div className="col-lg-12">
+                   <div className="row">
 		           
 		         {this.state.connectionsMade.map(function(search, i) {
 	                return (
+                    <div className="col-lg-4" id="connections-box">
 	                  <div key={search.id}>
 
 	    	              		 
@@ -98,8 +102,13 @@ class Connections extends React.Component {
 
 	                      <br />
 	                    </div>
+                      </div>
+                      
 	                );
 	              })}
+                </div>
+                </div>
+                </div>
 
 
 	        </Card></center>
@@ -107,11 +116,16 @@ class Connections extends React.Component {
                 <div className="container text-center">
                         <h3 className="title">Connections Around You</h3>
                 </div>
+        
 
-          <center><Card className="container">
+          <center><Card className="container card-container">
+             <div className="row">
+                 <div className="col-lg-12">
+                   <div className="row">
                
              {this.state.connectionsAvailable.map(function(search, i) {
                   return (
+                    <div className="col-lg-4" id="connections-box">
                     <div key={search.id}>
 
                            
@@ -126,17 +140,20 @@ class Connections extends React.Component {
                               } 
                             activeClassName='active' >
 
-                            <h2>{search.name}</h2>
+                            <h2 className="connections-name">{search.name}</h2>
 
                             </Link>
 
-                           <h4>{search.email}</h4>
+                           <h4 className="connections-email">{search.email}</h4>
 
                         <br />
                       </div>
+                      </div>
                   );
                 })}
-
+                </div>
+                </div>
+                </div>
 
           </Card></center>
 	        </div>

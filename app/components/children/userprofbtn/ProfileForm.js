@@ -51,11 +51,7 @@ class ProfileForm extends React.Component {
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
-                        {/*<div className="form-top">
-                                <h3><span><i className="fa fa-calendar-check-o" aria-hidden="true"></i></span>Create Your Tribe</h3>
-                                <p>Enter Your Project Details Below</p>
-                                {/* Included Geo Component for react-place autofill */}
-                        {/*</div>*/}
+                        
                         <div className="form-bottom">
                             <div className="row">
                                  <center><div className="col-lg-12 form-group">
@@ -70,7 +66,7 @@ class ProfileForm extends React.Component {
                                     /></center>
                                  </div></center>
                                 <center><div className="col-lg-12 form-group">
-                                    <label htmlFor='title' className="form-fonts">One Liner:</label><br/>
+                                    <label htmlFor='title' className="form-fonts">Job:</label><br/>
                                     <center><input 
                                     className='form-control text-field-box form-fonts' 
                                     placeholder="It was all a dream..."
@@ -82,7 +78,7 @@ class ProfileForm extends React.Component {
                                     /></center>
                                  </div></center>
                                 <center><div className="col-lg-12 form-group">
-                                    <label htmlFor='bio' className="form-fonts">Bio:</label><br/>
+                                    <label htmlFor='bio' className="form-fonts">One Liner:</label><br/>
                                    <center><textarea 
                                     id='bio'
                                     type='text'
@@ -96,7 +92,7 @@ class ProfileForm extends React.Component {
                                     defaultValue={this.props.bio}
                                     /></center>
                                 </div></center>
-                                <center><div className="col-lg-12 form-group">
+                                {/*<center><div className="col-lg-12 form-group">
                                     <label htmlFor='detail' className="form-fonts">Details:</label><br/>
                                    <center><textarea 
                                     id='detail'
@@ -110,8 +106,7 @@ class ProfileForm extends React.Component {
                                     className="form-control text-field-box" 
                                     placeholder="Super Nintendo, Sega Genesis. When I was dead broke, man I couldn't picture this. 50 inch screen, money green leather sofa"
                                     /></center>
-                                </div></center>
-                                
+                                </div></center>*/}
                             </div>
                             {/* Update Loading Cursor with this.props.loading bool */}
                             <button 
