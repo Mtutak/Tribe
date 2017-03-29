@@ -73,6 +73,7 @@ app.get('/projects', function(req, res){
 			console.log('hit projects route!');
 
 				Project.find({})
+				.populate('creator')
 				.exec(function(error, doc){
 							console.log(doc);
 				      if (error) {
