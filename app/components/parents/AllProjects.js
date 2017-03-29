@@ -34,7 +34,10 @@ class AllProjects extends React.Component {
       });
 
     }
-
+     getCreator(event) {
+      event.preventDefault();
+      console.log(event);
+    }
 
     componentDidMount(){
 
@@ -57,7 +60,7 @@ class AllProjects extends React.Component {
                    <div className="row">
 		         {this.state.allProjects.map(function(search, i) {
 	                return (
-                    <div className="col-lg-4" id="post-box">
+                    <div className="col-lg-4" id="post-box" onClick={(event) => this.getCreator(event)}>
 	                  <div key={search._id}>
                             <h2 className="project-title">{search.title}</h2>
                             <i><h2 className="project-location">{search.location}</h2></i>
