@@ -29,7 +29,7 @@ class ProfileForm extends React.Component {
       title: this.props.title || '',
       bio: this.props.bio || '',
       detail: this.props.detail || '',
-      profileimg: this.props.profileimg || 'https://www.actualized.org/images/pages/creative_mind_01.png'
+      profileimg: this.props.profileimg || ''
     });
   }
 

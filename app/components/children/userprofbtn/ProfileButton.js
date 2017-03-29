@@ -24,72 +24,6 @@ class ProfileButton extends React.Component {
         open() {
             this.setState({ showModal:true });
         }        
-        sendSuccessNotification() {
-            notification['success']({
-            message: 'Yayyy!!',
-            description: 'Your post has been created.',
-            });
-        }
-        sendErrorNotification() {
-            notification['error']({
-            message: 'Uh Oh',
-            description: 'Something went wrong, please try again.',
-            });
-        }
-        // Data Request Methods
-        updateProfile(postObj) {
-            var id = this.state.id;
-            console.log('this is userid', id);
-            // this.startLoading();
-            helpers.updateUserProfile(id, postObj).then((profile) => {
-                console.log('Post Form Success!');
-                //profile is the response object returned after mongoose
-                console.log(profile.data);
-                // this.setState({
-                //     profileimg: profile.data.profileimg,
-                //     bio: profile.data.bio,
-                //     detail: profile.data.detail,
-                //     title: profile.data.title
-                // });
-                this.sendSuccessNotification();
-                this.endLoading();
-                this.redirectToPosts();
-              })
-              .catch((error) => {
-                console.log('Error With Post Form Project')
-                this.sendErrorNotification();
-                this.endLoading();
-              });
-        }
-        getUserId(){
-
-            const xhr = new XMLHttpRequest();
-            xhr.open('get', '/api/userprofile');
-            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-            // set the authorization HTTP header
-            xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
-            xhr.responseType = 'json';
-            xhr.addEventListener('load', () => {
-            if (xhr.status === 200) {
-                console.log(xhr.response);
-                this.setState({
-                id: xhr.response._id,
-                profileimg: xhr.response.profileimg,
-                bio: xhr.response.bio,
-                detail: xhr.response.detail,
-                title: xhr.response.title
-            });
-            console.log(this.state);
-            }
-            });
-            xhr.send();
-
-        }
-        componentDidMount(){
-
-            this.getUserId();
-
-        }
         render() {
             return (
                 <div>
@@ -112,13 +46,13 @@ class ProfileButton extends React.Component {
                         {
                         <Modal.Body>
                         <ProfileForm 
-                        loading={this.state.loading} 
-                        submitAction={(postObj) => this.updateProfile(postObj)} 
-                        id = {this.state.id}
-                        profileimg = {this.state.profileimg}
-                        bio = {this.state.bio}
-                        detail =  {this.state.detail}
-                        title = {this.state.title}
+                        loading={this.props.loading} 
+                        submitAction={(postObj) => this.props.submitAction(postObj)} 
+                        id = {this.props.id}
+                        profileimg = {this.props.profileimg}
+                        bio = {this.props.bio}
+                        detail =  {this.props.detail}
+                        title = {this.props.title}
                         />
                         {/*: null */}
                         
