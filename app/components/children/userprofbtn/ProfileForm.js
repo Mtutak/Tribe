@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Geo } from '../form/Geo';
-// import { Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 
 class ProfileForm extends React.Component {
 
@@ -13,19 +13,16 @@ class ProfileForm extends React.Component {
     this.setState(newState);
   }
 
-  handleSubmitForm(event) {
-    console.log(this.props.loading);
-    console.log('success!');
-    event.preventDefault();
-    console.log(this.state);
-    // this.setState({showModal: !this.state.showModal});
+    handleSubmitForm(event) {
+        console.log(this.props.loading);
+        console.log('success!');
+        event.preventDefault();
+        console.log(this.state);
+        this.setState({showModal: !this.state.showModal});
     {/* this is found in CreateProject Component */}
-    this.props.submitAction(this.state);
-  }
+        this.props.submitAction(this.state);
+        }
 
-//    close() {
-//         this.setState({ showModal: false });
-//     }
 
 
   // Initial State
@@ -44,7 +41,21 @@ class ProfileForm extends React.Component {
 
   componentWillMount() {
     this.initializeState();
+    this.setState({
+        showModal: false
+    });
   }
+
+   close() {
+     this.setState({ showModal: false });
+   } 
+
+
+//   componentWillMount() {
+//     this.setState({
+//         showModal: false
+//             });
+//         }
 
   render() {
     return (
@@ -116,14 +127,14 @@ class ProfileForm extends React.Component {
                                 </div></center>*/}
                             </div>
                             {/* Update Loading Cursor with this.props.loading bool */}
-                            {/*<button 
+                            <button 
                                 type="primary"
                                 className="button-medium save-profile-btn" 
                                 onClick={() => this.close()}
                                 id="contact-submit"                                 
                                 name="contact">
                                 SAVE
-                            </button>*/}
+                            </button>
                            
                         </div>
                     </fieldset>
@@ -151,6 +162,6 @@ ProfileForm.propTypes = {
   bio: React.PropTypes.string,
   detail: React.PropTypes.string,
   title: React.PropTypes.string
-};
+}; 
 
 export { ProfileForm };

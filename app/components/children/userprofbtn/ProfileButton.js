@@ -12,6 +12,7 @@ class ProfileButton extends React.Component {
             // this.setState({formVisible: !this.state.formVisible});
             this.setState({showModal: !this.state.showModal});
         }
+       
         // Initial State       
         componentWillMount() {
             this.setState({
@@ -54,14 +55,6 @@ class ProfileButton extends React.Component {
                         detail =  {this.props.detail}
                         title = {this.props.title}
                         />
-                           <button 
-                                type="primary"
-                                className="button-medium save-profile-btn" 
-                                onClick={() => this.close()}
-                                id="contact-submit"                                 
-                                name="contact">
-                                SAVE
-                            </button>
                         {/*: null */}
                         
                         </Modal.Body>
@@ -72,14 +65,10 @@ class ProfileButton extends React.Component {
                     </Modal>
                 
                 </div>
-                /*{
-                    /*this.state.formVisible*/
-                    /*this.state.showModal
-                        ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)}/>
-                        : null
-                    }
-                </div>*/
+            
             );
         }
 }
+
+
 export  { ProfileButton };
