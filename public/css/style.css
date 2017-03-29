@@ -868,6 +868,10 @@ form element
     height: 275px;
 }
 
+#connections-box {
+    height: 120px;
+}
+
 .form-bottom {
     padding-bottom: 50px;
 }
