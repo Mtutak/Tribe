@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Geo } from '../form/Geo';
+import { Modal } from 'react-bootstrap';
 
 class ProfileForm extends React.Component {
 
@@ -12,14 +13,16 @@ class ProfileForm extends React.Component {
     this.setState(newState);
   }
 
-  handleSubmitForm(event) {
-    console.log(this.props.loading);
-    console.log('success!');
-    event.preventDefault();
-    console.log(this.state);
+    handleSubmitForm(event) {
+        console.log(this.props.loading);
+        console.log('success!');
+        event.preventDefault();
+        console.log(this.state);
     {/* this is found in CreateProject Component */}
-    this.props.submitAction(this.state);
-  }
+        this.props.submitAction(this.state);
+        }
+
+
 
   // Initial State
 
@@ -39,6 +42,13 @@ class ProfileForm extends React.Component {
   componentWillMount() {
     this.initializeState();
   }
+
+
+//   componentWillMount() {
+//     this.setState({
+//         showModal: false
+//             });
+//         }
 
   render() {
     return (
@@ -114,6 +124,7 @@ class ProfileForm extends React.Component {
                             <button 
                                 type="primary"
                                 className="button-medium save-profile-btn" 
+                                onClick={(event) => this.handleSubmitForm(event)}
                                 id="contact-submit"                                 
                                 name="contact">
                                 SAVE
@@ -147,5 +158,6 @@ ProfileForm.propTypes = {
   title: React.PropTypes.string,
   location: React.PropTypes.string
 };
+
 
 export { ProfileForm };

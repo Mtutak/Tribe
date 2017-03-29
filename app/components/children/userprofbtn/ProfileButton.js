@@ -1,17 +1,18 @@
 import * as React from 'react';
 import { ProfileForm } from './ProfileForm';
-import { notification } from 'antd';
+// import { notification } from 'antd';
 import { Modal } from 'react-bootstrap';
 import * as axios from 'axios'; // axios should be replaced with helpers
 import { helpers } from '../../utils/helpers';
 import Auth from '../../../modules/localAuth';
 
 class ProfileButton extends React.Component {
-        handleClick(event) {
-            event.preventDefault();
+        handleSubmit(data) {
             // this.setState({formVisible: !this.state.formVisible});
-            this.setState({showModal: !this.state.showModal});
+            this.close();
+            this.props.submitAction(data);
         }
+       
         // Initial State       
         componentWillMount() {
             this.setState({
@@ -47,7 +48,7 @@ class ProfileButton extends React.Component {
                         <Modal.Body>
                         <ProfileForm 
                         loading={this.props.loading} 
-                        submitAction={(postObj) => this.props.submitAction(postObj)} 
+                        submitAction={(postObj) => this.handleSubmit(postObj)} 
                         id = {this.props.id}
                         profileimg = {this.props.profileimg}
                         bio = {this.props.bio}
@@ -65,14 +66,10 @@ class ProfileButton extends React.Component {
                     </Modal>
                 
                 </div>
-                /*{
-                    /*this.state.formVisible*/
-                    /*this.state.showModal
-                        ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)}/>
-                        : null
-                    }
-                </div>*/
+            
             );
         }
 }
+
+
 export  { ProfileButton };

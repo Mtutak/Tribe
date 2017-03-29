@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Header } from '../children/Header';
 import { Form } from '../children/Form';
-import { notification } from 'antd';
+// import { notification } from 'antd';
 import * as axios from 'axios'; // axios should be replaced with helpers
 import { helpers } from '../utils/helpers';
 import Auth from '../../modules/localAuth';
@@ -26,19 +26,19 @@ class CreateProject extends React.Component {
     this.context.router.push('posts');
   }
 
-  sendSuccessNotification() {
-    notification['success']({
-      message: 'Yayyy!!',
-      description: 'Your post has been created.',
-    });
-  }
+  // sendSuccessNotification() {
+  //   notification['success']({
+  //     message: 'Yayyy!!',
+  //     description: 'Your post has been created.',
+  //   });
+  // }
 
-  sendErrorNotification() {
-    notification['error']({
-      message: 'Uh Oh',
-      description: 'Something went wrong, please try again.',
-    });
-  }
+  // sendErrorNotification() {
+  //   notification['error']({
+  //     message: 'Uh Oh',
+  //     description: 'Something went wrong, please try again.',
+  //   });
+  // }
 
   // Data Request Methods
 
@@ -78,6 +78,7 @@ class CreateProject extends React.Component {
   componentWillMount() {
     this.initializeState();
   }
+
   
   componentDidMount(){
 
