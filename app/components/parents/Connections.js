@@ -178,13 +178,13 @@ class Connections extends React.Component {
 
 
 
-          </Card>
+          </Card></center>
 
                 <div className="container text-center">
                         <h3 className="title">Connections Awaiting Meetup</h3>
                 </div>
 
-          <Card className="container">
+          <center><Card className="container card-container">
                
              {this.state.connectionsPending.map(function(search, i) {
                   return (
@@ -226,12 +226,11 @@ class Connections extends React.Component {
                 })}
 
 
-          </Card>
+          </Card></center>
 
           {this.props.children}
 
 
-          </Card></center>
 
 	        </div>
         </div>
