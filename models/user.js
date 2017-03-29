@@ -21,6 +21,9 @@ const UserSchema = new mongoose.Schema({
   location: { 
   	type: String,
   },
+   profileimg: {
+    type: String
+  },
   connections: [{
     // Store ObjectIds in the array
     type: Schema.Types.ObjectId,
