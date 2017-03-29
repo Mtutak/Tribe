@@ -181,7 +181,7 @@ class Connections extends React.Component {
           </Card></center>
 
                 <div className="container text-center">
-                        <h3 className="title">Connections Awaiting Meetup</h3>
+                        <h3 className="title awaiting-meetup">Awaiting Meetup</h3>
                 </div>
 
           <center><Card className="container card-container">
