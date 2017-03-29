@@ -11,7 +11,8 @@ class Connections extends React.Component {
 
       this.setState({
         connectionsMade: [],
-        connectionsAvailable: []
+        connectionsAvailable: [],
+        connectionsPending: []
       });
     }
 
@@ -57,9 +58,29 @@ class Connections extends React.Component {
 
     }
 
+    getPendingConnections(){
+
+    const xhr = new XMLHttpRequest();
+    xhr.open('get', '/api/connections/pending');
+    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    // set the authorization HTTP header
+    xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', () => {
+      if (xhr.status === 200) {
+        this.setState({
+          connectionsPending: xhr.response.pendingConnections
+        });
+      }
+    });
+    xhr.send();
+
+    }
+
     componentDidMount(){
 
       this.getUsersConnections();
+      this.getPendingConnections();
       this.getAvailableConnections();
 
     }
@@ -155,7 +176,63 @@ class Connections extends React.Component {
                 </div>
                 </div>
 
+
+
+          </Card>
+
+                <div className="container text-center">
+                        <h3 className="title">Connections Awaiting Meetup</h3>
+                </div>
+
+          <Card className="container">
+               
+             {this.state.connectionsPending.map(function(search, i) {
+                  return (
+                    <div key={search.id}>
+
+                           
+                           <Link 
+                            to={
+                                { 
+                                  pathname: '/friendsProfile/query', 
+                                  query: { 
+                                    friend: search._id 
+                                  } 
+                                }
+                              } 
+                            activeClassName='active' >
+
+                            <h2>{search.name}</h2>
+
+                            </Link>
+
+                           <h4>{search.email}</h4>
+
+                            <Link 
+                            to={
+                                { 
+                                  pathname: '/connections/query', 
+                                  query: { 
+                                    friend: search._id 
+                                  } 
+                                }
+                              } 
+                            activeClassName='active' > 
+                              <h5>LINK UP!</h5>
+                            </Link>
+                        <br />
+                      </div>
+                  );
+                })}
+
+
+          </Card>
+
+          {this.props.children}
+
+
           </Card></center>
+
 	        </div>
         </div>
         );
