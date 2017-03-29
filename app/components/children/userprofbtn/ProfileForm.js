@@ -18,7 +18,6 @@ class ProfileForm extends React.Component {
         console.log('success!');
         event.preventDefault();
         console.log(this.state);
-        this.setState({showModal: !this.state.showModal});
     {/* this is found in CreateProject Component */}
         this.props.submitAction(this.state);
         }
@@ -41,14 +40,7 @@ class ProfileForm extends React.Component {
 
   componentWillMount() {
     this.initializeState();
-    this.setState({
-        showModal: false
-    });
   }
-
-   close() {
-     this.setState({ showModal: false });
-   } 
 
 
 //   componentWillMount() {
@@ -130,7 +122,7 @@ class ProfileForm extends React.Component {
                             <button 
                                 type="primary"
                                 className="button-medium save-profile-btn" 
-                                onClick={() => this.close()}
+                                onClick={(event) => this.handleSubmitForm(event)}
                                 id="contact-submit"                                 
                                 name="contact">
                                 SAVE

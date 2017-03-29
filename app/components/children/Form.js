@@ -36,23 +36,9 @@ class Form extends React.Component {
       location: '',
       title: this.props.defaultTitle || '',
       category: this.props.defaultCategory || '',
-      detail: '',
-      message: ''
+      detail: ''
     });
   }
-
-  handleSubmitForm(event) {
-        console.log(this.props.loading);
-        console.log('success!');
-        event.preventDefault();
-        console.log(this.state);
-        this.setState({
-            location: '',
-            title:
-
-    {/* this is found in CreateProject Component */}
-        this.props.submitAction(this.state);
-        }
 
   // Lifecycle Methods
 
@@ -160,3 +146,4 @@ Form.propTypes = {
 };
 
 export { Form };
+

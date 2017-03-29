@@ -7,10 +7,10 @@ import { helpers } from '../../utils/helpers';
 import Auth from '../../../modules/localAuth';
 
 class ProfileButton extends React.Component {
-        handleClick(event) {
-            event.preventDefault();
+        handleSubmit(data) {
             // this.setState({formVisible: !this.state.formVisible});
-            this.setState({showModal: !this.state.showModal});
+            this.close();
+            this.props.submitAction(data);
         }
        
         // Initial State       
@@ -48,7 +48,7 @@ class ProfileButton extends React.Component {
                         <Modal.Body>
                         <ProfileForm 
                         loading={this.props.loading} 
-                        submitAction={(postObj) => this.props.submitAction(postObj)} 
+                        submitAction={(postObj) => this.handleSubmit(postObj)} 
                         id = {this.props.id}
                         profileimg = {this.props.profileimg}
                         bio = {this.props.bio}
