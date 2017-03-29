@@ -35,10 +35,13 @@ Header
     background-color: #fff;
     border-color: rgba(231, 231, 231, 0.33);
     padding: 20px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
-    color: #354242;
+    color: #e43c5c;
     background-color: #fff;
 }
 .navbar-nav {
@@ -135,7 +138,8 @@ a.btn-banner:hover, a.btn-banner:focus
 }
 .bold
 {
-    font-weight: bold;
+    /*font-weight: bold;*/
+    font-family: 'Rock Salt', cursive;
 }
 .bor-btm
 {
@@ -150,6 +154,7 @@ a.btn-banner:hover, a.btn-banner:focus
     border-width: 0px;
     margin: 0px;
     padding: 0px;
+    padding-top: 20px;
     font-family: 'Raleway', sans-serif;
     font-size: 62px;
     letter-spacing: 6px;
@@ -338,15 +343,16 @@ margin-top: 5px;
 /* Contact Form */ 
 .text-field-box {
     background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 40px;
-    height: 60px;
-    line-height: 60px;
+    /*border: 1px solid #ddd;*/
+    border-radius: .4em;
+    border-color: grey;
+    /*height: 60px;*/
+    line-height: 25px;
     text-align: left;
-    color: #666;
+    color: black;
     font-size: 14px;
-    padding: 0 35px;
-    margin-bottom: 30px;
+    padding: 7px 15px;
+    margin-bottom: 15px;
     width: 100%;
     outline: none;
     appearance: none;
@@ -394,15 +400,14 @@ margin-top: 5px;
     color: #ffffff;
     cursor: pointer;
     display: block;
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Raleway', sans-serif;
     font-size: 18px;
     font-weight: 400;
-    height: 48px;
-    line-height: 48px;
+    height: 40px;
     margin: 0 auto;
     overflow: hidden;
     text-align: center;
-    width: 200px;
+    width: 100px;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -414,6 +419,11 @@ margin-top: 5px;
     -ms-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
+
+button:active {
+    color: #e43c5c;
+}
+
 .footer {
     background-color: #040E18;
 }
@@ -612,7 +622,7 @@ form element
     font-family: 'Rock Salt', cursive;
     color: #e43c5c;
     font-size: 45px;
-    margin-top: 30px;
+    margin-top: 50px;
 }
 
 .description-style {
@@ -621,15 +631,21 @@ form element
     font-family: 'Open Sans', sans-serif;
 }
 
+.description-style-line {
+    color: #6f6f6f;
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .header-height {
     height: 75px;
 }
 
-.location {
-    width: 200px;
+/*.location {
+    width: 65%;
     border-radius: 20px;
     right: 7.5%;
-}
+}*/
 
 .nav-style {
     width: 50%;
@@ -641,19 +657,29 @@ form element
     min-height: 100%;
     width: 100%;
     height: auto;
-    position: fixed;
+    position: absolute;
+}
+
+#user-bg {
+    background-color: black;
+    background-size: cover;
+    min-height: 100%;
+    width: 100%;
+    height: auto;
+    position: absolute;
 }
 
 .firstname {
     color: white;
-    font-size: 80px;
+    font-size: 500%;
     margin-top: 130px;
     font-family: 'Rock Salt', cursive;
+    text-align: center;
 }
 
 .lastname {
     color: white;
-    font-size: 80px;
+    font-size: 500%;
     margin-top: 130px;
     font-family: 'Rock Salt', cursive;
     text-align: center;
@@ -698,7 +724,7 @@ form element
 
 .edit-me {
     background-color: black;
-    margin-top: 20px;
+    /*margin-top: 20px;*/
     /*border: 1px solid #ffffff;*/
     padding: 12px 22px;
     line-height: 0px;
@@ -710,4 +736,262 @@ form element
     color: #ffffff;
     letter-spacing: 1px;
     display: inline-block;
+}
+
+.connections-bg {
+    background-color: black;
+}
+
+.title {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 92px
+}
+
+.title-showcase {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    padding-top: 35px;
+    font-size: 99px;
+}
+
+.card-container {
+    background-color: black !important;
+}
+
+.connections-name {
+    color: #e43c5c;
+    font-family: 'Rock Salt', cursive;
+}
+
+.connections-email {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.location-heading {
+    font-family: 'Raleway', sans-serif;
+    color: #e43c5c;
+}
+
+.edit-profile {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+}
+
+.form-fonts {
+    font-family: 'Open Sans', sans-serif;
+    color: black;
+    border-radius: .4em; 
+}
+
+.showcase-projects {
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    font-size: 99px;
+    padding-top: 35px;
+}
+
+.save-profile-btn {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.newposts-heading {
+    font-family: 'Raleway', sans-serif;
+    font-size: 99px;
+    text-align: center;
+    color: white;
+}
+
+.create-project-heading {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+.recruiting-p {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+}
+
+.pink-tribe {
+    color: #e43c5c;
+    font-family: 'Rock Salt', cursive;
+}
+
+.project-btn {
+    width: 200px;
+    margin-top: 20px;
+}
+
+.project-form {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.project-title {
+    color: #e43c5c;
+    font-family: 'Rock Salt', cursive;
+    padding-top: 20px;
+}
+
+.project-location {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 10px;
+    margin-top: 0px;
+    font-size: 15px;
+}
+
+.project-summary {
+    color: yellow;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 10px;
+    font-size: 20px;
+}
+
+.project-details {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 0px;
+    font-size: 20px;
+}
+
+.all-projects-heading {
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 99px;
+}
+
+.title-input {
+    width: 50%;
+}
+
+.needed-input {
+    width: 50%;
+}
+
+#post-box {
+    height: 275px;
+}
+
+#connections-box {
+    height: 120px;
+}
+
+.form-bottom {
+    padding-bottom: 50px;
+}
+
+body {
+    color: white !important;
+}
+
+.content {
+      width: 400px;
+      margin: 0 auto;
+      padding: 1em;
+    }
+    .location {
+      width: 50%;
+      padding: 7px 15px;
+      font-size: 1em;
+      outline: none;
+      border-radius: .4em;
+      border: solid 1px grey;
+    }
+    .location:focus {
+      border: solid 2px white;
+    }
+    [hidden] { display: none; }
+    .visually-hidden {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+    }
+    div.awesomplete {
+      display: block;
+      position: relative;
+      height: 30px;
+    }
+    div.awesomplete > ul {
+      position: relative;
+      left: 0;
+      z-index: 1;
+      min-width: 60%;
+      box-sizing: border-box;
+      list-style: none;
+      padding: 0;
+      border-radius: .3em;
+      margin: .2em 0 0;
+      background: black;
+      /*background: linear-gradient(to bottom right, white, hsla(0,0%,100%,.8));*/
+      border: 1px solid rgba(0,0,0,.3);
+      box-shadow: .05em .2em .6em rgba(0,0,0,.2);
+      text-shadow: none;
+    }
+    div.awesomplete > ul[hidden],
+    div.awesomplete > ul:empty {
+      display: none;
+    }
+    @supports (transform: scale(0)) {
+      div.awesomplete > ul {
+        transition: .3s cubic-bezier(.4,.2,.5,1.4);
+        transform-origin: 1.43em -.43em;
+      }
+      
+      div.awesomplete > ul[hidden],
+      div.awesomplete > ul:empty {
+        opacity: 0;
+        transform: scale(0);
+        display: block;
+        transition-timing-function: ease;
+      }
+    }
+
+ div.awesomplete > ul:before {
+        content: "";
+        position: absolute;
+        top: -.43em;
+        left: 1em;
+        width: 0; height: 0;
+        /*padding: .4em;*/
+        background: white;
+        border: inherit;
+        border-right: 0;
+        border-bottom: 0;
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+      div.awesomplete > ul > li {
+        position: relative;
+        text-align: left;
+        padding: .2em .5em;
+        cursor: pointer;
+      }
+      
+      div.awesomplete > ul > li:hover {
+        background: palevioletred;
+        color: black;
+      }
+      
+      div.awesomplete > ul > li[aria-selected="true"] {
+        background: palevioletred;
+        color: white;
+      }
+      
+        div.awesomplete mark {
+          background: #e43c5c;
+        }
+        
+        div.awesomplete li:hover mark {
+          background: #e43c5c;
+        }
+        
+        div.awesomplete li[aria-selected="true"] mark {
+          background: hsl(86, 100%, 21%);
+          color: inherit;
+        }
+.close-button {
+    background-color: white;
+    color: black;
+    font-family: 'Open Sans', sans-serif;
 }

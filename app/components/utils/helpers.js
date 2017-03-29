@@ -35,7 +35,21 @@ var helpers = {
     console.log('Post Project Helper hit!');
     return axios.post("/projects/new", { data });
 
+  },
+  getAllProjects: function() {
+    console.log('Hit Get All Projects Helper');
+    return axios.get("/projects");
+  },
+  // getUserProfile:function(data) {
+  //   console.log('Hit Get User Profile Helper');
+  //   return axios.get("/user/data");
+  // },
+  updateUserProfile: function(id, data) {
+    console.log('Hit Update User Helper');
+    console.log(data);
+    return axios.post(`/user/${id}/update`, { data });
   }
+
 };
 
 // We export the API helper

@@ -2,6 +2,14 @@ import * as React from 'react';
 import { Geo } from './form/Geo';
 
 class Form extends React.Component {
+    
+    onLocationSet(data) {
+        console.log(data);
+        // data.description
+        // data.coords.lat
+        // data.coords.lng
+
+    };
 
   // Form Event Handlers
 
@@ -25,6 +33,7 @@ class Form extends React.Component {
 
   initializeState() {
     this.setState({
+      location: '',
       title: this.props.defaultTitle || '',
       category: this.props.defaultCategory || '',
       detail: ''
@@ -45,10 +54,10 @@ class Form extends React.Component {
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
                         <div className="page-title text-center">
-					<center><h1>Create your Project, Find your Tribe:</h1></center>
-					<center><p>List a current project that you are recruiting for:</p></center>
+					<center><h1 className="create-project-heading">Create your Project:</h1></center>
+					<center><p className="recruiting-p">List a current project that you are recruiting for:</p></center>
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
-                    <Geo />
+                    <Geo onChange={(event) => this.updateInput(event)} onLocationSet={this.onLocationSet}/>
 				        </div>
                 
                         {/*<div className="form-top">
@@ -59,33 +68,34 @@ class Form extends React.Component {
                         <div className="form-bottom">
                             <div className="row">
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='Title'>Project Title:</label><br/>
+                                    <label htmlFor='Title' className='project-form'>Project Title:</label><br/>
                                     <center><input 
-                                    className='form-control text-field-box' 
+                                    className='form-control title-input' 
                                     placeholder="Idea Here"
                                     id='title'
                                     type='text'
+                                    maxLength="15"
                                     onChange={(event) => this.updateInput(event)}
                                     defaultValue={this.props.defaultTitle}
                                     required
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='category'>Project Summary:</label><br/>
+                                    <label htmlFor='category' className='project-form'>Needed:</label><br/>
                                    <center><textarea 
                                     id='category'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
                                     rows="1"
                                     cols="2"
-                                    maxLength="50"
+                                    maxLength="20"
                                     required
-                                    className="form-control text-field-box" 
-                                    placeholder="Brief Intro to your Project"
+                                    className="form-control needed-input" 
+                                    placeholder="Type of Artist Needed"
                                     /></center>
                                 </div></center>
                                 <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='detail'>Details:</label><br/>
+                                    <label htmlFor='detail' className='project-form'>Details:</label><br/>
                                    <center><textarea 
                                     id='detail'
                                     type='text'
@@ -93,10 +103,10 @@ class Form extends React.Component {
                                     defaultValue={this.props.defaultCategory}
                                     rows="2"
                                     cols="2"
-                                    maxLength="250"
+                                    maxLength="150"
                                     required
-                                    className="form-control text-field-box" 
-                                    placeholder="This information will only be viewable by users you have met. Provide detail on your project and talents needed"
+                                    className="form-control details-input" 
+                                    placeholder="Provide brief details about your project."
                                     /></center>
                                 </div></center>
                                 
@@ -104,7 +114,7 @@ class Form extends React.Component {
                             {/* Update Loading Cursor with this.props.loading bool */}
                             <button 
                                 type="primary"
-                                className="button-medium" 
+                                className="button-medium project-btn" 
                                 id="contact-submit" 
                                 loading={this.props.loading} 
                                 htmlType="submit" 

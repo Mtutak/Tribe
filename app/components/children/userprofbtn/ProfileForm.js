@@ -25,9 +25,11 @@ class ProfileForm extends React.Component {
 
   initializeState() {
     this.setState({
-      title: this.props.defaultTitle || '',
-      bio: this.props.defaultbio || '',
-      detail: ''
+      id: this.props.id || '',
+      title: this.props.title || '',
+      bio: this.props.bio || '',
+      detail: this.props.detail || '',
+      profileimg: this.props.profileimg || ''
     });
   }
 
@@ -40,55 +42,63 @@ class ProfileForm extends React.Component {
   render() {
     return (
         <div id="contact" className="section-padding">
-		<div className="container">
-			<div className="row">
+		{/*<div className="container">
+			<div className="row">*/}
                 <form role="form" className="registration-form" onSubmit={(event) => this.handleSubmitForm(event)}>
                     <fieldset>
                         <div className="page-title text-center">
-					<center><h1>Edit Your Profile: </h1></center>
+					<center><h1 className="edit-profile">Edit Your Profile: </h1></center>
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
-                        {/*<div className="form-top">
-                                <h3><span><i className="fa fa-calendar-check-o" aria-hidden="true"></i></span>Create Your Tribe</h3>
-                                <p>Enter Your Project Details Below</p>
-                                {/* Included Geo Component for react-place autofill */}
-                        {/*</div>*/}
+                        
                         <div className="form-bottom">
                             <div className="row">
-                                <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='title'>One Liner:</label><br/>
+                                 <center><div className="col-lg-12 form-group">
+                                    <label htmlFor='profileimg' className="form-fonts">Profile Image:</label><br/>
                                     <center><input 
-                                    className='form-control text-field-box' 
+                                    className='form-control text-field-box form-fonts' 
+                                    id='profileimg'
+                                    type='text'
+                                     placeholder="Enter a link for your profile image"
+                                    onChange={(event) => this.updateInput(event)}
+                                    required
+                                    /></center>
+                                 </div></center>
+                                <center><div className="col-lg-12 form-group">
+                                    <label htmlFor='title' className="form-fonts">Job:</label><br/>
+                                    <center><input 
+                                    className='form-control text-field-box form-fonts' 
                                     placeholder="It was all a dream..."
                                     id='title'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
-                                    defaultValue={this.props.defaultTitle}
+                                    defaultValue={this.props.title}
                                     required
                                     /></center>
-                                </div></center>
-                                <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='bio'>Bio:</label><br/>
+                                 </div></center>
+                                <center><div className="col-lg-12 form-group">
+                                    <label htmlFor='bio' className="form-fonts">One Liner:</label><br/>
                                    <center><textarea 
                                     id='bio'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
-                                    rows="1"
+                                    rows="2"
                                     cols="2"
                                     maxLength="50"
                                     required
                                     className="form-control text-field-box" 
                                     placeholder="I used to read Word Up magazine. Salt'n'Pepa and Heavy D up in the limousine"
+                                    defaultValue={this.props.bio}
                                     /></center>
                                 </div></center>
-                                <center><div className="col-md-6 col-md-offset-3 form-group">
-                                    <label htmlFor='detail'>Details:</label><br/>
+                                {/*<center><div className="col-lg-12 form-group">
+                                    <label htmlFor='detail' className="form-fonts">Details:</label><br/>
                                    <center><textarea 
                                     id='detail'
                                     type='text'
                                     onChange={(event) => this.updateInput(event)}
-                                    defaultValue={this.props.defaultbio}
+                                    defaultValue={this.props.detail}
                                     rows="2"
                                     cols="2"
                                     maxLength="250"
@@ -96,26 +106,23 @@ class ProfileForm extends React.Component {
                                     className="form-control text-field-box" 
                                     placeholder="Super Nintendo, Sega Genesis. When I was dead broke, man I couldn't picture this. 50 inch screen, money green leather sofa"
                                     /></center>
-                                </div></center>
-                                
+                                </div></center>*/}
                             </div>
                             {/* Update Loading Cursor with this.props.loading bool */}
                             <button 
                                 type="primary"
-                                className="button-medium" 
-                                id="contact-submit" 
-                                loading={this.props.loading} 
-                                htmlType="submit" 
+                                className="button-medium save-profile-btn" 
+                                id="contact-submit"                                 
                                 name="contact">
-                                Save My Profile
+                                SAVE
                             </button>
                            
                         </div>
                     </fieldset>
                 </form>
             </div>
-        </div>
-    </div>
+    //     </div>
+    // </div>
     );
   }
 }
@@ -130,7 +137,12 @@ ProfileForm.propTypes = {
   submitAction: React.PropTypes.func.isRequired,
   loading: React.PropTypes.bool,
   defaultTitle: React.PropTypes.string,
-  defaultbio: React.PropTypes.string
+  defaultbio: React.PropTypes.string,
+  id: React.PropTypes.string,
+  profileimg: React.PropTypes.string,
+  bio: React.PropTypes.string,
+  detail: React.PropTypes.string,
+  title: React.PropTypes.string
 };
 
 export { ProfileForm };

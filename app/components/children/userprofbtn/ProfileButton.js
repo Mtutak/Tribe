@@ -1,81 +1,77 @@
 import * as React from 'react';
 import { ProfileForm } from './ProfileForm';
 import { notification } from 'antd';
+import { Modal } from 'react-bootstrap';
 import * as axios from 'axios'; // axios should be replaced with helpers
-import helpers from '../../utils/helpers';
+import { helpers } from '../../utils/helpers';
 import Auth from '../../../modules/localAuth';
 
 class ProfileButton extends React.Component {
         handleClick(event) {
             event.preventDefault();
-            this.setState({formVisible: !this.state.formVisible});
+            // this.setState({formVisible: !this.state.formVisible});
+            this.setState({showModal: !this.state.showModal});
         }
-       // Initial State
-
-        initializeState() {
-            this.setState({ formVisible: false});
-        }
-
-        // Lifecycle Methods
-
+        // Initial State       
         componentWillMount() {
-            this.initializeState();
-        }
-
-        sendSuccessNotification() {
-            notification['success']({
-            message: 'Yayyy!!',
-            description: 'Your post has been created.',
+            this.setState({
+                showModal: false
             });
         }
-
-        sendErrorNotification() {
-            notification['error']({
-            message: 'Uh Oh',
-            description: 'Something went wrong, please try again.',
-            });
+        close() {
+            this.setState({ showModal: false });
         }
-
-        // Data Request Methods
-
-        postform(postObj) {
-            this.startLoading();
-            axios.post("/projects/new", { postObj });
-
-            // helpers.postProject(postObj).then(() => {
-            //     console.log('Post Form Success!');
-            //     this.sendSuccessNotification();
-            //     this.endLoading();
-            //     this.redirectToPosts();
-            //   })
-            //   .catch((error) => {
-            //     console.log('Error With Post Form Project')
-            //     this.sendErrorNotification();
-            //     this.endLoading();
-            //   }).bind(this);
+        open() {
+            this.setState({ showModal:true });
+        }        
+        render() {
+            return (
+                <div>
+                <center>
+                    <button
+                        onClick={() => this.open()}
+                        className="btn edit-me" 
+                        id="userProfileForm" 
+                        type="submit"
+                        name="contact"
+                    >
+                    Edit My Profile
+                    </button>
+                </center>
+                
+                    <Modal show={this.state.showModal} onHide={() => this.close()}>
+                        <Modal.Header closeButton>
+                            <Modal.Title></Modal.Title>
+                        </Modal.Header>
+                        {
+                        <Modal.Body>
+                        <ProfileForm 
+                        loading={this.props.loading} 
+                        submitAction={(postObj) => this.props.submitAction(postObj)} 
+                        id = {this.props.id}
+                        profileimg = {this.props.profileimg}
+                        bio = {this.props.bio}
+                        detail =  {this.props.detail}
+                        title = {this.props.title}
+                        />
+                        {/*: null */}
+                        
+                        </Modal.Body>
+                        }
+                        <Modal.Footer>
+                            <button className="close-button" onClick={() => this.close()}>Close</button>
+                        </Modal.Footer>
+                    </Modal>
+                
+                </div>
+                /*{
+                    /*this.state.formVisible*/
+                    /*this.state.showModal
+                        ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)}/>
+                        : null
+                    }
+                </div>*/
+            );
         }
-    render() {
-        return (
-        <div>
-           <center><button 
-                onClick={(event) => this.handleClick(event)} 
-                className="btn edit-me" 
-                id="userProfileForm" 
-                type="submit"
-                name="contact"
-            >
-            Edit My Profile
-            </button></center>
-            {
-            this.state.formVisible
-                ? <ProfileForm loading={this.state.loading} submitAction={(postObj) => this.postform(postObj)}/>
-                : null
-            }
-        </div>
-        )
-    }
 }
-
-
-
 export  { ProfileButton };
