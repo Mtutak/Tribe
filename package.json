@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Get Connected",
   "main": "public/index.html",
+  "engines": {
+    "node": "7.7.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack & node server",
