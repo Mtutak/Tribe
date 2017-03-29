@@ -878,9 +878,9 @@ form element
     height: 120px;
 }
 
-.form-bottom {
-    padding-bottom: 50px;
-}
+/*.form-bottom {
+    padding-bottom: 30px;
+}*/
 
 body {
     color: white !important;
@@ -987,7 +987,7 @@ body {
         }
         
         div.awesomplete li[aria-selected="true"] mark {
-          background: hsl(86, 100%, 21%);
+          background: black;
           color: inherit;
         }
 .close-button {

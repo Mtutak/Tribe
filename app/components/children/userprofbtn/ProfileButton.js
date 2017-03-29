@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ProfileForm } from './ProfileForm';
-import { notification } from 'antd';
+// import { notification } from 'antd';
 import { Modal } from 'react-bootstrap';
 import * as axios from 'axios'; // axios should be replaced with helpers
 import { helpers } from '../../utils/helpers';
@@ -54,6 +54,14 @@ class ProfileButton extends React.Component {
                         detail =  {this.props.detail}
                         title = {this.props.title}
                         />
+                           <button 
+                                type="primary"
+                                className="button-medium save-profile-btn" 
+                                onClick={() => this.close()}
+                                id="contact-submit"                                 
+                                name="contact">
+                                SAVE
+                            </button>
                         {/*: null */}
                         
                         </Modal.Body>
