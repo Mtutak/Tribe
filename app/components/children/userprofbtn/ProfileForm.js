@@ -51,11 +51,7 @@ class ProfileForm extends React.Component {
 					<center><hr className="pg-titl-bdr-btm"></hr></center>
                     <Geo />
 				        </div>
-                        {/*<div className="form-top">
-                                <h3><span><i className="fa fa-calendar-check-o" aria-hidden="true"></i></span>Create Your Tribe</h3>
-                                <p>Enter Your Project Details Below</p>
-                                {/* Included Geo Component for react-place autofill */}
-                        {/*</div>*/}
+                        
                         <div className="form-bottom">
                             <div className="row">
                                  <center><div className="col-lg-12 form-group">
@@ -111,7 +107,6 @@ class ProfileForm extends React.Component {
                                     placeholder="Super Nintendo, Sega Genesis. When I was dead broke, man I couldn't picture this. 50 inch screen, money green leather sofa"
                                     /></center>
                                 </div></center>*/}
-                                
                             </div>
                             {/* Update Loading Cursor with this.props.loading bool */}
                             <button 
