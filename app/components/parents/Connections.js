@@ -185,9 +185,13 @@ class Connections extends React.Component {
                 </div>
 
           <center><Card className="container card-container">
-               
+                <div className="row">
+                 <div className="col-lg-12">
+                   <div className="row">
+
              {this.state.connectionsPending.map(function(search, i) {
                   return (
+                    <div className="col-lg-4" id="connections-box">
                     <div key={search.id}>
 
                            
@@ -222,9 +226,13 @@ class Connections extends React.Component {
                             </Link>
                         <br />
                       </div>
+                      </div>
                   );
                 })}
-
+                </div>
+                </div>
+                </div>
+                
 
           </Card></center>
 
