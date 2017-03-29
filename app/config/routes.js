@@ -12,6 +12,8 @@ import LoginPage from '../components/parents/LoginPage';
 import SignUpPage from '../components/parents/SignUpPage';
 import DashboardPage from '../components/parents/DashboardPage';
 import FriendsPage from '../components/parents/FriendsProfile';
+import MeetInstructionsPage from '../components/parents/MeetInstructionsPage';
+import PairInstructionsPage from '../components/parents/PairInstructionsPage';
 import FriendsPageComponents from '../components/children/friendsProfComps';
 import Auth from '../modules/localAuth';
 import { Link } from 'react-router';
@@ -90,9 +92,42 @@ const routes = {
 
     {
       path: '/connections',
+      component: Connections,
+      childRoutes: [
+        {
+          path:'query', 
+          component: PairInstructionsPage
+        }
+      ]
+    },
+
+    {
+      path: '/meet',
       getComponent: (location, callback) => {
         if (Auth.isUserAuthenticated()) {
-          callback(null, Connections);
+          callback(null, MeetInstructionsPage);
+        } else {
+          callback(null, LoginPage);
+        }
+      }
+    },
+
+    // {
+    //   path: '/pair',
+    //   component: FriendsPage,
+    //   childRoutes: [
+    //     {
+    //       path:'query', 
+    //       component: FriendsPageComponents
+    //     }
+    //   ]
+    // },
+
+    {
+      path: '/pair',
+      getComponent: (location, callback) => {
+        if (Auth.isUserAuthenticated()) {
+          callback(null, PairInstructionsPage);
         } else {
           callback(null, LoginPage);
         }
