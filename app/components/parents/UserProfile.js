@@ -148,7 +148,7 @@ class UserProfile extends React.Component {
                     </div>
 
                     <div>
-                        <center><h3 className="line-adjustment description-style">{this.state.bio}</h3></center>
+                        <center><h3 className="line-adjustment description-style-line">{this.state.bio}</h3></center>
                     </div>
 
                     <hr />
