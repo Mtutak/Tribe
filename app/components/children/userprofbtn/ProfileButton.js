@@ -54,6 +54,7 @@ class ProfileButton extends React.Component {
                         bio = {this.props.bio}
                         detail =  {this.props.detail}
                         title = {this.props.title}
+                        location = {this.props.location}
                         />
                         {/*: null */}
                         

@@ -866,6 +866,10 @@ form element
     width: 50%;
 }
 
+.awaiting-meetup {
+    font-size: 92px;
+}
+
 .needed-input {
     width: 50%;
 }

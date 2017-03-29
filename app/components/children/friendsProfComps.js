@@ -18,6 +18,26 @@ class FriendsProfileComponents extends React.Component {
       this.initializeState();
     }
 
+    addToPendingConnections(event) {
+        // event.preventDefault();
+      // console.log(this);
+        const who = this.props.location.query.friend;
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('post', '/api/friendRequest');
+        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        // set the authorization HTTP header
+        xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+        xhr.responseType = 'json';
+        // xhr.addEventListener('load', () => {
+        //   if (xhr.status === 200) {
+        //     console.log('success');
+
+        //   }
+        // });
+        xhr.send('id='+who); 
+    }
+
     getFriendsInfo(){
         const who = this.props.location.query.friend;
 
@@ -87,7 +107,7 @@ class FriendsProfileComponents extends React.Component {
                     <hr />
 
                     <div>
-                     <center><Link to="#" className="btn connect-me">Connect <i className="fa fa-handshake-o"></i></Link></center>
+                     <center><Link onClick={(event) => this.addToPendingConnections(event)} to='/meet' className="btn connect-me">Connect <i className="fa fa-handshake-o"></i></Link></center>
                     </div>
 
                     <div>
