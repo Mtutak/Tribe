@@ -13,7 +13,7 @@ import SignUpPage from '../components/parents/SignUpPage';
 import DashboardPage from '../components/parents/DashboardPage';
 import FriendsPage from '../components/parents/FriendsProfile';
 import MeetInstructionsPage from '../components/parents/MeetInstructionsPage';
-import PairInstructionsPage from '../components/parents/PairInstructionsPage';
+// import PairInstructionsPage from '../components/parents/PairInstructionsPage';
 import FriendsPageComponents from '../components/children/friendsProfComps';
 import Auth from '../modules/localAuth';
 import { Link } from 'react-router';
@@ -96,7 +96,7 @@ const routes = {
       childRoutes: [
         {
           path:'query', 
-          component: PairInstructionsPage
+          component: DashboardPage
         }
       ]
     },
