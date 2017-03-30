@@ -28,13 +28,15 @@ class ProfileForm extends React.Component {
 
   initializeState() {
     this.setState({
-      id: this.props.id || '',
+      id: this.props.id,
       title: this.props.title || '',
       bio: this.props.bio || '',
       detail: this.props.detail || '',
       profileimg: this.props.profileimg || '',
       location: this.props.location || ''
     });
+    console.log('id');
+    console.log(this.state.id);
   }
 
   // Lifecycle Methods

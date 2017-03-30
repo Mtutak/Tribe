@@ -210,11 +210,8 @@ app.get('/projects', function(req, res){
 	});
 
 	app.get('/projects/user', function(req, res){
+		var userID = req.body.data.id;
 			console.log('hit projects route!');
-			console.log(req.body);
-			console.log(req.body.data.title);
-			var userID = "58d1bd0d28594f86f2c4ba92";
-			
 				Project.find({userID})
 				.exec(function(error, doc){
 							console.log(doc);

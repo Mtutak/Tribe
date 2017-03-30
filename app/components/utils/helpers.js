@@ -33,6 +33,7 @@ var helpers = {
 // This function posts new searches to our database.
   postProject: function(data) {
     console.log('Post Project Helper hit!');
+    console.log(data);
     return axios.post("/projects/new", { data });
 
   },
