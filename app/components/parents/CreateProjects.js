@@ -5,6 +5,7 @@ import { Form } from '../children/Form';
 import * as axios from 'axios'; // axios should be replaced with helpers
 import { helpers } from '../utils/helpers';
 import Auth from '../../modules/localAuth';
+import { Link } from 'react-router';
 
 class CreateProject extends React.Component {
 

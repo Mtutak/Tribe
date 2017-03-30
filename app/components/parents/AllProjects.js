@@ -3,7 +3,7 @@ import { Header } from '../children/Header';
 import { Card, CardText } from 'material-ui/Card';
 import  { helpers } from '../utils/helpers';
 import Auth from '../../modules/localAuth';
-import { Link } from 'react-router';
+
 
 class AllProjects extends React.Component {
     initializeState() {
