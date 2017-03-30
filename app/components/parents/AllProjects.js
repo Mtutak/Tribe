@@ -35,10 +35,6 @@ class AllProjects extends React.Component {
       });
 
     }
-     getCreator(event) {
-      event.preventDefault();
-      console.log(event);
-    }
 
     componentDidMount(){
 
@@ -61,13 +57,13 @@ class AllProjects extends React.Component {
                    <div className="row">
 		         {this.state.allProjects.map(function(search, i) {
 	                return (
-                    <div className="col-lg-4" id="post-box" onClick={(event) => this.getCreator(event)}>
+                    <div className="col-lg-4" id="post-box" >
 	                  <div key={search._id}>
                       <Link to={
                         {
                           pathname: '/friendsProfile/query',
                           query: {
-                            friend: search._id
+                            friend: search.creator
                           }
                         }
                       }
