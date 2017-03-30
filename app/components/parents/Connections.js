@@ -4,6 +4,7 @@ import { Header } from '../children/Header';
 import ApiService from '../utils/helpers';
 import Auth from '../../modules/localAuth';
 import { Link } from 'react-router';
+import Dashboard from '../children/Dashboard';
 
 class Connections extends React.Component {
     
@@ -238,7 +239,7 @@ class Connections extends React.Component {
 
           {this.props.children}
 
-
+          {/*<Dashboard />*/}
 
 	        </div>
         </div>
