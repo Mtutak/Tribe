@@ -1,1 +1,4 @@
+python2.7
+make
+g++
 libbluetooth-dev
