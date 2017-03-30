@@ -19,11 +19,11 @@ module.exports = new PassportLocalStrategy({
 
   // console.log(userData);
 
-  // const newUser = new User(userData);
-  // newUser.save((err) => {
-  //   if (err) { return done(err); }
+  const newUser = new User(userData);
+  newUser.save((err) => {
+    if (err) { return done(err); }
 
-  //   return done(null);
-  // });
-      return done(null);
+    return done(null);
+  });
+      // return done(null);
 });
