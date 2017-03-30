@@ -5,7 +5,7 @@ import { Form } from '../children/Form';
 import * as axios from 'axios'; // axios should be replaced with helpers
 import { helpers } from '../utils/helpers';
 import Auth from '../../modules/localAuth';
-import { Link } from 'react-router';
+import { Router } from 'react-router';
 
 class CreateProject extends React.Component {
 
@@ -24,7 +24,9 @@ class CreateProject extends React.Component {
   }
 
   redirectToPosts() {
-    this.context.router.push('posts');
+    // console.log(÷);
+    this.props.router.push('/projects');
+    
   }
 
   // sendSuccessNotification() {
@@ -44,24 +46,26 @@ class CreateProject extends React.Component {
   // Data Request Methods
 
   postform(postObj) {
-    console.log('Hit create Project component');
+    // console.log('Hit create Project component');
     this.startLoading();
     // axios.post("/projects/new", { postObj });
 
     helpers.postProject(postObj).then(() => {
-        console.log('Post Form Success!');
-        this.sendSuccessNotification();
+        // console.log('Post Form Success!');
+        // this.sendSuccessNotification();
         this.endLoading();
+        this.redirectToPosts();
         // Loading icon
         // Redirect to explore page - > project 
         //Need notification 
         // this.redirectToPosts();
       })
       .catch((error) => {
-        console.log('Error With Post Form Project')
-        console.log(error);
-        this.sendErrorNotification();
+        // console.log('Error With Post Form Project')
+        // console.log(error);
+        // this.sendErrorNotification();
         this.endLoading();
+        console.log(error);
       });
   }
 
@@ -91,11 +95,11 @@ class CreateProject extends React.Component {
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
-        console.log(xhr.response.currentid);
+        // console.log(xhr.response.currentid);
         this.setState({
           currentid: xhr.response._id
         });
-        console.log(this.state.currentid);
+        // console.log(this.state.currentid);
       }
     });
     xhr.send();

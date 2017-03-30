@@ -4,7 +4,7 @@ import { Geo } from './form/Geo';
 class Form extends React.Component {
     
     onLocationSet(data) {
-        console.log(data);
+        // console.log(data);
         // data.description
         // data.coords.lat
         // data.coords.lng
@@ -14,17 +14,17 @@ class Form extends React.Component {
   // Form Event Handlers
 
   updateInput(event) {
-    console.log(event.target.value);
+    // console.log(event.target.value);
     const newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
   }
 
   handleSubmitForm(event) {
-    console.log(this.props.loading);
-    console.log('success!');
+    // console.log(this.props.loading);
+    // console.log('success!');
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
     {/* this is found in CreateProject Component */}
     this.props.submitAction(this.state);
   }
