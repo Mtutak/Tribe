@@ -27,6 +27,8 @@ class PairInstructions extends React.Component {
         deviceInfo['friendToAdd'] = this.props.location.query.friend;
         deviceInfo['loggedInUser'] = this.state.loggedUser;
 
+
+
         axios.post('/bluetooth/confirm', deviceInfo)
           .then((data) => {
             console.log(data.data);
@@ -104,6 +106,7 @@ class PairInstructions extends React.Component {
   componentWillMount() {
     this.initializeState();
     this.getMyInfo();
+    console.log(this);
   }  
   /**
    * Render the component.

@@ -24,6 +24,7 @@ class AllProjects extends React.Component {
         console.log('Successfully called helper');
         console.log(res);
         console.log(res.data);
+          console.log(res.data);
           this.setState({
           allProjects: res.data
         });

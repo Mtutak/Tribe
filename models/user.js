@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
+
+
+const bcrypt = require('bcrypt-nodejs');
+// var encrypt = require('mongoose-encryption');
 var Schema = mongoose.Schema;
 // define the User model schema
 const UserSchema = new mongoose.Schema({
@@ -63,10 +66,7 @@ UserSchema.pre('save', function saveHook(next) {
   if (!user.isModified('password')) return next();
 
 
-  return bcrypt.genSalt((saltError, salt) => {
-    if (saltError) { return next(saltError); }
-
-    return bcrypt.hash(user.password, salt, (hashError, hash) => {
+    return bcrypt.hash(user.password, null, null, function(hashError, hash){
       if (hashError) { return next(hashError); }
 
       // replace a password string with hash value
@@ -74,7 +74,7 @@ UserSchema.pre('save', function saveHook(next) {
 
       return next();
     });
-  });
+
 });
 
 
