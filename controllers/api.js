@@ -15,18 +15,17 @@ const router = new express.Router();
 	router.post('/friendsInfo', (req, res) => {
 
 		const friendsId = req.body.id; 
-	
-
+				console.log('Friends Id' + friendsId);
 	    	User.findById(friendsId)
 				.exec(function(error, doc){
-
+						console.log('test find by id' + doc);
 				      if (error) {
 				          res.send(error);
 				      }
 				      // Or send the doc to the browser
 				      else {
 						  res.status(200).json({
-						    name: doc.name,
+						    name: mdoc.name,
 						    email:doc.email
 						  }); 
 
@@ -37,7 +36,6 @@ const router = new express.Router();
 	});
 
 	router.post('/friendRequest', (req, res) => {
-
 		const friendsId = req.body.id; 
 
 		const token = req.headers.authorization.split(' ')[1];

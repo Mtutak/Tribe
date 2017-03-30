@@ -40,7 +40,8 @@ class FriendsProfileComponents extends React.Component {
 
     getFriendsInfo(){
         const who = this.props.location.query.friend;
-
+        console.log('this is who' + who);
+        console.log(this.props);
         const xhr = new XMLHttpRequest();
         xhr.open('post', '/api/friendsInfo');
         xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -49,8 +50,9 @@ class FriendsProfileComponents extends React.Component {
         xhr.responseType = 'json';
         xhr.addEventListener('load', () => {
           if (xhr.status === 200) {
-            const nameArray = xhr.response.name.split(' ');
-
+            // const nameArray = xhr.response.name.split(' ');
+            console.log(xhr.response);
+           
             this.setState({
               friendsFirstName: nameArray[0],
               friendsLastName: nameArray[1],

@@ -3,6 +3,7 @@ import { Header } from '../children/Header';
 import { Card, CardText } from 'material-ui/Card';
 import  { helpers } from '../utils/helpers';
 import Auth from '../../modules/localAuth';
+import { Link } from 'react-router';
 
 
 class AllProjects extends React.Component {
@@ -22,8 +23,7 @@ class AllProjects extends React.Component {
 
         helpers.getAllProjects().then((res) => {
         console.log('Successfully called helper');
-        console.log(res);
-        console.log(res.data);
+        // console.log(res);
           this.setState({
           allProjects: res.data
         });
@@ -34,10 +34,10 @@ class AllProjects extends React.Component {
       });
 
     }
-     getCreator(event) {
-      event.preventDefault();
-      console.log(event);
-    }
+    //  getCreator(event) {
+    //   event.preventDefault();
+    //   console.log(event);
+    // }
 
     componentDidMount(){
 
@@ -60,15 +60,25 @@ class AllProjects extends React.Component {
                    <div className="row">
 		         {this.state.allProjects.map(function(search, i) {
 	                return (
-                    <div className="col-lg-4" id="post-box" onClick={(event) => this.getCreator(event)}>
-	                  <div key={search._id}>
+                    <div className="col-lg-4" id="post-box">
+	                  <div key={search.creator}>
+                      <Link to={
+                                { 
+                                  pathname: '/friendsProfile/query', 
+                                  query: { 
+                                    friend: search.creator 
+                                  } 
+                                }
+                              } 
+                            activeClassName='active' >
                             <h2 className="project-title">{search.title}</h2>
+                            </Link>
                             <i><h2 className="project-location">{search.location}</h2></i>
                             <h2 className="project-summary">{search.summary}</h2>
                             <h2 className="project-details">{search.detail}</h2>
 	                      <br />
-	                    </div>
                     </div>
+                  </div>
                   
                   
 	                );
