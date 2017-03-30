@@ -792,6 +792,10 @@ form element
     padding-top: 35px;
 }
 
+.link-up {
+    color: yellow;
+}
+
 .save-profile-btn {
     font-family: 'Open Sans', sans-serif;
 }
