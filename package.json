@@ -10,8 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack & node server",
     "start": "nodemon server.js",
-    "build": "webpack",
-    "install": "node-gyp configure; node-gyp build"
+    "build": "webpack"
   },
   "author": "Tribe",
   "license": "ISC",
