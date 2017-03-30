@@ -9,7 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack & node server",
-    "start": "nodemon --use_strict server.js",
+    "start": "nodemon server.js",
     "build": "webpack"
   },
   "author": "Tribe",
@@ -17,7 +17,7 @@
   "dependencies": {
     "antd": "^2.8.1",
     "axios": "^0.12.0",
-    "bcrypt": "^1.0.2",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "jsonwebtoken": "^7.3.0",
