@@ -36,7 +36,7 @@ class ProfileForm extends React.Component {
       location: this.props.location || ''
     });
     console.log('id');
-    console.log(this.state.id);
+    // console.log(this.state.id);
   }
 
   // Lifecycle Methods
@@ -45,12 +45,6 @@ class ProfileForm extends React.Component {
     this.initializeState();
   }
 
-
-//   componentWillMount() {
-//     this.setState({
-//         showModal: false
-//             });
-//         }
 
   render() {
     return (
