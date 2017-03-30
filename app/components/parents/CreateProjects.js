@@ -49,7 +49,7 @@ class CreateProject extends React.Component {
 
     helpers.postProject(postObj).then(() => {
         console.log('Post Form Success!');
-        this.sendSuccessNotification();
+        // this.sendSuccessNotification();
         this.endLoading();
         // Loading icon
         // Redirect to explore page - > project 
@@ -59,9 +59,16 @@ class CreateProject extends React.Component {
       .catch((error) => {
         console.log('Error With Post Form Project')
         console.log(error);
-        this.sendErrorNotification();
+        // this.sendErrorNotification();
         this.endLoading();
       });
+  }
+  userIdState(id) {
+    console.log(id);
+    this.setState({
+          currentid: id
+        });
+    console.log(this.state.currentid);
   }
 
   // Setting Initial State
@@ -81,7 +88,7 @@ class CreateProject extends React.Component {
 
   
   componentDidMount(){
-
+    var userId;
    	const xhr = new XMLHttpRequest();
     xhr.open('get', '/api/projects/user');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
@@ -90,15 +97,11 @@ class CreateProject extends React.Component {
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
       if (xhr.status === 200) {
-        console.log(xhr.response.currentid);
-        this.setState({
-          currentid: xhr.response._id
-        });
-        console.log(this.state.currentid);
+        userId = xhr.response.currentid;
+        this.userIdState(userId);
       }
     });
     xhr.send();
-
     }
 
   render() {
@@ -109,6 +112,7 @@ class CreateProject extends React.Component {
         <Form
           loading={this.state.loading}
           submitAction={(postObj) => this.postform(postObj)}
+          currentid = {this.state.currentid}
         />
       </div>
     )

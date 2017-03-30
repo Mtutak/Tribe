@@ -9,15 +9,16 @@ class Form extends React.Component {
         // data.coords.lat
         // data.coords.lng
 
-    };
+    }
 
   // Form Event Handlers
 
   updateInput(event) {
-    console.log(event.target.value);
+    this.setState({id: this.props.currentid});
     const newState = {};
     newState[event.target.id] = event.target.value;
     this.setState(newState);
+    console.log(this.state.id);
   }
 
   handleSubmitForm(event) {
@@ -34,10 +35,12 @@ class Form extends React.Component {
   initializeState() {
     this.setState({
       location: '',
-      title: this.props.defaultTitle || '',
-      category: this.props.defaultCategory || '',
-      detail: ''
+      title: '',
+      category: '',
+      detail: '',
+      id: this.props.currentid || ''
     });
+    console.log(this.props.currentid);
   }
 
   // Lifecycle Methods
@@ -45,7 +48,6 @@ class Form extends React.Component {
   componentWillMount() {
     this.initializeState();
   }
-
   render() {
     return (
         <div id="contact" className="section-padding">
