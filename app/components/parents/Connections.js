@@ -237,9 +237,9 @@ class Connections extends React.Component {
 
           </Card></center>
 
-          {this.props.children}
+          {/*{this.props.children}*/}
 
-          {/*<Dashboard />*/}
+          <Dashboard />
 
 	        </div>
         </div>
