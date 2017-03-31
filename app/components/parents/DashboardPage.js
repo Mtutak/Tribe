@@ -101,10 +101,8 @@ class DashboardPage extends React.Component {
                 </div>
             </div>
         </header> 
-
-
-        <UserProfile />
-      {/*<Dashboard secretData={this.state.secretData} />*/}
+        
+      <Dashboard secretData={this.state.secretData} />
 
     </div>
 
