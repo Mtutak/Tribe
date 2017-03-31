@@ -34,7 +34,8 @@
     "react-router": "^3.0.0",
     "react-tap-event-plugin": "^2.0.1",
     "style-loader": "^0.14.1",
-    "validator": "^7.0.0"
+    "validator": "^7.0.0",
+    "web-bluetooth": "^0.1.2"
   },
   "devDependencies": {
     "babel-core": "^6.3.13",
