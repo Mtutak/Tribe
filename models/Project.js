@@ -8,7 +8,8 @@ const ProjectSchema = new Schema({
   //identify creator of project
   creator: {
     type: Schema.Types.ObjectId, 
-    ref: 'User'
+    ref: 'User',
+    required: true
   },
   title: {
   	type: String,
@@ -24,7 +25,6 @@ const ProjectSchema = new Schema({
   },
   location: {
   	type: String,
-  	required: true
   },
   latitude: {
   	type: Number

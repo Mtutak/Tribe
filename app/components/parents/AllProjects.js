@@ -58,7 +58,7 @@ class AllProjects extends React.Component {
 		         {this.state.allProjects.map(function(search, i) {
 	                return (
                     <div className="col-lg-4" id="post-box" >
-	                  <div key={search._id}>
+	                  <div key={search.creator}>
                       <Link to={
                         {
                           pathname: '/friendsProfile/query',

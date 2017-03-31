@@ -113,7 +113,12 @@ class Form extends React.Component {
                                 </div></center>
                                 
                             </div>
-                            {/* Update Loading Cursor with this.props.loading bool */}
+                        {/* Update Loading Cursor with this.props.loading bool */}
+                        {this.props.loading ? (
+                               <center> <img src='./img/triangle.svg' /></center>
+                            ) : (
+                                null
+                            )}
                             <button 
                                 type="primary"
                                 className="button-medium project-btn" 
