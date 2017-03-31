@@ -52,7 +52,7 @@ class CreateProject extends React.Component {
         // Loading icon
         // Redirect to explore page - > project 
         //Need notification 
-        // this.redirectToPosts();
+        this.redirectToPosts();
       })
       .catch((error) => {
         console.log('Error With Post Form Project')
