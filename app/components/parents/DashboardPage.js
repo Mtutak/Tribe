@@ -80,7 +80,7 @@ class DashboardPage extends React.Component {
                 </nav>
                 <br/>
                 <div className="container text-center">
-                        <h3 className="title-showcase">Showcase Projects Here</h3>
+                        <h3 className="title-showcase">Authenticated!</h3>
                         <Card className="container">
 		           
 		        {/*  {this.state.connections.map(function(search, i) {
@@ -102,7 +102,9 @@ class DashboardPage extends React.Component {
             </div>
         </header> 
 
-      <Dashboard secretData={this.state.secretData} />
+
+        <UserProfile />
+      {/*<Dashboard secretData={this.state.secretData} />*/}
 
     </div>
 
