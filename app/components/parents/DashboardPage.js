@@ -101,7 +101,7 @@ class DashboardPage extends React.Component {
                 </div>
             </div>
         </header> 
-
+        
       <Dashboard secretData={this.state.secretData} />
 
     </div>

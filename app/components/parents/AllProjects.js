@@ -18,12 +18,12 @@ class AllProjects extends React.Component {
     }
 
     getAllProjects(){
-        ('hit get all projects!');
+        // ('hit get all projects!');
 
-        helpers.getAllProjects().then((res) => {
-        console.log('Successfully called helper');
-        console.log(res);
-        console.log(res.data);
+        // helpers.getAllProjects().then((res) => {
+        // console.log('Successfully called helper');
+        // console.log(res);
+        // console.log(res.data);
           console.log(res.data);
           this.setState({
           allProjects: res.data
