@@ -619,14 +619,15 @@ form element
 **************************************/
 
 .line-adjustment {
-    /*line-height: .1;*/
+    line-height: .3;
 }
+
 
 .job-style {
     font-family: 'Rock Salt', cursive;
     color: #e43c5c;
     font-size: 45px;
-    margin-top: 50px;
+    /*margin-top: 50px;*/
 }
 
 .description-style {
@@ -671,6 +672,7 @@ form element
     width: 100%;
     height: auto;
     position: absolute;
+    padding-top: 50px;
 }
 
 .firstname {
