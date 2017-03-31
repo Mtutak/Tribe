@@ -10,7 +10,13 @@ class FriendsProfileComponents extends React.Component {
       this.setState({
               friendsFirstName: '',
               friendsLastName:'',
-              friendsEmail: ''
+              friendsEmail: '',
+              profileimg: '',
+              bio: '',
+              detail: '',
+              title: '',
+              location: ''
+
       });
     }
 
@@ -54,7 +60,12 @@ class FriendsProfileComponents extends React.Component {
             this.setState({
               friendsFirstName: nameArray[0],
               friendsLastName: nameArray[1],
-              friendsEmail: xhr.response.email
+              friendsEmail: xhr.response.email,
+              profileimg: xhr.response.profileimg,
+              bio: xhr.response.bio,
+              detail: xhr.response.detail,
+              title: xhr.response.title,
+              location: xhr.response.location
             });
 
           }
@@ -75,9 +86,10 @@ class FriendsProfileComponents extends React.Component {
 
     render() {
         return(
+
         <div>
             <Header />
-            <div id="blackbg-banner" className="section-padding">
+            <div id="user-bg" className="section-padding">
                 <div className="container">
 
                     <div id="about" className="section-padding">
@@ -87,7 +99,9 @@ class FriendsProfileComponents extends React.Component {
                                  <h1 className="firstname">{this.state.friendsFirstName}</h1>
                               </div>
                               <div className="col-6 col-md-4">
-                                 <center><img src="/img/profile-placeholder.png" className="img-responsive img-style" /></center>
+                                <div className="image-cropper">
+                                    <center><img src={this.state.profileimg} className="img-responsive img-style img-main rounded" /></center>
+                                </div>
                               </div>
                               <div className="col-6 col-md-4">
                                   <h1 className="lastname">{this.state.friendsLastName}</h1>
@@ -97,11 +111,11 @@ class FriendsProfileComponents extends React.Component {
                     </div>
 
                     <div className="page-title text-center">
-                                <h1 className="line-adjustment job-style">Job Title</h1>
+                                <h1 className="line-adjustment job-style">{this.state.title}</h1>
                     </div>
 
                     <div>
-                        <center><h3 className="line-adjustment description-style">This is what I do and what kind of people I am looking to connect with.</h3></center>
+                        <center><h3 className="line-adjustment description-style-line">{this.state.bio}</h3></center>
                     </div>
 
                     <hr />
@@ -111,12 +125,15 @@ class FriendsProfileComponents extends React.Component {
                     </div>
 
                     <div>
-                        <center><Link to="#" className="btn projects-me">Projects <i className="fa fa-star-o"></i></Link></center>
+                        <center><Link to="#" className="btn projects-me">My Projects <i className="fa fa-star-o"></i></Link></center>
+                        <center><h3 className="line-adjustment description-style">{this.state.location}</h3></center>
                     </div>
 
                 </div>
             </div>
         </div>
+
+              
         );
     }
 }
