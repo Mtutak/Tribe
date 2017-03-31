@@ -182,7 +182,7 @@ app.post('/projects/new', function(req, res){
 
 	    	// create new project
 	    	Project.create({
-					creator: req.body.data._id,
+					creator: req.body.data.id,
 					location: req.body.data.location,
 					title: req.body.data.title,
 					summary: req.body.data.category,
@@ -199,6 +199,7 @@ app.get('/projects', function(req, res){
 			console.log('hit projects route!');
 
 				Project.find({})
+  				.sort({ createdAt: -1 })
 				.exec(function(error, doc){
 							console.log(doc);
 				      if (error) {

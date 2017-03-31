@@ -93,7 +93,7 @@ class ProfileForm extends React.Component {
                                     onChange={(event) => this.updateInput(event)}
                                     rows="2"
                                     cols="2"
-                                    maxLength="250"
+                                    maxLength="175"
                                     required
                                     className="form-control text-field-box" 
                                     placeholder="I used to read Word Up magazine. Salt'n'Pepa and Heavy D up in the limousine"
