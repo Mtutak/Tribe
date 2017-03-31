@@ -25,8 +25,6 @@ class FriendsProfileComponents extends React.Component {
     }
 
     addToPendingConnections(event) {
-        // event.preventDefault();
-      // console.log(this);
         const who = this.props.location.query.friend;
 
         const xhr = new XMLHttpRequest();
@@ -35,12 +33,6 @@ class FriendsProfileComponents extends React.Component {
         // set the authorization HTTP header
         xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
         xhr.responseType = 'json';
-        // xhr.addEventListener('load', () => {
-        //   if (xhr.status === 200) {
-        //     console.log('success');
-
-        //   }
-        // });
         xhr.send('id='+who); 
     }
 
@@ -71,10 +63,6 @@ class FriendsProfileComponents extends React.Component {
           }
         });
         xhr.send('id='+who);  
-
-        // this.setState({
-        //     who:this.props.location.query.friend
-        // });
     }
 
 
