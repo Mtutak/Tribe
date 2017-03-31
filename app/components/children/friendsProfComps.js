@@ -69,6 +69,7 @@ class FriendsProfileComponents extends React.Component {
 
     componentDidMount(){
         this.getFriendsInfo();
+        console.log(this.state.profileimg);
 
     }
 
