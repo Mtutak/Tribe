@@ -27,7 +27,12 @@ const router = new express.Router();
 				      else {
 						  res.status(200).json({
 						    name: doc.name,
-						    email:doc.email
+						    email: doc.email,
+				            profileimg: doc.profileimg,
+				            bio: doc.bio,
+				            detail: doc.detail,
+				            title: doc.title,
+				            location: doc.location
 						  }); 
 
 				      }
