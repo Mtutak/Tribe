@@ -16,18 +16,28 @@ Clone the Tribe repository (https://github.com/Mtutak/Tribe).
 
 Run npm install in the terminal/command line:
 
-* body-parser: 1.16.0
-* express: 4.14.1
-* express-handlebars: 3.0.0
-* express-partials: 0.3.0
-* express-session: 1.15.0
-* method-override: 2.3.7
-* nodemailer: 3.0.2
-* passport: 0.3.2
-* passport-github2: 0.1.10
-* sequelize: 3.30.1
-* sequelize-cli: 2.5.1
-* util: 0.10.3
+* "axios": "^0.12.0",
+* "bcrypt-nodejs": "0.0.3",
+* "body-parser": "^1.15.2",
+* "express": "^4.14.0",
+* "jsonwebtoken": "^7.3.0",
+* "material-ui": "^0.16.4",
+* "method-override": "^2.3.5",
+* mongoose: "^4.8.4",
+* morgan": "^1.7.0",
+* "mysql": "^2.10.2",
+* "passport": "^0.3.2",
+* "passport-local": "^1.0.0",
+* "path": "^0.12.7",
+* "react": "^15.4.1",
+* "react-bootstrap": "^0.30.8",
+* "react-dom": "^15.4.1",
+* "react-place": "^0.6.1",
+* "react-router": "^3.0.0",
+* "react-tap-event-plugin": "^2.0.1",
+* "style-loader": "^0.14.1",
+* "validator": "^7.0.0",
+* "web-bluetooth": "^0.1.2"
 
 ## Step-by-Step
 
@@ -54,6 +64,7 @@ Tribe was deployed using Heroku
 * Body-Parser
 * JSON Web Token
 * Node.js
+* Babel
 * Passport
 * Passport-Local
 * Node Mailer
