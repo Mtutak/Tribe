@@ -141,7 +141,9 @@ class UserProfile extends React.Component {
                                  <h1 className="firstname">{this.state.myFirstName}</h1>
                               </div>
                               <div className="col-6 col-md-4">
-                                 <center><img src={this.state.profileimg} className="img-responsive img-style" /></center>
+                                <div className="image-cropper">
+                                    <center><img src={this.state.profileimg} className="img-responsive img-style img-main rounded" /></center>
+                                </div>
                               </div>
                               <div className="col-6 col-md-4">
                                   <h1 className="lastname">{this.state.myLastName}</h1>

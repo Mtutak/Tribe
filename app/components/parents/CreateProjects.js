@@ -1,15 +1,12 @@
 import * as React from 'react';
 import { Header } from '../children/Header';
 import { Form } from '../children/Form';
-// import { notification } from 'antd';
+import { notification } from 'antd';
 import * as axios from 'axios'; // axios should be replaced with helpers
 import { helpers } from '../utils/helpers';
 import Auth from '../../modules/localAuth';
 
 class CreateProject extends React.Component {
-
-  // Create Post User Feedback
-
   startLoading() {
     this.setState({
       loading: true
@@ -26,19 +23,20 @@ class CreateProject extends React.Component {
     this.props.router.push('/projects');
   }
 
-  // sendSuccessNotification() {
-  //   notification['success']({
-  //     message: 'Yayyy!!',
-  //     description: 'Your post has been created.',
-  //   });
-  // }
+  sendSuccessNotification() {
+    console.log("triggered");
+    notification['success']({
+      message: 'Yayyy!!',
+      description: 'Your post has been created.',
+    });
+  }
 
-  // sendErrorNotification() {
-  //   notification['error']({
-  //     message: 'Uh Oh',
-  //     description: 'Something went wrong, please try again.',
-  //   });
-  // }
+  sendErrorNotification() {
+    notification['error']({
+      message: 'Uh Oh',
+      description: 'Something went wrong, please try again.',
+    });
+  }
 
   // Data Request Methods
 
@@ -49,7 +47,7 @@ class CreateProject extends React.Component {
 
     helpers.postProject(postObj).then(() => {
         console.log('Post Form Success!');
-        // this.sendSuccessNotification();
+        this.sendSuccessNotification();
         this.endLoading();
         // Loading icon
         // Redirect to explore page - > project 
@@ -59,8 +57,8 @@ class CreateProject extends React.Component {
       .catch((error) => {
         console.log('Error With Post Form Project')
         console.log(error);
-        // this.sendErrorNotification();
-        this.endLoading();
+        this.sendErrorNotification();
+        alert('Error! Please Refresh and Try Again.');
       });
   }
   userIdState(id) {

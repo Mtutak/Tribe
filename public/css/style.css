@@ -1003,3 +1003,22 @@ body {
     color: black;
     font-family: 'Open Sans', sans-serif;
 }
+
+/*Profile Image Rounded*/
+.image-cropper {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.img-main {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+}
