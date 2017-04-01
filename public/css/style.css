@@ -626,6 +626,7 @@ form element
 .job-style {
     font-family: 'Rock Salt', cursive;
     color: #e43c5c;
+    background-color: white;
     font-size: 45px;
     margin-top: 50px;
 }
