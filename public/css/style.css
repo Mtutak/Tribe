@@ -108,12 +108,12 @@ Header
 }
 a.btn-banner {
     border: 1px solid #cdcdcd;
-    padding: 12px 22px;
+    padding: 15px 20px;
     line-height: 0px;
     border-radius: 3px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    font-size: 11px;
+    font-size: 16px;
     text-transform: uppercase;
     color: #ffffff;
     letter-spacing: 1px;
