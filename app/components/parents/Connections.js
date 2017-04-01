@@ -11,7 +11,7 @@ import BluetoothDevice from 'web-bluetooth';
 class Connections extends React.Component {
     onClickHandle(){
    var exampleDevice = new BluetoothDevice({
-     services: 'heart_rate'
+     name: 'LG X power'
    });
 
    exampleDevice.connect();
