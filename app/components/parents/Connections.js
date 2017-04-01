@@ -123,7 +123,7 @@ class Connections extends React.Component {
             <Header />
             <div id="blackbg-banner" className="section-padding">
                 <div className="container text-center">
-                        <h3 className="title">Connections You've Made</h3>
+                        <h3 className="title">My Tribe</h3>
                 </div>
 	        <center><Card className="container card-container">
             <div className="row">
@@ -151,7 +151,7 @@ class Connections extends React.Component {
 
                             </Link>
 
-	    	              		 <h4 className="connections-email">{search.email}</h4>
+	    	              		 <h4 className="connections-email">{search.title}</h4>
 
 	                      <br />
 	                    </div>
@@ -167,7 +167,7 @@ class Connections extends React.Component {
 	        </Card></center>
 
                 <div className="container text-center">
-                        <h3 className="title">Connections Around You</h3>
+                        <h3 className="title">People Around Me</h3>
                 </div>
         
 
@@ -197,7 +197,7 @@ class Connections extends React.Component {
 
                             </Link>
 
-                           <h4 className="connections-email">{search.email}</h4>
+                           <h4 className="connections-email">{search.title}</h4>
 
                         <br />
                       </div>
@@ -213,7 +213,7 @@ class Connections extends React.Component {
           </Card></center>
 
                 <div className="container text-center">
-                        <h3 className="title awaiting-meetup">Awaiting Meetup</h3>
+                        <h3 className="title awaiting-meetup">People To Meet</h3>
                 </div>
 
           <center><Card className="container card-container">
@@ -243,7 +243,7 @@ class Connections extends React.Component {
 
                             </Link>
 
-                           <h4 className="connections-email">{search.email}</h4>
+                           <h4 className="connections-email">{search.title}</h4>
 
                            <button value={search._id}>Add to Your Tribe!</button>
 
