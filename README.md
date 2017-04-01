@@ -41,8 +41,8 @@ Run npm install in the terminal/command line:
 
 ## Step-by-Step
 
-* Run node server.js (starts the server, creates the tables in sandbox_db)
-* Visit localhost:8080
+* Run node server.js in your terminal/command line
+* Visit localhost:8080 in your browser
 
 ## Deployment
 
@@ -82,5 +82,5 @@ Tribe was deployed using Heroku
 
 ## Acknowledgments
 
-* Hat tip to the TA's, instructors and several of our peers who were so kind and helped us out along the way!
+* So grateful to the TA's, instructors and several of our peers who were so kind and helped us out along the way! We could not have done it without you!
 
