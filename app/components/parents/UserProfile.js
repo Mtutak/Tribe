@@ -163,7 +163,7 @@ class UserProfile extends React.Component {
                     <hr />
 
                     <div>
-                        <center><Link to="#" className="btn projects-me">My Projects <i className="fa fa-star-o"></i></Link></center>
+                        {/*<center><Link to="#" className="btn projects-me">My Projects <i className="fa fa-star-o"></i></Link></center>*/}
                         <center><h3 className="line-adjustment description-style">{this.state.location}</h3></center>
                     </div>
 
