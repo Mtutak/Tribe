@@ -48,7 +48,7 @@ import Auth from '../../modules/localAuth';
 			<div className="row">
 				<div className="jumbotron">
 				  <h1 className="small">Welcome To <span className="bold">Tribe</span></h1>
-				  <p className="big">Band together and create</p>
+				  <p className="big">Together we create</p>
 				  <Link to="/signup" className="btn btn-banner">Sign Up<i className="fa fa-send"></i></Link>
 				</div>
 			</div>
