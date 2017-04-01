@@ -138,10 +138,11 @@ let transporter = nodemailer.createTransport({
 									    	User.findById(userId)
 												.exec(function(error, doc){
 													friendEmail = doc.email;
+													emailList = userEmail + ', ' + friendEmail;
 
 													let mailOptions = {
 													    from: '"TRIBE 👻"', // sender address
-													    to: userEmail + ', ' + friendEmail, // list of receivers
+													    to: emailList, // list of receivers
 													    subject: 'Hi! Nice to Meet\'ya!', // Subject line
 													    text: 'Schedule a time and place to meet.  Always meet in public!  Safety is #1.' // plain text body
 													};
