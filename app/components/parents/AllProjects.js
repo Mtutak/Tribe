@@ -67,7 +67,7 @@ class AllProjects extends React.Component {
                             <h2 className="project-title">{search.title}</h2>
                         </Link>
                             <i><h2 className="project-location">{search.location}</h2></i>
-                            <h2 className="project-summary">{search.summary}</h2>
+                            <h2 className="project-summary">WANTED: {search.summary}</h2>
                             <h2 className="project-details">{search.detail}</h2>
 	                      <br />
 	                    </div>
