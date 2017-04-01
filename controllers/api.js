@@ -111,8 +111,6 @@ let transporter = nodemailer.createTransport({
 
 	    	User.findById(userId)
 				.exec(function(error, doc){
-					// console.log(doc.pendingConnections.indexOf(friendsId));
-					// console.log(friendsId);
 
 					if(doc.pendingConnections.indexOf(friendsId) === -1){
 				    	User.findOneAndUpdate({_id: userId}, { $push: { "pendingConnections": friendsId } }, { new: true }, function(err, newdoc) {
@@ -138,7 +136,7 @@ let transporter = nodemailer.createTransport({
 									    	User.findById(userId)
 												.exec(function(error, doc){
 													friendEmail = doc.email;
-													emailList = userEmail + ', ' + friendEmail;
+													var emailList = userEmail + ', ' + friendEmail;
 
 													let mailOptions = {
 													    from: '"TRIBE 👻"', // sender address
@@ -149,9 +147,9 @@ let transporter = nodemailer.createTransport({
 
 													transporter.sendMail(mailOptions, (error, info) => {
 													    if (error) {
-													        return console.log(error);
+													        return error;
 													    }
-													    // console.log('Message %s sent: %s', info.messageId, info.response);
+
 													});
 
 												});
@@ -177,7 +175,6 @@ let transporter = nodemailer.createTransport({
 	router.get('/myInfo', function(req, res){
 		
 		const token = req.headers.authorization.split(' ')[1];
-		// console.log('this is the token!'+token);
 
 	  	jwt.verify(token, config.jwtSecret, (err, decoded) => {
 	    // the 401 code is for unauthorized status
@@ -255,12 +252,15 @@ let transporter = nodemailer.createTransport({
 				      }
 				      // Or send the doc to the browser
 				      else {
+
 				      		unavailableConnections = doc.connections;
+
 				      		doc.pendingConnections.forEach(function(element, index, array){
 				      			unavailableConnections.push(element);
 				      		});
+
 				      		unavailableConnections.push(userId);
-				      		// console.log(unavailableConnections);
+
 
 							User.find({
 							    '_id': { $nin: unavailableConnections}
@@ -296,7 +296,6 @@ let transporter = nodemailer.createTransport({
 				      }
 				      // Or send the doc to the browser
 				      else {
-				      		// console.log('pending: '+ doc.pendingConnections);
 						  res.status(200).json({
 						    pendingConnections: doc.pendingConnections
 						  }); 
@@ -320,7 +319,7 @@ router.get('/projects/user', function(req, res){
 	    	// query user
 	    	User.findById(userId)
 				.exec(function(error, doc){
-							// console.log(doc._id);
+
 				      if (error) {
 				          res.send(error);
 				      }

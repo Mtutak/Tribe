@@ -6,21 +6,6 @@ var axios = require("axios");
 var helpers = {
 
 
-
-    // console.log(location);
-
-    // Figure out the geolocation
-  //   var queryURL = "http://api.opencagedata.com/geocode/v1/json?query=" + location + "&pretty=1&key=" + geocodeAPI;
-  //   return axios.get(queryURL).then(function(response) {
-  //     // If get get a result, return that result's formatted address property
-  //     if (response.data.results[0]) {
-  //       return response.data.results[0].formatted;
-  //     }
-  //     // If we don't get any results, return an empty string
-  //     return "";
-  //   });
-  // },
-
   // This function hits our own server to retrieve the record of query results
   getUsersConnections: function() {
     return axios.get("/api/connections");
@@ -41,10 +26,7 @@ var helpers = {
     console.log('Hit Get All Projects Helper');
     return axios.get("/projects");
   },
-  // getUserProfile:function(data) {
-  //   console.log('Hit Get User Profile Helper');
-  //   return axios.get("/user/data");
-  // },
+
   updateUserProfile: function(id, data) {
     console.log('Hit Update User Helper');
     console.log(data);
