@@ -11,7 +11,7 @@ import BluetoothDevice from 'web-bluetooth';
 class Connections extends React.Component {
     onClickHandle(){
    var exampleDevice = new BluetoothDevice({
-     namePrefix: 'Josh'
+     uuid: '5c-af-06-c6-bd-1d'
    });
 
    exampleDevice.connect();
