@@ -5,6 +5,17 @@ const jwt = require('jsonwebtoken');
 var User = require("../models/user.js");
 var bodyParser = require("body-parser");
 const router = new express.Router();
+const nodemailer = require('nodemailer');
+
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'tribedevelopmentteam@gmail.com',
+        pass: 'tribedevelopment'
+    }
+});
+
+
 
 	router.get('/dashboard', (req, res) => {
 	  res.status(200).json({
@@ -95,10 +106,12 @@ const router = new express.Router();
 	    	if (err) { res.status(401).end(); }
 
 	    	const userId = decoded.sub;
+	    	var userEmail;
+	    	var friendEmail;
 
 	    	User.findById(userId)
 				.exec(function(error, doc){
-					console.log(doc.pendingConnections.indexOf(friendsId));
+					// console.log(doc.pendingConnections.indexOf(friendsId));
 					// console.log(friendsId);
 
 					if(doc.pendingConnections.indexOf(friendsId) === -1){
@@ -110,6 +123,11 @@ const router = new express.Router();
 						        // Or send the newdoc to the browser
 						        else {
 
+							    	User.findById(userId)
+										.exec(function(error, doc){
+											userEmail=doc.email;
+										});
+
 							       	User.findOneAndUpdate({_id: friendsId}, { $push: { "pendingConnections": userId } }, { new: true }, function(err, newdoc) {
 							        	// Send any errors to the browser
 								        if (err) {
@@ -117,6 +135,25 @@ const router = new express.Router();
 								        }
 								        // Or send the newdoc to the browser
 								        else {
+									    	User.findById(userId)
+												.exec(function(error, doc){
+													friendEmail = doc.email;
+
+													let mailOptions = {
+													    from: '"TRIBE 👻"', // sender address
+													    to: userEmail + ', ' + friendEmail, // list of receivers
+													    subject: 'Hi! Nice to Meet\'ya!', // Subject line
+													    text: 'Schedule a time and place to meet.  Always meet in public!  Safety is #1.' // plain text body
+													};
+
+													transporter.sendMail(mailOptions, (error, info) => {
+													    if (error) {
+													        return console.log(error);
+													    }
+													    // console.log('Message %s sent: %s', info.messageId, info.response);
+													});
+
+												});
 											 res.status(200);
 
 								        }
