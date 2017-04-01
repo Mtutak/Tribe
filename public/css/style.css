@@ -759,11 +759,14 @@ form element
     color: black;
     padding-top: 35px;
     font-size: 99px;
+    margin-top: 35px;
 }
 
 .card-container {
     background-color: black !important;
 }
+
+
 
 .connections-name {
     color: #e43c5c;
@@ -1023,4 +1026,9 @@ body {
     margin: 0 auto;
     /*height: 100%;*/
     width: auto;
+}
+
+.pending-style {
+    background-color: black !important;
+    color: white !important;
 }

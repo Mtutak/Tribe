@@ -47,26 +47,24 @@ class MeetInstructions extends React.Component {
                     </div>
                 </nav>
                 <br/>
-                <div className="container text-center">
-                </div>
-            </div>
-        </header> 
 
-        <Card className="container">
-          <CardTitle
-            title="Awesome!"
-            subtitle="Your request has been submitted!"
-          />
-
-        <CardText style={{ fontSize: '16px', color: 'green' }}>
+                    <div className="container text-center">
+                        <h3 className="title-showcase">Meetup!</h3>
+                        <Card className="container">
+                             <CardTitle
+                                title="Awesome!"
+                                subtitle="Your request has been submitted!"
+                            />
+                              <CardText style={{ fontSize: '16px', color: 'black' }}>
         A scheduling email was sent to both of you.  When you are together in person, go to the      
           <Link 
             to='/connections' 
-            activeClassName='active' >
-               - Connections Page - 
-          </Link>         
-              and click on "LINK UP". </CardText>
+            activeClassName='active' > Connections Page  </Link>  
+           and click on "LINK UP". </CardText>
         </Card>
+                </div>
+            </div>
+        </header> 
 
     </div>
 

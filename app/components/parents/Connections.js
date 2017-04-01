@@ -239,7 +239,7 @@ class Connections extends React.Component {
 
           {/*{this.props.children}*/}
 
-          <Dashboard />
+          {/*<Dashboard />*/}
 
 	        </div>
         </div>

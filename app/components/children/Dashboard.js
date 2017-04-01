@@ -3,10 +3,11 @@ import { Card, CardTitle, CardText } from 'material-ui/Card';
 
 
 const Dashboard = ({ secretData }) => (
-  <Card className="container">
+  <Card className="container card-container">
     <CardTitle
-      title="Dashboard"
-      subtitle="You should get access to this page only after authentication."
+      style={{ fontSize: '16px', color: 'white'}}
+      title="Pending Connection..."
+      subtitle="Go ahead, get out and talk to each other!"
     />
 
     {secretData && <CardText style={{ fontSize: '16px', color: 'green' }}>{secretData}</CardText>}
