@@ -5,9 +5,19 @@ import ApiService from '../utils/helpers';
 import Auth from '../../modules/localAuth';
 import { Link } from 'react-router';
 import Dashboard from '../children/Dashboard';
+import BluetoothDevice from 'web-bluetooth';
+
 
 class Connections extends React.Component {
-    
+    onClickHandle(){
+   var exampleDevice = new BluetoothDevice({
+     namePrefix: 'Josh'
+   });
+
+   exampleDevice.connect();
+
+    }
+
     initializeState() {
 
       this.setState({
@@ -236,6 +246,8 @@ class Connections extends React.Component {
                 
 
           </Card></center>
+
+          <button onClick={(event)=>this.onClickHandle(event)}>click me</button>
 
           {/*{this.props.children}*/}
 
