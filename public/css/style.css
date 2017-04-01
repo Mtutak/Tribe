@@ -663,6 +663,7 @@ form element
     width: 100%;
     height: auto;
     position: absolute;
+    padding-bottom: 50px;
 }
 
 #user-bg {
