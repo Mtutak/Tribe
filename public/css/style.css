@@ -121,6 +121,22 @@ a.btn-banner {
     margin-top: 95px;
 }
 
+.add-tribe {
+    background-color: black;
+    color: white;
+    border: 1px solid #cdcdcd;
+    padding: 15px 10px;
+    line-height: 0px;
+    border-radius: 3px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ffffff;
+    /*letter-spacing: 1px;*/
+    display: inline-block;
+}
+
 .link-up {
     color: yellow;
     font-family: 'Open Sans', sans-serif;

@@ -245,7 +245,7 @@ class Connections extends React.Component {
 
                            <h4 className="connections-email">{search.title}</h4>
 
-                           <button value={search._id}>Add to Your Tribe!</button>
+                           <button value={search._id} className="btn btn-banner add-tribe">Add to Your Tribe!</button>
 
                             
                         <br />
