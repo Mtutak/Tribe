@@ -69,6 +69,7 @@ Tribe was deployed using Heroku
 * Passport-Local
 * Node Mailer
 * MongoDB / Mongoose
+* Web-Bluetooth
 * Express
 * Heroku
  
