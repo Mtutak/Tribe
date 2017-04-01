@@ -17,7 +17,7 @@ const User = require('./models/user');
 // Create Instance of Express
 var app = express();
 // Sets an initial port. We'll use this later in our listener
-var PORT = process.env.PORT || 8888;
+var PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(bodyParser.json());

@@ -41,6 +41,49 @@ const router = new express.Router();
 
 	});
 
+	router.post('/addToTribe', (req, res) => {
+
+		const friendsId = req.body.id; 
+
+		const token = req.headers.authorization.split(' ')[1];
+
+	  	jwt.verify(token, config.jwtSecret, (err, decoded) => {
+	    // the 401 code is for unauthorized status
+	    	if (err) { res.status(401).end(); }
+
+	    	const userId = decoded.sub;
+
+
+		    	User.findOneAndUpdate({_id: userId}, { $pull: { "pendingConnections": friendsId }, $push: { "connections": friendsId } }, { new: true }, function(err, newdoc) {
+				        // Send any errors to the browser
+				        if (err) {
+				          res.send(err);
+				        }
+				        // Or send the newdoc to the browser
+				        else {
+
+					       	User.findOneAndUpdate({_id: friendsId}, { $pull: { "pendingConnections": userId }, $push: { "connections": userId } }, { new: true }, function(err, newdoc) {
+					        	// Send any errors to the browser
+						        if (err) {
+						          res.send(err);
+						        }
+						        // Or send the newdoc to the browser
+						        else {
+								    res.json({
+								      friendAdded: true 
+								    }); 	 
+
+						        }
+					    	})
+
+				        }
+				});
+
+
+	  	});
+
+	});
+
 	router.post('/friendRequest', (req, res) => {
 
 		const friendsId = req.body.id; 

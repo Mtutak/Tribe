@@ -9,12 +9,33 @@ import BluetoothDevice from 'web-bluetooth';
 
 
 class Connections extends React.Component {
-    onClickHandle(){
-   var exampleDevice = new BluetoothDevice({
-     name: 'LG X power'
-   });
+    bluetoothAddFriendToTribe(event){
+      var friendsId = event.target.value;
+      if(friendsId){
+         var _this = this;
+         var exampleDevice = new BluetoothDevice({
+           name: 'Josh Phone'
+         });
 
-   exampleDevice.connect();
+         exampleDevice.connect().then(function(){
+          // console.log(_this);
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('post', '/api/addToTribe');
+            xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+            // set the authorization HTTP header
+            xhr.setRequestHeader('Authorization', `bearer ${Auth.getToken()}`);
+            xhr.responseType = 'json';
+            xhr.addEventListener('load', () => {
+              if (xhr.status === 200) {
+                console.log(xhr.response);
+                window.location.reload();
+              }
+            });
+            xhr.send('id='+friendsId); 
+
+         });
+      }
 
     }
 
@@ -200,6 +221,7 @@ class Connections extends React.Component {
                  <div className="col-lg-12">
                    <div className="row">
 
+          <div onClick={(event)=>this.bluetoothAddFriendToTribe(event)}>
              {this.state.connectionsPending.map(function(search, i) {
                   return (
                     <div className="col-lg-4" id="connections-box">
@@ -223,23 +245,15 @@ class Connections extends React.Component {
 
                            <h4 className="connections-email">{search.email}</h4>
 
-                            <Link 
-                            to={
-                                { 
-                                  pathname: '/connections/query', 
-                                  query: { 
-                                    friend: search._id 
-                                  } 
-                                }
-                              } 
-                            activeClassName='active' > 
-                              <h5 className="link-up">LINK UP!</h5>
-                            </Link>
+                           <button value={search._id}>Add to Your Tribe!</button>
+
+                            
                         <br />
                       </div>
                       </div>
                   );
                 })}
+          </div>
                 </div>
                 </div>
                 </div>
@@ -247,7 +261,6 @@ class Connections extends React.Component {
 
           </Card></center>
 
-          <button onClick={(event)=>this.onClickHandle(event)}>click me</button>
 
           {/*{this.props.children}*/}
 
